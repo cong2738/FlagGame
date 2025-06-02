@@ -80,3 +80,5 @@
 !*.json
 #gif
 !*.gif
+#py
+!*.py
