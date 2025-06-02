@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_random_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_random" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="182000000001fs"></ZoomEndTime>
+      <Cursor1Time time="10571025000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/tb_random/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/ce" type="logic">
+      <obj_property name="ElementShortName">ce</obj_property>
+      <obj_property name="ObjectShortName">ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/seed_en" type="logic">
+      <obj_property name="ElementShortName">seed_en</obj_property>
+      <obj_property name="ObjectShortName">seed_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/seed" type="array">
+      <obj_property name="ElementShortName">seed[127:0]</obj_property>
+      <obj_property name="ObjectShortName">seed[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/rnd" type="array">
+      <obj_property name="ElementShortName">rnd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rnd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/ce" type="logic">
+      <obj_property name="ElementShortName">ce</obj_property>
+      <obj_property name="ObjectShortName">ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/seed_en" type="logic">
+      <obj_property name="ElementShortName">seed_en</obj_property>
+      <obj_property name="ObjectShortName">seed_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/seed" type="array">
+      <obj_property name="ElementShortName">seed[127:0]</obj_property>
+      <obj_property name="ObjectShortName">seed[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/rnd" type="array">
+      <obj_property name="ElementShortName">rnd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rnd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/x" type="array">
+      <obj_property name="ElementShortName">x[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/y" type="array">
+      <obj_property name="ElementShortName">y[31:0]</obj_property>
+      <obj_property name="ObjectShortName">y[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/z" type="array">
+      <obj_property name="ElementShortName">z[31:0]</obj_property>
+      <obj_property name="ObjectShortName">z[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/w" type="array">
+      <obj_property name="ElementShortName">w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/DUT/t" type="array">
+      <obj_property name="ElementShortName">t[31:0]</obj_property>
+      <obj_property name="ObjectShortName">t[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/rnd_array" type="array">
+      <obj_property name="ElementShortName">rnd_array[0:9999][31:0]</obj_property>
+      <obj_property name="ObjectShortName">rnd_array[0:9999][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/prev_rnd" type="array">
+      <obj_property name="ElementShortName">prev_rnd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_rnd[31:0]</obj_property>
+   </wvobject>
+</wave_config>
