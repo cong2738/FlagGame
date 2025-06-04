@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../0530_OV7670_VGA.srcs/sources_1/new/Filter.sv" \
+"../../../../0530_OV7670_VGA.srcs/sources_1/new/Frame_buffer.sv" \
+"../../../../0530_OV7670_VGA.srcs/sources_1/new/Mem_controller.sv" \
+"../../../../0530_OV7670_VGA.srcs/sources_1/new/QVGA_MemController.sv" \
+"../../../../0530_OV7670_VGA.srcs/sources_1/imports/new/VGA_controller.sv" \
+"../../../../0530_OV7670_VGA.srcs/sources_1/new/charactor_display.sv" \
+"../../../../0530_OV7670_VGA.srcs/sources_1/new/OV7670_VGA_Display.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

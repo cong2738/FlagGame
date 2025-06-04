@@ -1,0 +1,1 @@
+-wto "b4791e584c8b4c668a9f87161c2d5de7" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "uvm" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "OV7670_VGA_Display_behav" "xil_defaultlib.OV7670_VGA_Display" "xil_defaultlib.glbl" -log "elaborate.log" 
