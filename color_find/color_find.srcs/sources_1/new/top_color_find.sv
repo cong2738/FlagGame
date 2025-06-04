@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2025/06/04 14:13:45
-// Design Name: 
-// Module Name: top_color_find
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module top_color_find (
     // global signals
@@ -86,26 +66,12 @@ module top_color_find (
     always_ff @(posedge clk) begin : CC_Sel
         center_color <= ((x_pixel==160) && (y_pixel==120)) ? {vgaRed, vgaGreen, vgaBlue} : center_color;
     end
-    logic [0:32] hand;
-    logic [0:32] count;
-    always_ff @(posedge clk, posedge reset) begin : userdatafnd
-        if (reset) count <= 0;
-        else begin
-            if (count == 10_000_000) begin
-                hand  <= (user_hand1?32'hf000:32'h0) + (user_hand1?32'h000f:32'h0);
-                count <= 0;
-            end else count <= count + 1;
-        end
-    end
-    logic [32:0] bcd;
-    assign bcd = sw_mode ? hand : center_color;
     fnd_controller u_fnd_controller (
         .clk     (clk),
         .reset   (reset),
-        .bcd32   (hand),
+        .bcd32   (sw_mode ? user_hand1 : user_hand0),
         .fnd_font(fnd_font),
         .fnd_comm(fnd_comm)
     );
-
 
 endmodule
