@@ -1,0 +1,296 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Jun  4 10:03:00 2025
+# Process ID: 17548
+# Current directory: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1
+# Command line: vivado.exe -log game_cpu_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source game_cpu_wrapper.tcl
+# Log file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/game_cpu_wrapper.vds
+# Journal file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source game_cpu_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/ip_repo/FlagUPDOWN_game_test_rom_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.cache/ip 
+Command: synth_design -top game_cpu_wrapper -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 36892
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1103.730 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_wrapper' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/hdl/game_cpu_wrapper.v:12]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/hdl/game_cpu_wrapper.v:21]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:13]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_clk_wiz_1_0' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_clk_wiz_1_0' (1#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_mdm_1_0' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_mdm_1_0' (2#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_microblaze_0_0' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_microblaze_0_0' (3#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_microblaze_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'Interrupt_Ack' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_AWADDR' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_AWPROT' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_AWVALID' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_WDATA' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_WSTRB' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_WVALID' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_BREADY' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_ARADDR' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_ARPROT' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_ARVALID' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7071] port 'M_AXI_DP_RREADY' of module 'game_cpu_microblaze_0_0' is unconnected for instance 'microblaze_0' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+WARNING: [Synth 8-7023] instance 'microblaze_0' of module 'game_cpu_microblaze_0_0' has 52 connections declared, but only 40 given [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:75]
+INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_4Z0TTN' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:148]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_dlmb_bram_if_cntlr_0' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_dlmb_bram_if_cntlr_0' (4#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_dlmb_v10_0' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_dlmb_v10_0' (5#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_dlmb_v10_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'game_cpu_dlmb_v10_0' is unconnected for instance 'dlmb_v10' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:294]
+WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'game_cpu_dlmb_v10_0' has 25 connections declared, but only 24 given [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:294]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_ilmb_bram_if_cntlr_0' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_ilmb_bram_if_cntlr_0' (6#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_ilmb_v10_0' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_ilmb_v10_0' (7#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_ilmb_v10_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'game_cpu_ilmb_v10_0' is unconnected for instance 'ilmb_v10' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:340]
+WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'game_cpu_ilmb_v10_0' has 25 connections declared, but only 24 given [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:340]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_lmb_bram_0' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_lmb_bram_0' (8#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_lmb_bram_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'game_cpu_lmb_bram_0' is unconnected for instance 'lmb_bram' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:365]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'game_cpu_lmb_bram_0' is unconnected for instance 'lmb_bram' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:365]
+WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'game_cpu_lmb_bram_0' has 16 connections declared, but only 14 given [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:365]
+INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_4Z0TTN' (9#1) [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:148]
+INFO: [Synth 8-6157] synthesizing module 'game_cpu_rst_clk_wiz_1_100M_0' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_rst_clk_wiz_1_100M_0' (10#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/.Xil/Vivado-17548-korchamHoyoun24/realtime/game_cpu_rst_clk_wiz_1_100M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'game_cpu_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:138]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'game_cpu_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:138]
+WARNING: [Synth 8-7071] port 'peripheral_aresetn' of module 'game_cpu_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:138]
+WARNING: [Synth 8-7023] instance 'rst_clk_wiz_1_100M' of module 'game_cpu_rst_clk_wiz_1_100M_0' has 10 connections declared, but only 7 given [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu' (11#1) [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/synth/game_cpu.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'game_cpu_wrapper' (12#1) [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/hdl/game_cpu_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1103.730 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1103.730 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1103.730 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1103.730 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_microblaze_0_0/game_cpu_microblaze_0_0/game_cpu_microblaze_0_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0'
+Finished Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_microblaze_0_0/game_cpu_microblaze_0_0/game_cpu_microblaze_0_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0'
+Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_dlmb_v10_0/game_cpu_dlmb_v10_0/game_cpu_ilmb_v10_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_dlmb_v10_0/game_cpu_dlmb_v10_0/game_cpu_ilmb_v10_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/dlmb_v10'
+Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_ilmb_v10_0/game_cpu_ilmb_v10_0/game_cpu_ilmb_v10_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_ilmb_v10_0/game_cpu_ilmb_v10_0/game_cpu_ilmb_v10_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/ilmb_v10'
+Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_dlmb_bram_if_cntlr_0/game_cpu_dlmb_bram_if_cntlr_0/game_cpu_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_dlmb_bram_if_cntlr_0/game_cpu_dlmb_bram_if_cntlr_0/game_cpu_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_ilmb_bram_if_cntlr_0/game_cpu_ilmb_bram_if_cntlr_0/game_cpu_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_ilmb_bram_if_cntlr_0/game_cpu_ilmb_bram_if_cntlr_0/game_cpu_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_lmb_bram_0/game_cpu_lmb_bram_0/game_cpu_lmb_bram_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/lmb_bram'
+Finished Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_lmb_bram_0/game_cpu_lmb_bram_0/game_cpu_lmb_bram_0_in_context.xdc] for cell 'game_cpu_i/microblaze_0_local_memory/lmb_bram'
+Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_mdm_1_0/game_cpu_mdm_1_0/game_cpu_mdm_1_0_in_context.xdc] for cell 'game_cpu_i/mdm_1'
+Finished Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_mdm_1_0/game_cpu_mdm_1_0/game_cpu_mdm_1_0_in_context.xdc] for cell 'game_cpu_i/mdm_1'
+Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_clk_wiz_1_0/game_cpu_clk_wiz_1_0/game_cpu_clk_wiz_1_0_in_context.xdc] for cell 'game_cpu_i/clk_wiz_1'
+Finished Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_clk_wiz_1_0/game_cpu_clk_wiz_1_0/game_cpu_clk_wiz_1_0_in_context.xdc] for cell 'game_cpu_i/clk_wiz_1'
+Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_rst_clk_wiz_1_100M_0/game_cpu_rst_clk_wiz_1_100M_0/game_cpu_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'game_cpu_i/rst_clk_wiz_1_100M'
+Finished Parsing XDC File [c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_rst_clk_wiz_1_100M_0/game_cpu_rst_clk_wiz_1_100M_0/game_cpu_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'game_cpu_i/rst_clk_wiz_1_100M'
+Parsing XDC File [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1110.867 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1110.867 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'game_cpu_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1122.879 ; gain = 19.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1122.879 ; gain = 19.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  {c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_clk_wiz_1_0/game_cpu_clk_wiz_1_0/game_cpu_clk_wiz_1_0_in_context.xdc}, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  {c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.gen/sources_1/bd/game_cpu/ip/game_cpu_clk_wiz_1_0/game_cpu_clk_wiz_1_0/game_cpu_clk_wiz_1_0_in_context.xdc}, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i/microblaze_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i/microblaze_0_local_memory/dlmb_v10. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i/microblaze_0_local_memory/ilmb_v10. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i/microblaze_0_local_memory/dlmb_bram_if_cntlr. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i/microblaze_0_local_memory/ilmb_bram_if_cntlr. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i/microblaze_0_local_memory/lmb_bram. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i/mdm_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i/clk_wiz_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for game_cpu_i/rst_clk_wiz_1_100M. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1122.879 ; gain = 19.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1122.879 ; gain = 19.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1122.879 ; gain = 19.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1171.922 ; gain = 68.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1171.922 ; gain = 68.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1191.531 ; gain = 87.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1197.285 ; gain = 93.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1197.285 ; gain = 93.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1197.285 ; gain = 93.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1197.285 ; gain = 93.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1197.285 ; gain = 93.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1197.285 ; gain = 93.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+------------------------------+----------+
+|      |BlackBox name                 |Instances |
++------+------------------------------+----------+
+|1     |game_cpu_clk_wiz_1_0          |         1|
+|2     |game_cpu_mdm_1_0              |         1|
+|3     |game_cpu_microblaze_0_0       |         1|
+|4     |game_cpu_rst_clk_wiz_1_100M_0 |         1|
+|5     |game_cpu_dlmb_bram_if_cntlr_0 |         1|
+|6     |game_cpu_dlmb_v10_0           |         1|
+|7     |game_cpu_ilmb_bram_if_cntlr_0 |         1|
+|8     |game_cpu_ilmb_v10_0           |         1|
+|9     |game_cpu_lmb_bram_0           |         1|
++------+------------------------------+----------+
+
+Report Cell Usage: 
++------+----------------------------+------+
+|      |Cell                        |Count |
++------+----------------------------+------+
+|1     |game_cpu_clk_wiz_1          |     1|
+|2     |game_cpu_dlmb_bram_if_cntlr |     1|
+|3     |game_cpu_dlmb_v10           |     1|
+|4     |game_cpu_ilmb_bram_if_cntlr |     1|
+|5     |game_cpu_ilmb_v10           |     1|
+|6     |game_cpu_lmb_bram           |     1|
+|7     |game_cpu_mdm_1              |     1|
+|8     |game_cpu_microblaze_0       |     1|
+|9     |game_cpu_rst_clk_wiz_1_100M |     1|
+|10    |IBUF                        |     1|
++------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1197.285 ; gain = 93.555
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 1197.285 ; gain = 74.406
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1197.285 ; gain = 93.555
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1209.367 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1216.418 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+39 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1216.418 ; gain = 112.688
+INFO: [Common 17-1381] The checkpoint 'C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/hsa_June_app_test1/hsa_June_app_test1.runs/synth_1/game_cpu_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file game_cpu_wrapper_utilization_synth.rpt -pb game_cpu_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jun  4 10:03:25 2025...
