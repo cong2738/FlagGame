@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Wed Jun  4 16:18:47 2025
+| Date             : Wed Jun  4 19:09:22 2025
 | Host             : korchamHoyoun24 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_color_find_power_routed.rpt -pb top_color_find_power_summary_routed.pb -rpx top_color_find_power_routed.rpx
 | Design           : top_color_find
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.116        |
+| Total On-Chip Power (W)  | 0.104        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.043        |
+| Dynamic (W)              | 0.031        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.4         |
-| Junction Temperature (C) | 25.6         |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      591 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      240 |     20800 |            1.15 |
-|   Register     |    <0.001 |      198 |     41600 |            0.48 |
-|   CARRY4       |    <0.001 |       17 |      8150 |            0.21 |
+| Slice Logic    |     0.001 |     1000 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      428 |     20800 |            2.06 |
+|   CARRY4       |    <0.001 |       57 |      8150 |            0.70 |
+|   Register     |    <0.001 |      330 |     41600 |            0.79 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
 |   F7/F8 Muxes  |    <0.001 |        1 |     32600 |           <0.01 |
-|   Others       |     0.000 |       27 |       --- |             --- |
-| Signals        |     0.002 |      553 |       --- |             --- |
+|   Others       |     0.000 |       30 |       --- |             --- |
+| Signals        |     0.002 |      759 |       --- |             --- |
 | Block RAM      |     0.002 |     36.5 |        50 |           73.00 |
 | DSPs           |    <0.001 |        1 |        90 |            1.11 |
-| I/O            |     0.035 |       44 |       106 |           41.51 |
+| I/O            |     0.023 |       44 |       106 |           41.51 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.116 |          |           |                 |
+| Total          |     0.104 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,8 +76,8 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Vccint    |       1.000 |     0.018 |       0.008 |      0.010 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.011 |       0.010 |      0.001 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.007 |       0.006 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -144,11 +144,11 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| top_color_find         |     0.043 |
-|   u_OV7670_Init        |     0.002 |
-|     U_btn_detector     |     0.001 |
+| top_color_find         |     0.031 |
+|   u_OV7670_Init        |     0.001 |
 |   u_OV7670_VGA_Display |     0.005 |
 |     U_Frame_Buffer     |     0.003 |
+|   u_color_find         |     0.001 |
 +------------------------+-----------+
 
 
