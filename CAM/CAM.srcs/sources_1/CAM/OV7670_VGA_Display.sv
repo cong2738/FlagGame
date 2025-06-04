@@ -32,12 +32,6 @@ module OV7670_VGA_Display (
     logic        rclk;
     logic        oe;
 
-    pixel_clk_gen U_OV7670_Clk_Gen (
-        .clk  (clk),
-        .reset(reset),
-        .pclk (ov7670_xclk)
-    );
-
 
     VGA_Controller U_VGAController (
         .clk    (clk),
@@ -50,7 +44,12 @@ module OV7670_VGA_Display (
         .y_pixel(y_pixel)
     );
 
-
+    pixel_clk_gen U_OV7670_Clk_Gen (
+        .clk  (clk),
+        .reset(reset),
+        .pclk (ov7670_xclk)
+    );
+    
     OV7670_MemController U_OV7670_MemController (
         .pclk       (ov7670_pclk),
         .reset      (reset),
@@ -61,7 +60,6 @@ module OV7670_VGA_Display (
         .wAddr      (wAddr),
         .wData      (wData)
     );
-
 
     frame_buffer U_Frame_Buffer (
         .wclk (ov7670_pclk),
