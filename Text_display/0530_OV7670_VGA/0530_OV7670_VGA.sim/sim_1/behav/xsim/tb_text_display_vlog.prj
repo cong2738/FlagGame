@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../0530_OV7670_VGA.srcs/sources_1/new/charactor_display.sv" \
+"../../../../0530_OV7670_VGA.srcs/sim_1/new/tb_text_display.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
