@@ -39,7 +39,7 @@ module top_color_find (
     output logic [3:0] vgaRed,
     output logic [3:0] vgaGreen,
     output logic [3:0] vgaBlue,
-    output logic       sw_mode,
+    input logic       sw_mode,
     output logic [7:0] fnd_font,
     output logic [3:0] fnd_comm
 );
@@ -71,26 +71,38 @@ module top_color_find (
 
     logic [9:0] user_x0, user_y0, user_x1, user_y1;
     color_find u_color_find (
-        .clk        (clk),
-        .reset      (reset),
-        .x_pixel    (x_pixel),
-        .y_pixel    (y_pixel),
-        .pixel_color({vgaRed, vgaGreen, vgaBlue}),
-        .user_x0    (user_x0),
-        .user_y0    (user_y0),
-        .user_x1    (user_x1),
-        .user_y1    (user_y1)
+        .clk       (clk),
+        .reset     (reset),
+        .x_pixel   (x_pixel),
+        .y_pixel   (y_pixel),
+        .R         (vgaRed),
+        .G         (vgaGreen),
+        .B         (vgaBlue),
+        .user_hand0(user_hand0),
+        .user_hand1(user_hand1)
     );
 
-    logic[11:0] center_color;
-    assign center_color = (x_pixel==180&&y_pixel==120) ? {vgaRed, vgaGreen, vgaBlue} : 0;
-    logic[0:32] bcd32;
-    assign bcd32 = sw_mode ? user_x0 : user_x0;
-
+    logic [31:0] center_color;
+    always_ff @(posedge clk) begin : CC_Sel
+        center_color <= ((x_pixel==160) && (y_pixel==120)) ? {vgaRed, vgaGreen, vgaBlue} : center_color;
+    end
+    logic [0:32] hand;
+    logic [0:32] count;
+    always_ff @(posedge clk, posedge reset) begin : userdatafnd
+        if (reset) count <= 0;
+        else begin
+            if (count == 10_000_000) begin
+                hand  <= {user_hand1,15'b0} + user_hand0;
+                count <= 0;
+            end else count <= count + 1;
+        end
+    end
+    logic[32:0] bcd;
+    assign bcd = sw_mode ? hand : center_color;
     fnd_controller u_fnd_controller (
         .clk     (clk),
         .reset   (reset),
-        .bcd32   (12'hf2),
+        .bcd32   (sw_mode ? user_hand1:user_hand0),
         .fnd_font(fnd_font),
         .fnd_comm(fnd_comm)
     );

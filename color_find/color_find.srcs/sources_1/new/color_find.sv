@@ -5,28 +5,41 @@ module color_find (
     input reset,
     input [9:0] x_pixel,
     input [9:0] y_pixel,
-    input [11:0] pixel_color,
-    output logic [9:0] user_x0,
-    output logic [9:0] user_y0,
-    output logic [9:0] user_x1,
-    output logic [9:0] user_y1
+    input [3:0] R,
+    input [3:0] G,
+    input [3:0] B,
+    output logic user_hand0,
+    output logic user_hand1
 );
-    reg target0 = 12'hff;
-    reg target1 = 12'hff;
+    reg [31:0] target0_U_count;
+    reg [31:0] target0_D_count;
+    reg [31:0] target1_U_count;
+    reg [31:0] target1_D_count;
     always_ff @(posedge clk, posedge reset) begin : COLOR_FIND
         if (reset) begin
-            user_x0 <= 0;
-            user_y0 <= 0;
-            user_x1 <= 0;
-            user_y1 <= 0;
+            target0_U_count <= 0;
+            target0_D_count <= 0;
+            target1_U_count <= 0;
+            target1_D_count <= 0;
         end else begin
-            if (pixel_color == target0) begin
-                user_x0 <= x_pixel;
-                user_y0 <= y_pixel;
-            end
-            if (pixel_color == target1) begin
-                user_x1 <= x_pixel;
-                user_y1 <= y_pixel;
+            if (x_pixel == 320 && y_pixel == 240) begin
+                user_hand1 <= (target1_D_count < target1_U_count);
+                user_hand0 <= (target0_D_count < target0_U_count);
+            end else if (x_pixel == 0 && y_pixel == 0) begin
+                target0_U_count <= 0;
+                target0_D_count <= 0;
+                target1_U_count <= 0;
+                target1_D_count <= 0;
+            end else begin  //오른손
+                if ((R < 5) && (G < 5) && (B > 10)) begin  //파랑
+                    if (y_pixel < 120)  //반절 위면
+                        target0_U_count <= target0_U_count + 1;
+                    else target0_D_count <= target0_D_count + 1;
+                end else if (R > 10 && G < 5 && B < 5) begin  //빨강
+                    if (y_pixel < 120)  //반절 위면
+                        target1_U_count <= target1_U_count + 1;
+                    else target1_D_count <= target1_D_count + 1;
+                end
             end
         end
     end
