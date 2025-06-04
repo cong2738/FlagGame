@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Jun  4 11:27:55 2025
+# Process ID: 41108
+# Current directory: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent41820 C:\harman\_HARMAN Team Project\HarmanSA_June_TeamPJ\CAM\CAM.xpr
+# Log file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/vivado.log
+# Journal file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.xpr}

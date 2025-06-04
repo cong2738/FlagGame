@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Jun  4 10:26:39 2025
+# Process ID: 38560
+# Current directory: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent39388 C:\harman\_HARMAN Team Project\HarmanSA_June_TeamPJ\CAM\CAM.xpr
+# Log file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/vivado.log
+# Journal file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.xpr}
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new
+file mkdir {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new}
+close [ open {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new/SSSD.v} w ]
+add_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new/SSSD.v}}
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/QVGA_MemController.sv} {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/frame_buffer.sv} {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv} {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_MemController.sv} {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_VGA_Display.sv}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
