@@ -39,7 +39,7 @@ module top_color_find (
     output logic [3:0] vgaRed,
     output logic [3:0] vgaGreen,
     output logic [3:0] vgaBlue,
-    input logic       sw_mode,
+    input  logic       sw_mode,
     output logic [7:0] fnd_font,
     output logic [3:0] fnd_comm
 );
@@ -92,17 +92,17 @@ module top_color_find (
         if (reset) count <= 0;
         else begin
             if (count == 10_000_000) begin
-                hand  <= {user_hand1,15'b0} + user_hand0;
+                hand  <= (user_hand1?32'hf000:32'h0) + (user_hand1?32'h000f:32'h0);
                 count <= 0;
             end else count <= count + 1;
         end
     end
-    logic[32:0] bcd;
+    logic [32:0] bcd;
     assign bcd = sw_mode ? hand : center_color;
     fnd_controller u_fnd_controller (
         .clk     (clk),
         .reset   (reset),
-        .bcd32   (sw_mode ? user_hand1:user_hand0),
+        .bcd32   (hand),
         .fnd_font(fnd_font),
         .fnd_comm(fnd_comm)
     );
