@@ -1,13 +1,15 @@
 `timescale 1ns / 1ps
 
 module FlagGame (
-    input  logic       clk,
-    input  logic       reset,
-    input  logic       start,
-    input  logic [3:0] RANDCMD,
-    input  logic [1:0] USER,
-    output logic [3:0] GAME,
-    output logic       get
+    input  logic        clk,
+    input  logic        reset,
+    input  logic        start,
+    input  logic [ 3:0] RANDCMD,
+    input  logic [ 1:0] USER,
+    output logic [ 3:0] GAME,
+    output logic        get,
+    output logic [31:0] game_count,
+    output logic [31:0] game_score
 );
     // 명령어 정의: 청기/백기 올려, 내려, 내리지마(내림의 반대), 올리지마(올림의 반대)
     typedef enum logic [3:0] {
@@ -35,7 +37,7 @@ module FlagGame (
 
     GAME_STATE_E game_state, game_next;
     logic [3:0] temp_CMD, temp_CMD_next;
-    logic timeover;
+    logic timeover, pass;
 
     assign GAME = temp_CMD;
 
@@ -49,7 +51,6 @@ module FlagGame (
         end
     end
 
-    logic [31:0] game_count;
     always_ff @(posedge clk, posedge reset) begin : GAME_COUNTER
         if (reset) begin
             game_count <= 0;
@@ -65,10 +66,19 @@ module FlagGame (
         end
     end
 
+    always_ff @(posedge pass, posedge reset) begin : SCORE_COUNTER
+        if (reset) begin
+            game_score <= 0;
+        end else begin
+            game_score <= game_score + 1;
+        end
+    end
+
     always_comb begin : GAME_NEXT_LOGIC
         game_next     = game_state;
         temp_CMD_next = temp_CMD;
         get           = 0;
+        pass          = 0;
         case (game_state)
             GAME_START: begin
                 temp_CMD_next = GAME_START;
@@ -90,20 +100,36 @@ module FlagGame (
             GAME_JUDGE: begin
                 case (temp_CMD)
                     BLUE_UP, BLUE_NODOWN: begin
-                        game_next = CMD_SAVE;
-                        if (USER != 2'b10) game_next = GAME_OVER;
+                        if (USER != 2'b10) begin
+                            game_next = GAME_OVER;
+                        end else begin
+                            pass = 1;
+                            game_next = CMD_SAVE;
+                        end
                     end
                     BOTH_UP, BOTH_NODOWN: begin
-                        game_next = CMD_SAVE;
-                        if (USER != 2'b11) game_next = GAME_OVER;
+                        if (USER != 2'b11) begin
+                            game_next = GAME_OVER;
+                        end else begin
+                            pass = 1;
+                            game_next = CMD_SAVE;
+                        end
                     end
                     WHITE_UP, WHITE_NODOWN: begin
-                        game_next = CMD_SAVE;
-                        if (USER != 2'b01) game_next = GAME_OVER;
+                        if (USER != 2'b01) begin
+                            game_next = GAME_OVER;
+                        end else begin
+                            pass = 1;
+                            game_next = CMD_SAVE;
+                        end
                     end
                     BLUE_DOWN, BLUE_NOUP, BOTH_DOWN, BOTH_NOUP, WHITE_DOWN, WHITE_NOUP: begin
-                        game_next = CMD_SAVE;
-                        if (USER != 2'b00) game_next = GAME_OVER;
+                        if (USER != 2'b00) begin
+                            game_next = GAME_OVER;
+                        end else begin
+                            pass = 1;
+                            game_next = CMD_SAVE;
+                        end
                     end
                     default: begin
                         game_next = GAME_OVER;

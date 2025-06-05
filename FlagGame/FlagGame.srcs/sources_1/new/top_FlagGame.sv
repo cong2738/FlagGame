@@ -69,13 +69,14 @@ module top_FlagGame (
     );
 
     game u_game (
-        .clk    (clk),
-        .reset  (reset),
-        .start  (game_start),
-        .x_pixel(x_pixel),
-        .y_pixel(y_pixel),
-        .color  ({ov7670_Red, ov7670_Green, ov7670_Blue}),
-        .GAME   (GAME)
+        .clk       (clk),
+        .reset     (reset),
+        .start     (game_start),
+        .x_pixel   (x_pixel),
+        .y_pixel   (y_pixel),
+        .color     ({ov7670_Red, ov7670_Green, ov7670_Blue}),
+        .GAME      (GAME),
+        .game_count(game_count)
     );
 
     assign {vgaRed, vgaGreen, vgaBlue} = {Red, Green, Blue};
@@ -88,7 +89,9 @@ module game (
     input logic [9:0] x_pixel,
     input logic [9:0] y_pixel,
     input logic [11:0] color,
-    output logic [3:0] GAME
+    output logic [3:0] GAME,
+    output logic [31:0] game_count,
+    output logic [31:0] game_score
 );
     logic         seed_en;
     logic [127:0] seed;
@@ -124,13 +127,15 @@ module game (
     );
 
     FlagGame u_FlagGame (
-        .clk    (clk),
-        .reset  (reset),
-        .start  (start),
-        .RANDCMD(flag_cmd),
-        .USER   (USER),
-        .GAME   (GAME),
-        .get    (get)
+        .clk       (clk),
+        .reset     (reset),
+        .start     (start),
+        .RANDCMD   (flag_cmd),
+        .USER      (USER),
+        .GAME      (GAME),
+        .get       (get),
+        .game_count(game_count),
+        .game_score(game_score)
     );
 
 endmodule
