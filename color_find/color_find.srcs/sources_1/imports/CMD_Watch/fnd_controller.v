@@ -105,15 +105,15 @@ module segPlacer (
                 seg_comm = 4'b1110;
             end
             1: begin
-                segData  = bcd32[15:7];
+                segData  = bcd32[15:8];
                 seg_comm = 4'b1101;
             end
             2: begin
-                segData  = bcd32[23:15];
+                segData  = bcd32[23:16];
                 seg_comm = 4'b1011;
             end
             3: begin
-                segData  = bcd32[31:23];
+                segData  = bcd32[31:24];
                 seg_comm = 4'b0111;
             end
         endcase

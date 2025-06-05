@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Jun  4 16:18:26 2025
+| Date         : Thu Jun  5 10:24:07 2025
 | Host         : korchamHoyoun24 running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_color_find_drc_opted.rpt -pb top_color_find_drc_opted.pb -rpx top_color_find_drc_opted.rpx
 | Design       : top_color_find
@@ -95,12 +95,12 @@ Related violations: <none>
 
 REQP-1839#7 Warning
 RAMB36 async control check  
-The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[8]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[8]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#8 Warning
 RAMB36 async control check  
-The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[8]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[8]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#9 Warning

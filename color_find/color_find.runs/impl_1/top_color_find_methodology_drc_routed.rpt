@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Jun  4 16:18:47 2025
+| Date         : Thu Jun  5 10:24:26 2025
 | Host         : korchamHoyoun24 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_color_find_methodology_drc_routed.rpt -pb top_color_find_methodology_drc_routed.pb -rpx top_color_find_methodology_drc_routed.rpx
 | Design       : top_color_find
@@ -23,14 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 201
-+-----------+------------------+-------------------------------+------------+
-| Rule      | Severity         | Description                   | Violations |
-+-----------+------------------+-------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 166        |
-| DPIR-1    | Warning          | Asynchronous driver check     | 20         |
-| TIMING-18 | Warning          | Missing input or output delay | 15         |
-+-----------+------------------+-------------------------------+------------+
+             Violations found: 217
++-----------+------------------+--------------------------------------------+------------+
+| Rule      | Severity         | Description                                | Violations |
++-----------+------------------+--------------------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                | 168        |
+| DPIR-1    | Warning          | Asynchronous driver check                  | 20         |
+| SYNTH-6   | Warning          | Timing of a RAM block might be sub-optimal | 6          |
+| TIMING-18 | Warning          | Missing input or output delay              | 23         |
++-----------+------------------+--------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -586,280 +587,290 @@ Related violations: <none>
 
 TIMING-17#111 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[2]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[1]_rep__0/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#112 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[2]_rep/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#113 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[3]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[2]_rep/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#114 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[3]_rep/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#115 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[4]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[3]_rep/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#116 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[4]_rep/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#117 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[5]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[4]_rep/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#118 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[5]_rep/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#119 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[6]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[5]_rep/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#120 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[6]_rep/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#121 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[7]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[6]_rep/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#122 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[8]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[6]_rep__0/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#123 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[9]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#124 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[10]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#125 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[12]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/h_counter_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#126 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[13]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#127 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[14]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#128 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[15]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#129 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[1]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#130 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[2]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#131 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[3]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#132 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[4]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#133 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[7]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#134 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[8]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#135 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[9]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#136 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[0]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#137 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[1]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/pix_data_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#138 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[2]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#139 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[3]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#140 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[4]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#141 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[5]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#142 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[6]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#143 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[7]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#144 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/we_reg/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#145 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[0]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#146 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[1]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_OV7670_MemController/we_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#147 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[2]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#148 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[3]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#149 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[4]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#150 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[5]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#151 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[6]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#152 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[7]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#153 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[8]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#154 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[9]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#155 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[0]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#156 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[1]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#157 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[2]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#158 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[3]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#159 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[4]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#160 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[5]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#161 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[6]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#162 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[7]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#163 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[8]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#164 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[9]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#165 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_fnd_controller/U_Counter_4/r_counter_reg[0]/C is not reached by a timing clock
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#166 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#167 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_fnd_controller/U_Counter_4/r_counter_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#168 Critical Warning
 Non-clocked sequential cell  
 The clock pin u_fnd_controller/U_Counter_4/r_counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
@@ -964,6 +975,36 @@ Asynchronous driver check
 DSP u_OV7670_VGA_Display/U_QVGA_MemController/rAddr0 input pin u_OV7670_VGA_Display/U_QVGA_MemController/rAddr0/C[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
+SYNTH-6#1 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_13, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#2 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_14, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#3 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_15, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#4 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_2, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#5 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_8, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#6 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_9, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on initial_start relative to clock(s) sys_clk_pin
@@ -976,65 +1017,105 @@ Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An output delay is missing on ov7670_xclk relative to clock(s) sys_clk_pin
+An output delay is missing on fnd_font[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on vgaBlue[0] relative to clock(s) sys_clk_pin
+An output delay is missing on fnd_font[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An output delay is missing on vgaBlue[1] relative to clock(s) sys_clk_pin
+An output delay is missing on fnd_font[2] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An output delay is missing on vgaBlue[2] relative to clock(s) sys_clk_pin
+An output delay is missing on fnd_font[3] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An output delay is missing on vgaBlue[3] relative to clock(s) sys_clk_pin
+An output delay is missing on fnd_font[4] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An output delay is missing on vgaGreen[0] relative to clock(s) sys_clk_pin
+An output delay is missing on fnd_font[5] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#9 Warning
 Missing input or output delay  
-An output delay is missing on vgaGreen[1] relative to clock(s) sys_clk_pin
+An output delay is missing on fnd_font[6] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#10 Warning
 Missing input or output delay  
-An output delay is missing on vgaGreen[2] relative to clock(s) sys_clk_pin
+An output delay is missing on fnd_font[7] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#11 Warning
 Missing input or output delay  
-An output delay is missing on vgaGreen[3] relative to clock(s) sys_clk_pin
+An output delay is missing on ov7670_xclk relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#12 Warning
 Missing input or output delay  
-An output delay is missing on vgaRed[0] relative to clock(s) sys_clk_pin
+An output delay is missing on vgaBlue[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#13 Warning
 Missing input or output delay  
-An output delay is missing on vgaRed[1] relative to clock(s) sys_clk_pin
+An output delay is missing on vgaBlue[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#14 Warning
 Missing input or output delay  
-An output delay is missing on vgaRed[2] relative to clock(s) sys_clk_pin
+An output delay is missing on vgaBlue[2] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on vgaBlue[3] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An output delay is missing on vgaGreen[0] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An output delay is missing on vgaGreen[1] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An output delay is missing on vgaGreen[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An output delay is missing on vgaGreen[3] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An output delay is missing on vgaRed[0] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An output delay is missing on vgaRed[1] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An output delay is missing on vgaRed[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#23 Warning
 Missing input or output delay  
 An output delay is missing on vgaRed[3] relative to clock(s) sys_clk_pin
 Related violations: <none>
