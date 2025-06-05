@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../Flag_cmd.srcs/sources_1/import/Flag_cmd.sv" \
+"../../../../Flag_cmd.srcs/sources_1/import/xorshift128.sv" \
+"../../../../Flag_cmd.srcs/sim_1/imports/new/tb_random.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
