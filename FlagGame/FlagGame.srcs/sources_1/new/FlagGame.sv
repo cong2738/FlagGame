@@ -37,10 +37,12 @@ module FlagGame (
     logic [3:0] temp_CMD, temp_CMD_next;
     logic timeover;
 
+    assign GAME = temp_CMD;
+
     always_ff @(posedge clk, posedge reset) begin : GAME_STATE_LOGIC
         if (reset) begin
             game_state <= GAME_START;
-            temp_CMD   <= 0;
+            temp_CMD   <= GAME_START;
         end else begin
             game_state <= game_next;
             temp_CMD   <= temp_CMD_next;
@@ -53,7 +55,7 @@ module FlagGame (
             game_count <= 0;
         end else begin
             if (game_state == GAME_START) game_count <= 0;
-            else if (game_count == 100_000_000) begin
+            else if (game_count == 500_000_000) begin
                 game_count <= 0;
                 timeover   <= 1;
             end else begin
@@ -66,18 +68,17 @@ module FlagGame (
     always_comb begin : GAME_NEXT_LOGIC
         game_next     = game_state;
         temp_CMD_next = temp_CMD;
-        GAME          = temp_CMD;
         get           = 0;
         case (game_state)
             GAME_START: begin
-                GAME = GAME_START;
+                temp_CMD_next = GAME_START;
                 if (start) begin
                     get = 1;
-                    game_next = GAME_ON;
+                    game_next = CMD_SAVE;
                 end
             end
             CMD_SAVE: begin
-                temp_CMD_next = RANDCMD;
+                temp_CMD_next = RANDCMD;  // letching CMD
                 game_next     = GAME_ON;
             end
             GAME_ON: begin
@@ -110,7 +111,11 @@ module FlagGame (
                 endcase
             end
             GAME_OVER: begin
-                GAME = GAME_OVER;
+                temp_CMD_next = GAME_OVER;
+                if (start) begin
+                    get = 1;
+                    game_next = GAME_START;
+                end
             end
         endcase
     end
