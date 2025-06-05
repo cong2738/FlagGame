@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_random_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_random" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="137001fs"></ZoomEndTime>
+      <Cursor1Time time="95000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="201"></NameColumnWidth>
+      <ValueColumnWidth column_width="97"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/tb_random/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/ce" type="logic">
+      <obj_property name="ElementShortName">ce</obj_property>
+      <obj_property name="ObjectShortName">ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/seed_en" type="logic">
+      <obj_property name="ElementShortName">seed_en</obj_property>
+      <obj_property name="ObjectShortName">seed_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/seed" type="array">
+      <obj_property name="ElementShortName">seed[127:0]</obj_property>
+      <obj_property name="ObjectShortName">seed[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/rnd" type="array">
+      <obj_property name="ElementShortName">rnd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rnd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/flag_cmd" type="array">
+      <obj_property name="ElementShortName">flag_cmd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">flag_cmd[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/prev_rnd" type="array">
+      <obj_property name="ElementShortName">prev_rnd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_rnd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_random/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group40" type="group">
+      <obj_property name="label">du</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/idx" type="array">
+         <obj_property name="ElementShortName">idx[3:0]</obj_property>
+         <obj_property name="ObjectShortName">idx[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/rnd" type="array">
+         <obj_property name="ElementShortName">rnd[11:0]</obj_property>
+         <obj_property name="ObjectShortName">rnd[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/flag_cmd" type="array">
+         <obj_property name="ElementShortName">flag_cmd[7:0]</obj_property>
+         <obj_property name="ObjectShortName">flag_cmd[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/blue_cmd" type="array">
+         <obj_property name="ElementShortName">blue_cmd[3:0]</obj_property>
+         <obj_property name="ObjectShortName">blue_cmd[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/white_cmd" type="array">
+         <obj_property name="ElementShortName">white_cmd[3:0]</obj_property>
+         <obj_property name="ObjectShortName">white_cmd[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/both_cmd" type="array">
+         <obj_property name="ElementShortName">both_cmd[3:0]</obj_property>
+         <obj_property name="ObjectShortName">both_cmd[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/rand_cmd" type="array">
+         <obj_property name="ElementShortName">rand_cmd[3:0]</obj_property>
+         <obj_property name="ObjectShortName">rand_cmd[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/selected_cmd" type="array">
+         <obj_property name="ElementShortName">selected_cmd[3:0]</obj_property>
+         <obj_property name="ObjectShortName">selected_cmd[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_random/DUT_flag_cmd/prev_cmd" type="array">
+         <obj_property name="ElementShortName">prev_cmd[3:0]</obj_property>
+         <obj_property name="ObjectShortName">prev_cmd[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
