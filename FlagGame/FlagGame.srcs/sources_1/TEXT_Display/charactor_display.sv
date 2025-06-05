@@ -25,10 +25,10 @@ module abc_text_display (
         BLUE_DOWN,
         BLUE_NO_DOWN,
         BLUE_NO_UP,
-        WHITE_UP,
-        WHITE_DOWN,
-        WHITE_NO_DOWN,
-        WHITE_NO_UP,
+        RED_UP,
+        RED_DOWN,
+        RED_NO_DOWN,
+        RED_NO_UP,
         BOTH_UP,
         BOTH_DOWN,
         BOTH_NO_DOWN,
@@ -46,7 +46,7 @@ module abc_text_display (
     localparam int CAM_WIDTH = 320;
     localparam int CAM_HEIGHT = 240;
 
-    // 가장 긴 문자열 "WHITE_NO_DOWN" = 13글자이므로 MAX_CHARS = 13
+    // 가장 긴 문자열 "RED_NO_DOWN" = 13글자이므로 MAX_CHARS = 13
     localparam int MAX_CHARS = 13;
     localparam int CHAR_WIDTH = 8;
     localparam int CHAR_HEIGHT = 8;
@@ -196,85 +196,86 @@ module abc_text_display (
                 str_len   = 13;
             end
 
-            WHITE_UP: begin
+            RED_UP: begin
                 show_text = 1'b1;
-                // "WHITE_UP" → 8글자 + 왼쪽 2칸 공백, 오른쪽 3칸 공백
-                //   [0..1]=공백, [2]='W', [3]='H', [4]='I', [5]='T', [6]='E', [7]='_', [8]='U', [9]='P', [10..12]=공백
+                // "RED_UP" → 6글자 + 왼쪽 2칸 공백, 오른쪽 5칸 공백
+                //   [0..1]=공백, [2]='R', [3]='E', [4]='D', [5]='_', [6]='U', [7]='P', [8..12]=공백
                 codes[0]  = 8'd100;  // 공백
                 codes[1]  = 8'd100;  // 공백
-                codes[2]  = 8'd22;  // 'W'
-                codes[3]  = 8'd7;  // 'H'
-                codes[4]  = 8'd8;  // 'I'
-                codes[5]  = 8'd19;  // 'T'
-                codes[6]  = 8'd4;  // 'E'
-                codes[7]  = 8'd63;  // '_'
-                codes[8]  = 8'd20;  // 'U'
-                codes[9]  = 8'd15;  // 'P'
-                codes[10] = 8'd100;  // 공백
-                codes[11] = 8'd100;  // 공백
-                codes[12] = 8'd100;  // 공백
+                codes[2]  = 8'd100;  // 공백
+                codes[3]  = 8'd17;   // 'R'
+                codes[4]  = 8'd4;    // 'E'
+                codes[5]  = 8'd3;    // 'D'
+                codes[6]  = 8'd63;   // '_'
+                codes[7]  = 8'd20;   // 'U'
+                codes[8]  = 8'd15;   // 'P'
+                codes[9]  = 8'd100;
+                codes[10] = 8'd100;
+                codes[11] = 8'd100;
+                codes[12] = 8'd100;
                 str_len   = 13;
             end
 
-            WHITE_DOWN: begin
+            RED_DOWN: begin
                 show_text = 1'b1;
-                // "WHITE_DOWN" → 10글자 + 왼쪽 1칸 공백, 오른쪽 2칸 공백
-                //   [0]=공백, [1]='W', [2]='H', [3]='I', [4]='T', [5]='E', [6]='_', [7]='D', [8]='O', [9]='W', [10]='N', [11..12]=공백
-                codes[0]  = 8'd100;  // 공백
-                codes[1]  = 8'd22;  // 'W'
-                codes[2]  = 8'd7;  // 'H'
-                codes[3]  = 8'd8;  // 'I'
-                codes[4]  = 8'd19;  // 'T'
-                codes[5]  = 8'd4;  // 'E'
-                codes[6]  = 8'd63;  // '_'
-                codes[7]  = 8'd3;  // 'D'
-                codes[8]  = 8'd14;  // 'O'
-                codes[9]  = 8'd22;  // 'W'
-                codes[10] = 8'd13;  // 'N'
-                codes[11] = 8'd100;  // 공백
-                codes[12] = 8'd100;  // 공백
+                // "RED_DOWN" → 8글자 + 왼쪽 2칸 공백, 오른쪽 3칸 공백
+                //   [0..1]=공백, [2]='R', [3]='E', [4]='D', [5]='_', [6]='D', [7]='O', [8]='W', [9]='N', [10..12]=공백
+                codes[0]  = 8'd100;
+                codes[1]  = 8'd100;
+                codes[2]  = 8'd17;   // 'R'
+                codes[3]  = 8'd4;    // 'E'
+                codes[4]  = 8'd3;    // 'D'
+                codes[5]  = 8'd63;   // '_'
+                codes[6]  = 8'd3;    // 'D'
+                codes[7]  = 8'd14;   // 'O'
+                codes[8]  = 8'd22;   // 'W'
+                codes[9]  = 8'd13;   // 'N'
+                codes[10] = 8'd100;
+                codes[11] = 8'd100;
+                codes[12] = 8'd100;
                 str_len   = 13;
             end
 
-            WHITE_NO_DOWN: begin
+            RED_NO_DOWN: begin
                 show_text = 1'b1;
-                // "WHITE_NO_DOWN" → 13글자 (공백 없음)
-                //   [0]='W', [1]='H', [2]='I', [3]='T', [4]='E', [5]='_', [6]='N', [7]='O', [8]='_', [9]='D', [10]='O', [11]='W', [12]='N'
-                codes[0]  = 8'd22;  // 'W'
-                codes[1]  = 8'd7;  // 'H'
-                codes[2]  = 8'd8;  // 'I'
-                codes[3]  = 8'd19;  // 'T'
-                codes[4]  = 8'd4;  // 'E'
-                codes[5]  = 8'd63;  // '_'
-                codes[6]  = 8'd13;  // 'N'
-                codes[7]  = 8'd14;  // 'O'
-                codes[8]  = 8'd63;  // '_'
-                codes[9]  = 8'd3;  // 'D'
-                codes[10] = 8'd14;  // 'O'
-                codes[11] = 8'd22;  // 'W'
-                codes[12] = 8'd13;  // 'N'
+                // "RED_NO_DOWN" → 11글자 + 좌우 1칸씩 공백
+                //   [0]=공백, [1]='R', [2]='E', [3]='D', [4]='_', [5]='N', [6]='O', [7]='_', [8]='D', [9]='O', [10]='W', [11]='N', [12]=공백
+                codes[0]  = 8'd100;
+                codes[1]  = 8'd17;   // 'R'
+                codes[2]  = 8'd4;    // 'E'
+                codes[3]  = 8'd3;    // 'D'
+                codes[4]  = 8'd63;   // '_'
+                codes[5]  = 8'd13;   // 'N'
+                codes[6]  = 8'd14;   // 'O'
+                codes[7]  = 8'd63;   // '_'
+                codes[8]  = 8'd3;    // 'D'
+                codes[9]  = 8'd14;   // 'O'
+                codes[10] = 8'd22;   // 'W'
+                codes[11] = 8'd13;   // 'N'
+                codes[12] = 8'd100;
                 str_len   = 13;
             end
 
-            WHITE_NO_UP: begin
+            RED_NO_UP: begin
                 show_text = 1'b1;
-                // "WHITE_NO_UP" → 11글자 + 왼쪽 1칸 공백, 오른쪽 1칸 공백
-                //   [0]=공백, [1]='W', [2]='H', [3]='I', [4]='T', [5]='E', [6]='_', [7]='N', [8]='O', [9]='_', [10]='U', [11]='P', [12]=공백
-                codes[0]  = 8'd100;  // 공백
-                codes[1]  = 8'd22;  // 'W'
-                codes[2]  = 8'd7;  // 'H'
-                codes[3]  = 8'd8;  // 'I'
-                codes[4]  = 8'd19;  // 'T'
-                codes[5]  = 8'd4;  // 'E'
-                codes[6]  = 8'd63;  // '_'
-                codes[7]  = 8'd13;  // 'N'
-                codes[8]  = 8'd14;  // 'O'
-                codes[9]  = 8'd63;  // '_'
-                codes[10] = 8'd20;  // 'U'
-                codes[11] = 8'd15;  // 'P'
-                codes[12] = 8'd100;  // 공백
+                // "RED_NO_UP" → 9글자 + 좌우 공백 2칸씩
+                //   [0..1]=공백, [2]='R', [3]='E', [4]='D', [5]='_', [6]='N', [7]='O', [8]='_', [9]='U', [10]='P', [11..12]=공백
+                codes[0]  = 8'd100;
+                codes[1]  = 8'd100;
+                codes[2]  = 8'd17;   // 'R'
+                codes[3]  = 8'd4;    // 'E'
+                codes[4]  = 8'd3;    // 'D'
+                codes[5]  = 8'd63;   // '_'
+                codes[6]  = 8'd13;   // 'N'
+                codes[7]  = 8'd14;   // 'O'
+                codes[8]  = 8'd63;   // '_'
+                codes[9]  = 8'd20;   // 'U'
+                codes[10] = 8'd15;   // 'P'
+                codes[11] = 8'd100;
+                codes[12] = 8'd100;
                 str_len   = 13;
             end
+
 
             BOTH_UP: begin
                 show_text = 1'b1;
@@ -435,10 +436,10 @@ module sel_char (
         BLUE_DOWN,
         BLUE_NO_DOWN,
         BLUE_NO_UP,
-        WHITE_UP,
-        WHITE_DOWN,
-        WHITE_NO_DOWN,
-        WHITE_NO_UP,
+        RED_UP,
+        RED_DOWN,
+        RED_NO_DOWN,
+        RED_NO_UP,
         BOTH_UP,
         BOTH_DOWN,
         BOTH_NO_DOWN,
@@ -453,16 +454,16 @@ module sel_char (
             4'b0010: commend = BLUE_DOWN;
             4'b0011: commend = BLUE_NO_DOWN;
             4'b0100: commend = BLUE_NO_UP;
-            4'b0101: commend = WHITE_UP;
-            4'b0110: commend = WHITE_DOWN;
-            4'b0111: commend = WHITE_NO_DOWN;
-            4'b1000: commend = WHITE_NO_UP;
+            4'b0101: commend = RED_UP;
+            4'b0110: commend = RED_DOWN;
+            4'b0111: commend = RED_NO_DOWN;
+            4'b1000: commend = RED_NO_UP;
             4'b1001: commend = BOTH_UP;
             4'b1010: commend = BOTH_DOWN;
             4'b1011: commend = BOTH_NO_DOWN;
             4'b1100: commend = BOTH_NO_UP;
             4'b1111: commend = GAME_OVER;
-            default: commend = WHITE_NO_DOWN;
+            default: commend = RED_NO_DOWN;
             // default일 때 show_text=0이므로 화면에는 아무 것도 그려지지 않습니다.
         endcase
     end
