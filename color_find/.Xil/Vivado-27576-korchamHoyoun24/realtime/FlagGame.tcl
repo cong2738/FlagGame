@@ -34,21 +34,11 @@ set rt::rc [catch {
 
     set rt::useElabCache false
     if {$rt::useElabCache == false} {
-      rt::read_verilog -sv {
-      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/CAM/OV7670_MemController.sv}
-      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/CAM/OV7670_VGA_Display.sv}
-      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/CAM/QVGA_MemController.sv}
-      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/module_box/SCCB.sv}
-      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/CAM/VGA_Controller.sv}
-      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/color_find.sv}
-      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/CAM/frame_buffer.sv}
-      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/top_color_find.sv}
-    }
-      rt::read_verilog {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/CMD_Watch/fnd_controller.v}}
+      rt::read_verilog -sv {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/FlagGame.sv}}
       rt::filesetChecksum
     }
     rt::set_parameter usePostFindUniquification false
-    set rt::top top_color_find
+    set rt::top FlagGame
     rt::set_parameter enableIncremental true
     rt::set_parameter markDebugPreservationLevel "enable"
     set rt::reportTiming false
