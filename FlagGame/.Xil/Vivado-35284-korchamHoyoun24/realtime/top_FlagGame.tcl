@@ -16,7 +16,7 @@ set rt::rc [catch {
     set rt::cmdEcho 0
     rt::set_parameter writeXmsg true
     rt::set_parameter enableParallelHelperSpawn true
-    set ::env(RT_TMP) "C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/.Xil/Vivado-27576-korchamHoyoun24/realtime/tmp"
+    set ::env(RT_TMP) "C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/.Xil/Vivado-35284-korchamHoyoun24/realtime/tmp"
     if { [ info exists ::env(RT_TMP) ] } {
       file delete -force $::env(RT_TMP)
       file mkdir $::env(RT_TMP)
@@ -34,11 +34,23 @@ set rt::rc [catch {
 
     set rt::useElabCache false
     if {$rt::useElabCache == false} {
-      rt::read_verilog -sv {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/FlagGame.sv}}
+      rt::read_verilog -sv {
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/FlagGame.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Flag_cmd.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_MemController.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_VGA_Display.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/QVGA_MemController.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/SCCB/SCCV.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/VGA_Controller.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/color_find.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/frame_buffer.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/xorshift128.sv}
+      {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/top_FlagGame.sv}
+    }
       rt::filesetChecksum
     }
     rt::set_parameter usePostFindUniquification false
-    set rt::top FlagGame
+    set rt::top top_FlagGame
     rt::set_parameter enableIncremental true
     rt::set_parameter markDebugPreservationLevel "enable"
     set rt::reportTiming false
@@ -54,7 +66,7 @@ set rt::rc [catch {
     rt::set_parameter webTalkPath {}
     rt::set_parameter synthDebugLog false
     rt::set_parameter printModuleName false
-    rt::set_parameter enableSplitFlowPath "C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/.Xil/Vivado-27576-korchamHoyoun24/"
+    rt::set_parameter enableSplitFlowPath "C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/.Xil/Vivado-35284-korchamHoyoun24/"
     set ok_to_delete_rt_tmp true 
     if { [rt::get_parameter parallelDebug] } { 
        set ok_to_delete_rt_tmp false 

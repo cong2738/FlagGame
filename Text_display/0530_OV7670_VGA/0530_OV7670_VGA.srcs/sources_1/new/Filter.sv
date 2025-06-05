@@ -8,6 +8,7 @@ module Filter(
 
     //input switch
     input logic [3:0] sw_filter,
+    input  logic [3:0] sw_cmd,
     //input rgb port
     input logic [3:0] red_port_i,
     input logic [3:0] green_port_i,
@@ -15,7 +16,8 @@ module Filter(
     //output rgb port
     output logic [3:0] red_port_o,
     output logic [3:0] green_port_o,
-    output logic [3:0] blue_port_o
+    output logic [3:0] blue_port_o,
+    input logic        sw_passfail
     );
 
     logic [11:0] color_port_gray;
@@ -32,12 +34,14 @@ Grayscale_filter U_GRAY_FILTER(
     abc_text_display U_TEXT_DISPLAY(
     .clk(clk),
     .d_en(d_en),
+    .sw_cmd(sw_cmd),
     .x(x_pixel),
     .y(y_pixel),
     .red(red_port_text),
     .green(green_port_text),
     .blue(blue_port_text),
     .text_on(text_on)
+    //.sw_passfail(sw_passfail)
 );
 
     always_comb begin : sw_filter_logic
