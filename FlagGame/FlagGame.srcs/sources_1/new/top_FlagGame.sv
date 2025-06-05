@@ -6,24 +6,26 @@ module top_FlagGame (
     input              game_start,
     // ov7670 signals
     input  logic       ov7670_start,
+    output logic       ov7670_scl,
+    output logic       ov7670_sda,
     output logic       ov7670_xclk,    // == mclk
     input  logic       ov7670_pclk,
-    output logic       ov7670_SCLK,
-    output logic       ov7670_SDA,
     input  logic       ov7670_href,
     input  logic       ov7670_v_sync,
     input  logic [7:0] ov7670_data,
-    output logic       ov7670_scl,
-    output logic       ov7670_sda,
     //export
+    output logic       Hsync,
+    output logic       Vsync,
     output logic [3:0] vgaRed,
     output logic [3:0] vgaGreen,
     output logic [3:0] vgaBlue
 );
-    logic [3:0] ov7670_Red, ov7670_Green, ov7670_Blue;
+    logic [3:0] GAME;
+    logic [3:0] Red;
+    logic [3:0] Green;
+    logic [3:0] Blue;
     logic [9:0] x_pixel;
     logic [9:0] y_pixel;
-    logic [3:0] GAME;
 
     SCCB_core u_OV7670_SCCB_core (
         .clk          (clk),
@@ -33,6 +35,7 @@ module top_FlagGame (
         .siod         (ov7670_sda)
     );
 
+    logic [3:0] ov7670_Red, ov7670_Green, ov7670_Blue;
     OV7670_VGA_Display u_OV7670_VGA_Display (
         .clk          (clk),
         .reset        (reset),
@@ -41,13 +44,28 @@ module top_FlagGame (
         .ov7670_href  (ov7670_href),
         .ov7670_v_sync(ov7670_v_sync),
         .ov7670_data  (ov7670_data),
+        .DE           (d_en),
         .Hsync        (Hsync),
         .Vsync        (Vsync),
-        .vgaRed       (ov7670_Red),
-        .vgaGreen     (ov7670_Green),
-        .vgaBlue      (ov7670_Blue),
+        .ov7670_Red   (ov7670_Red),
+        .ov7670_Green (ov7670_Green),
+        .ov7670_Blue  (ov7670_Blue),
         .x_pixel      (x_pixel),
         .y_pixel      (y_pixel)
+    );
+
+    abc_text_display u_abc_text_display (
+        .clk    (clk),
+        .d_en   (d_en),
+        .sw_cmd (GAME),
+        .x      (x_pixel),
+        .y      (y_pixel),
+        .i_red  (ov7670_Red),
+        .i_green(ov7670_Green),
+        .i_blue (ov7670_Blue),
+        .o_red  (Red),
+        .o_green(Green),
+        .o_blue (Blue)
     );
 
     game u_game (
@@ -60,9 +78,7 @@ module top_FlagGame (
         .GAME   (GAME)
     );
 
-    assign {vgaRed, vgaGreen, vgaBlue} = {
-        ov7670_Red, ov7670_Green, ov7670_Blue
-    };
+    assign {vgaRed, vgaGreen, vgaBlue} = {Red, Green, Blue};
 endmodule
 
 module game (

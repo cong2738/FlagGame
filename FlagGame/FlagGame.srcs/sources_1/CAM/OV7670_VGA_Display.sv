@@ -11,11 +11,12 @@ module OV7670_VGA_Display (
     input  logic       ov7670_v_sync,
     input  logic [7:0] ov7670_data,
     // export signals
+    output logic       DE,
     output logic       Hsync,
     output logic       Vsync,
-    output logic [3:0] vgaRed,
-    output logic [3:0] vgaGreen,
-    output logic [3:0] vgaBlue,
+    output logic [3:0] ov7670_Red,
+    output logic [3:0] ov7670_Green,
+    output logic [3:0] ov7670_Blue,
     output logic [9:0] x_pixel,
     output logic [9:0] y_pixel
 );
@@ -26,7 +27,6 @@ module OV7670_VGA_Display (
     logic [16:0] rAddr;
     logic [15:0] rData;
 
-    logic        DE;
     logic        w_rclk;
     logic        rclk;
     logic        oe;
@@ -80,8 +80,8 @@ module OV7670_VGA_Display (
         .d_en      (oe),
         .rAddr     (rAddr),
         .rData     (rData),
-        .red_port  (vgaRed),
-        .green_port(vgaGreen),
-        .blue_port (vgaBlue)
+        .red_port  (ov7670_Red),
+        .green_port(ov7670_Green),
+        .blue_port (ov7670_Blue)
     );
 endmodule
