@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Jun  4 19:36:14 2025
+| Date         : Thu Jun  5 10:24:11 2025
 | Host         : korchamHoyoun24 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_color_find_control_sets_placed.rpt
 | Design       : top_color_find
@@ -86,14 +86,14 @@ Table of Contents
 |  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/CLK |                                                              | reset_IBUF       |                3 |             10 |         3.33 |
 |  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/CLK | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter | reset_IBUF       |                3 |             10 |         3.33 |
 |  clk_IBUF_BUFG                                          | u_OV7670_Init/U_btn_detector/start_reg_i_1_n_0               | reset_IBUF       |                3 |             12 |         4.00 |
-|  tick                                                   | u_OV7670_Init/U_SCCB_Controller/E[0]                         | reset_IBUF       |                3 |             16 |         5.33 |
 |  tick                                                   | u_OV7670_Init/U_SCCB_Controller/FSM_onehot_state_reg_n_0_[1] | reset_IBUF       |                4 |             16 |         4.00 |
+|  tick                                                   | u_OV7670_Init/U_SCCB_Controller/E[0]                         | reset_IBUF       |                3 |             16 |         5.33 |
 |  tick                                                   |                                                              | reset_IBUF       |                6 |             18 |         3.00 |
 |  ov7670_pclk_IBUF_BUFG                                  |                                                              | reset_IBUF       |                8 |             19 |         2.38 |
+|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_Frame_Buffer/target0_D_count          | reset_IBUF       |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_Frame_Buffer/target0_U_count          | reset_IBUF       |                8 |             32 |         4.00 |
 |  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_Frame_Buffer/target1_U_count          | reset_IBUF       |                8 |             32 |         4.00 |
 |  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_Frame_Buffer/target1_D_count          | reset_IBUF       |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_Frame_Buffer/target0_U_count          | reset_IBUF       |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_Frame_Buffer/target0_D_count          | reset_IBUF       |                8 |             32 |         4.00 |
 |  clk_IBUF_BUFG                                          |                                                              | reset_IBUF       |               17 |             53 |         3.12 |
 +---------------------------------------------------------+--------------------------------------------------------------+------------------+------------------+----------------+--------------+
 

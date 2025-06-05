@@ -62,10 +62,7 @@ module top_color_find (
         .user_hand1(user_hand1)
     );
 
-    logic [31:0] center_color;
-    always_ff @(posedge clk) begin : CC_Sel
-        center_color <= ((x_pixel==160) && (y_pixel==120)) ? {vgaRed, vgaGreen, vgaBlue} : center_color;
-    end
+    // logic [31:0] fndData = (user_hand0?32'hf0:0)+(user_hand1?32'hf:0);
     fnd_controller u_fnd_controller (
         .clk     (clk),
         .reset   (reset),
