@@ -11,12 +11,12 @@ module abc_text_display (
     output logic       text_on
 );
 
-    localparam CHAR_WIDTH    = 8;
-    localparam CHAR_HEIGHT   = 16;
-    localparam TEXT_X_START  = 148;
-    localparam TEXT_Y_START  = 16;
+    localparam int CHAR_WIDTH    = 8;
+    localparam int CHAR_HEIGHT   = 8;
+    localparam int TEXT_X_START  = 148;
+    localparam int TEXT_Y_START  = 16;
 
-    logic [3:0]   row_addr;
+    logic [2:0]   row_addr;
     logic [2:0]   bit_idx;
     logic [7:0]   font_line;
     logic         pixel_on;
@@ -25,7 +25,7 @@ module abc_text_display (
     logic [10:0]  rom_addr;
 
     assign text_on = pixel_on && d_en;
-    assign rom_addr = { char_rom_idx, row_addr };
+    assign rom_addr = (char_rom_idx << 3) | row_addr;
 
     font_rom u_font (
         .clk  (clk),
@@ -36,7 +36,7 @@ module abc_text_display (
     always_comb begin
         pixel_on     = 1'b0;
         char_rom_idx = 8'h00;
-        row_addr     = 4'd0;
+        row_addr     = 3'd0;
         bit_idx      = 3'd0;
 
         if ( d_en &&
@@ -49,14 +49,14 @@ module abc_text_display (
             char_slot = (x - TEXT_X_START) / CHAR_WIDTH;
 
             case (char_slot)
-                2'd0: char_rom_idx = 8'd111;
-                2'd1: char_rom_idx = 8'd96;
-                2'd2: char_rom_idx = 8'd114;
-                2'd3: char_rom_idx = 8'd114;
-                default: char_rom_idx = 8'h00;
+                2'd0: char_rom_idx = 8'd0;
+                2'd1: char_rom_idx = 8'd1;
+                2'd2: char_rom_idx = 8'd2;
+                2'd3: char_rom_idx = 8'd3;
+                default: char_rom_idx = 8'd0;
             endcase
 
-            row_addr = y - TEXT_Y_START;
+            row_addr = (y - TEXT_Y_START) & 3'h7;
             bit_idx  = (x - TEXT_X_START) % CHAR_WIDTH;
             pixel_on = font_line[bit_idx];
         end
@@ -66,9 +66,9 @@ module abc_text_display (
     end
 
     always_comb begin
-        if ( pixel_on && d_en ) begin
-            red   = 4'hF;
-            green = 4'h0;
+        if (pixel_on && d_en) begin
+            red   = 4'h0;
+            green = 4'hF;
             blue  = 4'h0;
         end else begin
             red   = 4'h0;
@@ -82,20 +82,19 @@ endmodule
 
 module font_rom (
     input  logic        clk,
-    input  logic [10:0] addr,  // {char_cod_en[7:0], row[3:0]} = 8 + 4 = 12 → 총 2048줄
+    input  logic [10:0] addr,
     output logic [7:0]  data
 );
 
-    (* rom_style = "block" *)  // 또는 "distributed"를 명시해도 됨
-    logic [7:0] rom [0:2047];  // 128문자 x 16줄 = 2048줄
+    (* rom_style = "block" *)
+    logic [7:0] rom [0:1023];
 
     initial begin
-        $readmemh("charactor_file.mem", rom);  // 외부 폰트 파일 로딩
+        $readmemh("font_complete.mem", rom);
     end
 
-    always_ff @(posedge clk ) begin
+    always_ff @(posedge clk) begin
         data <= rom[addr];
     end
 
 endmodule
-
