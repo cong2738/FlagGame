@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Jun  5 15:08:08 2025
+# Process ID: 8824
+# Current directory: C:/immune_working/HarmanSA_June_TeamPJ/Flag_cmd/Flag_cmd.runs/impl_1
+# Command line: vivado.exe -log OV7670_VGA_Display.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source OV7670_VGA_Display.tcl -notrace
+# Log file: C:/immune_working/HarmanSA_June_TeamPJ/Flag_cmd/Flag_cmd.runs/impl_1/OV7670_VGA_Display.vdi
+# Journal file: C:/immune_working/HarmanSA_June_TeamPJ/Flag_cmd/Flag_cmd.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source OV7670_VGA_Display.tcl -notrace
