@@ -269,66 +269,52 @@ module OV7670_config_rom (
     output logic [15:0] dout
 );
 
-    //FFFF is end of rom, FFF0 is delay
+ //FFFF is end of rom, FFF0 is delay
     always @(posedge clk) begin
         case (addr)
-            // [0] 초기화 (소프트 리셋)
-            0: dout <= 16'h12_80;  // COM7 - 전체 레지스터 소프트 리셋
-            1: dout <= 16'hFF_F0;  // 딜레이 명령 (일정 시간 대기 필요)
-
-            // [2~6] 출력 포맷 및 클럭 관련 초기 설정
-            2: dout <= 16'h12_14;  // COM7 - RGB 모드 설정
-            3: dout <= 16'h11_80;  // CLKRC - 클럭 분주 (내부 PLL 사용)
-            4: dout <= 16'h0C_00;  // COM3 - 기본 설정 (스케일링, 슬로우셔터 등 off)
-            5: dout <= 16'h3E_00;  // COM14 - DCW, PCLK 분주 비활성화
-            6: dout <= 16'h04_00;  // COM1 - CCIR656 프로토콜 비활성화
-
-            // [7~17] 색상 출력 포맷, 매트릭스 설정 등
-            7: dout <= 16'h40_d0;  // COM15 - RGB565 포맷, 풀 레인지 출력
-            8: dout <= 16'h3a_04;  // TSLB - RGB 데이터 정렬 순서 설정
-            9: dout <= 16'h14_18;  // COM9 - 최대 AGC x4로 제한
-
-            // 매직 매트릭스 계수 (YUV → RGB 변환용)
-            10: dout <= 16'h4F_B3;  // MTX1
-            11: dout <= 16'h50_B3;  // MTX2
-            12: dout <= 16'h51_00;  // MTX3
-            13: dout <= 16'h52_3d;  // MTX4
-            14: dout <= 16'h53_A7;  // MTX5
-            15: dout <= 16'h54_E4;  // MTX6
-            16: dout <= 16'h58_9E;  // MTXS - 스케일
-
-            17: dout <= 16'h3D_C0;  // COM13 - 감마 활성화
-
-            // [18~23] 유효 이미지 창 위치 설정
-            18: dout <= 16'h17_14;  // HSTART - 수평 시작 위치
-            19: dout <= 16'h18_02;  // HSTOP  - 수평 종료 위치
-            20: dout <= 16'h32_91;  // HREF   - 동기화 엣지 위치
-            21: dout <= 16'h19_03;  // VSTART - 수직 시작
-            22: dout <= 16'h1A_7B;  // VSTOP  - 수직 종료
-            23: dout <= 16'h03_00;  // VREF   - VSYNC 위치 미세 조정
-
-            // [24~30] 타이밍 및 기타 내부 제어
-            24: dout <= 16'h0F_41;  // COM6 - 타이밍 리셋
-            25: dout <= 16'h1E_00;  // MVFP - 상하/좌우 반전 비활성화
-            26: dout <= 16'h33_8f;  // CHLF - 클록 회로 관련 설정 (매직값)
-            27: dout <= 16'h3C_78;  // COM12 - VSYNC 상태에서 HREF 비활성화
-            28: dout <= 16'h69_00;  // GFIX - 고정 게인
-            29: dout <= 16'h74_00;  // REG74 - 디지털 게인 제어
-            30: dout <= 16'hB0_84;  // 매직값 (색상 보정 관련)
-
-            // [31~33] 밝기/색상 보정 계수
-            31: dout <= 16'hB1_0c;  // ABLC1 - 오토 밝기 제어
-            32: dout <= 16'hB2_0e;  // 매직값
-            33: dout <= 16'hB3_80;  // THL_ST - 임계 레벨 설정
-
-            // [34~38] 스케일링 관련 (미확정 매직값 포함)
+            0: dout <= 16'h12_80;  //reset
+            1: dout <= 16'hFF_F0;  //delay
+            2: dout <= 16'h12_14;  // COM7,     set RGB color output and set QVGA
+            3: dout <= 16'h11_80;  // CLKRC     internal PLL matches input clock
+            4: dout <= 16'h0C_04;  // COM3,     default settings
+            5: dout <= 16'h3E_19;  // COM14,    no scaling, normal pclock
+            6: dout <= 16'h04_00;  // COM1,     disable CCIR656
+            7: dout <= 16'h40_d0;  //COM15,     RGB565, full output range
+            8: dout <= 16'h3a_04;  //TSLB       
+            9: dout <= 16'h14_18;  //COM9       MAX AGC value x4
+            10: dout <= 16'h4F_B3;  //MTX1       
+            11: dout <= 16'h50_B3;  //MTX2
+            12: dout <= 16'h51_00;  //MTX3
+            13: dout <= 16'h52_3d;  //MTX4
+            14: dout <= 16'h53_A7;  //MTX5
+            15: dout <= 16'h54_E4;  //MTX6
+            16: dout <= 16'h58_9E;  //MTXS
+            17: dout <= 16'h3D_C0; //COM13      sets gamma enable, does not preserve reserved bits, may be wrong?
+            18: dout <= 16'h17_15;  //HSTART     start high 8 bits 
+            19: dout <= 16'h18_03; //HSTOP      stop high 8 bits //these kill the odd colored line
+            20: dout <= 16'h32_00;  //91  //HREF       edge offset
+            21: dout <= 16'h19_03;  //VSTART     start high 8 bits
+            22: dout <= 16'h1A_7B;  //VSTOP      stop high 8 bits
+            23: dout <= 16'h03_00;  // 00 //VREF       vsync edge offset
+            24: dout <= 16'h0F_41;  //COM6       reset timings
+            25:
+            dout <= 16'h1E_00; //MVFP       disable mirror / flip //might have magic value of 03
+            26: dout <= 16'h33_0B;  //CHLF       //magic value from the internet
+            27: dout <= 16'h3C_78;  //COM12      no HREF when VSYNC low
+            28: dout <= 16'h69_00;  //GFIX       fix gain control
+            29: dout <= 16'h74_00;  //REG74      Digital gain control
+            30:
+            dout <= 16'hB0_84; //RSVD       magic value from the internet *required* for good color
+            31: dout <= 16'hB1_0c;  //ABLC1
+            32: dout <= 16'hB2_0e;  //RSVD       more magic internet values
+            33: dout <= 16'hB3_80;  //THL_ST
+            //begin mystery scaling numbers
             34: dout <= 16'h70_3a;
             35: dout <= 16'h71_35;
             36: dout <= 16'h72_11;
-            37: dout <= 16'h73_f0;
+            37: dout <= 16'h73_f1;
             38: dout <= 16'ha2_02;
-
-            // [39~54] 감마 커브 테이블
+            //gamma curve values
             39: dout <= 16'h7a_20;
             40: dout <= 16'h7b_10;
             41: dout <= 16'h7c_1e;
@@ -345,36 +331,27 @@ module OV7670_config_rom (
             52: dout <= 16'h87_c4;
             53: dout <= 16'h88_d7;
             54: dout <= 16'h89_e8;
-
-            // [55~64] AGC / AEC 설정
-            55: dout <= 16'h13_e0;  // COM8 - AGC/AEC 끔
-            56: dout <= 16'h00_00;  // GAIN = 0
-            57: dout <= 16'h10_60;  // ARCJ - 자동 컨트롤 조정
-            58: dout <= 16'h0d_40;  // COM4 - 감마 클램핑 관련
-            59: dout <= 16'h14_18;  // COM9 - MAX AGC 제한 + 매직비트
+            //AGC and AEC
+            55: dout <= 16'h13_e0;  //COM8, disable AGC / AEC
+            56: dout <= 16'h00_00;  //set gain reg to 0 for AGC
+            57: dout <= 16'h10_00;  //set ARCJ reg to 0
+            58: dout <= 16'h0d_40;  //magic reserved bit for COM4
+            59: dout <= 16'h14_18;  //COM9, 4x gain + magic bit
             60: dout <= 16'ha5_05;  // BD50MAX
-            61: dout <= 16'hab_07;  // BD60MAX
-            62: dout <= 16'h24_95;  // AGC 상한
-            63: dout <= 16'h25_33;  // AGC 하한
-            64: dout <= 16'h26_e3;  // AGC 응답 영역
-
-            // [65~72] HAECC: AEC 제어 커브 (매직값)
-            65: dout <= 16'h9f_78;  // HAECC1
-            66: dout <= 16'ha0_68;  // HAECC2
-            67: dout <= 16'ha1_03;  // HAECC3
-            68: dout <= 16'ha6_d8;  // HAECC4
-            69: dout <= 16'ha7_d8;  // HAECC5
-            70: dout <= 16'ha8_f0;  // HAECC6
-            71: dout <= 16'ha9_90;  // HAECC7
-            72: dout <= 16'haa_94;  // HAECC 관련
-
-            // [73~79] 최종 보정값 및 사용자 설정
-            73: dout <= 16'h6f_9f;  // SCALING_YSC - 스케일링
-            74: dout <= 16'h13_e7;  // COM8 - AGC/AEC 다시 활성화
-            75: dout <= 16'h55_10;  // Brightness (밝기 조절)
-            76: dout <= 16'h13_E7;  // AWB + AGC + AEC ON (카메라 auto 값)
-            77: dout <= 16'hFF_F0;  // 딜레이 (AWB 적용 안정화)
-            78: dout <= 16'hFF_FF;  // ROM 종료
+            61: dout <= 16'hab_07;  //DB60MAX
+            62: dout <= 16'h24_95;  //AGC upper limit
+            63: dout <= 16'h25_33;  //AGC lower limit
+            64: dout <= 16'h26_e3;  //AGC/AEC fast mode op region
+            65: dout <= 16'h9f_78;  //HAECC1
+            66: dout <= 16'ha0_68;  //HAECC2
+            67: dout <= 16'ha1_03;  //magic
+            68: dout <= 16'ha6_d8;  //HAECC3
+            69: dout <= 16'ha7_d8;  //HAECC4
+            70: dout <= 16'ha8_f0;  //HAECC5
+            71: dout <= 16'ha9_90;  //HAECC6
+            72: dout <= 16'haa_94;  //HAECC7
+            73: dout <= 16'h13_e7;  //COM8, enable AGC / AEC
+            74: dout <= 16'h69_07;
             default: dout <= 16'hFF_FF;  //mark end of ROM
         endcase
     end
