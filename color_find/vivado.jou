@@ -135,3 +135,6 @@ close [ open {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagG
 add_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/FlagGame.sv}}
 update_compile_order -fileset sources_1
 synth_design -rtl -rtl_skip_mlo -name rtl_1
+refresh_design
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
