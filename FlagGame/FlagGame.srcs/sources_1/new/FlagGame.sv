@@ -13,15 +13,15 @@ module FlagGame (
     typedef enum logic [3:0] {
         BLUE_UP = 4'b0001,  // 청기 올려
         BLUE_DOWN = 4'b0010,  // 청기 내려
-        BLUE_HOLD = 4'b0011,  // 청기 내리지마 (내림의 반대=올림)
+        BLUE_NODOWN = 4'b0011,  // 청기 내리지마 (내림의 반대=올림)
         BLUE_NOUP = 4'b0100,  // 청기 올리지마 (올림의 반대=내림)
         WHITE_UP = 4'b0101,  // 백기 올려
         WHITE_DOWN = 4'b0110,  // 백기 내려
-        WHITE_HOLD = 4'b0111,  // 백기 내리지마 (내림의 반대=올림)
+        WHITE_NODOWN = 4'b0111,  // 백기 내리지마 (내림의 반대=올림)
         WHITE_NOUP = 4'b1000,  // 백기 올리지마 (올림의 반대=내림)
         BOTH_UP = 4'b1001,  // 청기, 백기 둘 다 올려
         BOTH_DOWN = 4'b1010,  // 청기, 백기 둘 다 내려
-        BOTH_HOLD      = 4'b1011, // 청기, 백기 둘 다 내리지마 (내림의 반대=둘 다 올림)
+        BOTH_NODOWN      = 4'b1011, // 청기, 백기 둘 다 내리지마 (내림의 반대=둘 다 올림)
         BOTH_NOUP      = 4'b1100 // 청기, 백기 둘 다 올리지마 (올림의 반대=둘 다 내림)
     } CMD_E;
 
@@ -32,7 +32,7 @@ module FlagGame (
         GAME_JUDGE,
         GAME_OVER  = 4'hf
     } GAME_STATE_E;
-    
+
     GAME_STATE_E game_state, game_next;
     logic [3:0] temp_CMD, temp_CMD_next;
     logic timeover;
@@ -52,7 +52,7 @@ module FlagGame (
         if (reset) begin
             game_count <= 0;
         end else begin
-            if(game_state == GAME_START) game_count <= 0;
+            if (game_state == GAME_START) game_count <= 0;
             else if (game_count == 100_000_000) begin
                 game_count <= 0;
                 timeover   <= 1;
@@ -87,11 +87,27 @@ module FlagGame (
                 end
             end
             GAME_JUDGE: begin
-                if (USER == temp_CMD) begin
-                    game_next = CMD_SAVE;
-                end else begin
-                    game_next = GAME_OVER;
-                end
+                case (temp_CMD)
+                    BLUE_UP, BLUE_NODOWN: begin
+                        game_next = CMD_SAVE;
+                        if (USER != 2'b10) game_next = GAME_OVER;
+                    end
+                    BOTH_UP, BOTH_NODOWN: begin
+                        game_next = CMD_SAVE;
+                        if (USER != 2'b11) game_next = GAME_OVER;
+                    end
+                    WHITE_UP, WHITE_NODOWN: begin
+                        game_next = CMD_SAVE;
+                        if (USER != 2'b01) game_next = GAME_OVER;
+                    end
+                    BLUE_DOWN, BLUE_NOUP, BOTH_DOWN, BOTH_NOUP, WHITE_DOWN, WHITE_NOUP: begin
+                        game_next = CMD_SAVE;
+                        if (USER != 2'b00) game_next = GAME_OVER;
+                    end
+                    default: begin
+                        game_next = GAME_OVER;
+                    end
+                endcase
             end
             GAME_OVER: begin
                 GAME = GAME_OVER;
