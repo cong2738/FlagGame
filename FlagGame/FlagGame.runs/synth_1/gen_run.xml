@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1749092966">
-  <File Type="PA-TCL" Name="FlagGame.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="FlagGame_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="FlagGame_reports.tcl"/>
-  <File Type="RDS-RDS" Name="FlagGame.vds"/>
-  <File Type="RDS-UTIL" Name="FlagGame_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="FlagGame_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="FlagGame.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="FlagGame_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="FlagGame_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1749103559">
+  <File Type="PA-TCL" Name="top_FlagGame.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_FlagGame_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="top_FlagGame_reports.tcl"/>
+  <File Type="RDS-RDS" Name="top_FlagGame.vds"/>
+  <File Type="RDS-UTIL" Name="top_FlagGame_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="top_FlagGame_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="top_FlagGame.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_FlagGame_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_FlagGame_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/FlagGame.sv">
@@ -18,9 +18,79 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/Flag_cmd.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/CAM/OV7670_MemController.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/CAM/OV7670_VGA_Display.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/CAM/QVGA_MemController.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/CAM/SCCB/SCCV.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/CAM/VGA_Controller.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/color_find.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/CAM/frame_buffer.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/xorshift128.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_FlagGame.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="FlagGame"/>
+      <Option Name="TopModule" Val="top_FlagGame"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -37,9 +107,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

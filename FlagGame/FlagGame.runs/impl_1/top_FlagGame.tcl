@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/impl_1/FlagGame.tcl"
+  variable script "C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/impl_1/top_FlagGame.tcl"
   variable category "vivado_impl"
 }
 
@@ -125,8 +125,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 4
-  set_param synth.incrementalSynthesisCache {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/.Xil/Vivado-27576-korchamHoyoun24/incrSyn}
-  set_param xicom.use_bs_reader 1
+  set_param synth.incrementalSynthesisCache {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/.Xil/Vivado-35284-korchamHoyoun24/incrSyn}
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part_repo_paths {C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
@@ -141,12 +140,12 @@ OPTRACE "set parameters" START { }
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1/FlagGame.dcp}}
+  add_files -quiet {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1/top_FlagGame.dcp}}
 OPTRACE "read constraints: implementation" START { }
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
-  link_design -top FlagGame -part xc7a35tcpg236-1
+  link_design -top top_FlagGame -part xc7a35tcpg236-1
 OPTRACE "link_design" END { }
 OPTRACE "gray box cells" START { }
 OPTRACE "gray box cells" END { }
@@ -178,10 +177,10 @@ OPTRACE "opt_design" END { }
 OPTRACE "read constraints: opt_design_post" START { }
 OPTRACE "read constraints: opt_design_post" END { }
 OPTRACE "Opt Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force FlagGame_opt.dcp
+  write_checkpoint -force top_FlagGame_opt.dcp
 OPTRACE "Opt Design: write_checkpoint" END { }
 OPTRACE "opt_design reports" START { REPORT }
-  create_report "impl_1_opt_report_drc_0" "report_drc -file FlagGame_drc_opted.rpt -pb FlagGame_drc_opted.pb -rpx FlagGame_drc_opted.rpx"
+  create_report "impl_1_opt_report_drc_0" "report_drc -file top_FlagGame_drc_opted.rpt -pb top_FlagGame_drc_opted.pb -rpx top_FlagGame_drc_opted.rpx"
 OPTRACE "opt_design reports" END { }
   close_msg_db -file opt_design.pb
 } RESULT]
@@ -212,12 +211,12 @@ OPTRACE "place_design" END { }
 OPTRACE "read constraints: place_design_post" START { }
 OPTRACE "read constraints: place_design_post" END { }
 OPTRACE "Place Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force FlagGame_placed.dcp
+  write_checkpoint -force top_FlagGame_placed.dcp
 OPTRACE "Place Design: write_checkpoint" END { }
 OPTRACE "place_design reports" START { REPORT }
-  create_report "impl_1_place_report_io_0" "report_io -file FlagGame_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file FlagGame_utilization_placed.rpt -pb FlagGame_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file FlagGame_control_sets_placed.rpt"
+  create_report "impl_1_place_report_io_0" "report_io -file top_FlagGame_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file top_FlagGame_utilization_placed.rpt -pb top_FlagGame_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file top_FlagGame_control_sets_placed.rpt"
 OPTRACE "place_design reports" END { }
   close_msg_db -file place_design.pb
 } RESULT]
@@ -243,7 +242,7 @@ OPTRACE "phys_opt_design" END { }
 OPTRACE "read constraints: phys_opt_design_post" START { }
 OPTRACE "read constraints: phys_opt_design_post" END { }
 OPTRACE "Post-Place Phys Opt Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force FlagGame_physopt.dcp
+  write_checkpoint -force top_FlagGame_physopt.dcp
 OPTRACE "Post-Place Phys Opt Design: write_checkpoint" END { }
 OPTRACE "phys_opt_design report" START { REPORT }
 OPTRACE "phys_opt_design report" END { }
@@ -271,17 +270,17 @@ OPTRACE "route_design" END { }
 OPTRACE "read constraints: route_design_post" START { }
 OPTRACE "read constraints: route_design_post" END { }
 OPTRACE "Route Design: write_checkpoint" START { CHECKPOINT }
-  write_checkpoint -force FlagGame_routed.dcp
+  write_checkpoint -force top_FlagGame_routed.dcp
 OPTRACE "Route Design: write_checkpoint" END { }
 OPTRACE "route_design reports" START { REPORT }
-  create_report "impl_1_route_report_drc_0" "report_drc -file FlagGame_drc_routed.rpt -pb FlagGame_drc_routed.pb -rpx FlagGame_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file FlagGame_methodology_drc_routed.rpt -pb FlagGame_methodology_drc_routed.pb -rpx FlagGame_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file FlagGame_power_routed.rpt -pb FlagGame_power_summary_routed.pb -rpx FlagGame_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file FlagGame_route_status.rpt -pb FlagGame_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file FlagGame_timing_summary_routed.rpt -pb FlagGame_timing_summary_routed.pb -rpx FlagGame_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file FlagGame_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file FlagGame_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file FlagGame_bus_skew_routed.rpt -pb FlagGame_bus_skew_routed.pb -rpx FlagGame_bus_skew_routed.rpx"
+  create_report "impl_1_route_report_drc_0" "report_drc -file top_FlagGame_drc_routed.rpt -pb top_FlagGame_drc_routed.pb -rpx top_FlagGame_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file top_FlagGame_methodology_drc_routed.rpt -pb top_FlagGame_methodology_drc_routed.pb -rpx top_FlagGame_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file top_FlagGame_power_routed.rpt -pb top_FlagGame_power_summary_routed.pb -rpx top_FlagGame_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file top_FlagGame_route_status.rpt -pb top_FlagGame_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file top_FlagGame_timing_summary_routed.rpt -pb top_FlagGame_timing_summary_routed.pb -rpx top_FlagGame_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file top_FlagGame_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file top_FlagGame_clock_utilization_routed.rpt"
+  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file top_FlagGame_bus_skew_routed.rpt -pb top_FlagGame_bus_skew_routed.pb -rpx top_FlagGame_bus_skew_routed.rpx"
 OPTRACE "route_design reports" END { }
 OPTRACE "route_design misc" START { }
   close_msg_db -file route_design.pb
@@ -289,7 +288,7 @@ OPTRACE "route_design write_checkpoint" START { CHECKPOINT }
 OPTRACE "route_design write_checkpoint" END { }
 } RESULT]
 if {$rc} {
-  write_checkpoint -force FlagGame_routed_error.dcp
+  write_checkpoint -force top_FlagGame_routed_error.dcp
   step_failed route_design
   return -code error $RESULT
 } else {
@@ -299,4 +298,34 @@ if {$rc} {
 
 OPTRACE "route_design misc" END { }
 OPTRACE "Phase: Route Design" END { }
+OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
+OPTRACE "write_bitstream setup" START { }
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+OPTRACE "read constraints: write_bitstream" START { }
+OPTRACE "read constraints: write_bitstream" END { }
+  catch { write_mem_info -force -no_partial_mmi top_FlagGame.mmi }
+OPTRACE "write_bitstream setup" END { }
+OPTRACE "write_bitstream" START { }
+  write_bitstream -force top_FlagGame.bit 
+OPTRACE "write_bitstream" END { }
+OPTRACE "write_bitstream misc" START { }
+OPTRACE "read constraints: write_bitstream_post" START { }
+OPTRACE "read constraints: write_bitstream_post" END { }
+  catch {write_debug_probes -quiet -force top_FlagGame}
+  catch {file copy -force top_FlagGame.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "write_bitstream misc" END { }
+OPTRACE "Phase: Write Bitstream" END { }
 OPTRACE "impl_1" END { }
