@@ -9,3 +9,4 @@
 # Log file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/impl_1/top_FlagGame.vdi
 # Journal file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
+source top_FlagGame.tcl -notrace

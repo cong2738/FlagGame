@@ -646,3 +646,29 @@ INFO: [runtcl-4] Executing : report_methodology -file top_FlagGame_methodology_d
 Command: report_methodology -file top_FlagGame_methodology_drc_routed.rpt -pb top_FlagGame_methodology_drc_routed.pb -rpx top_FlagGame_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/impl_1/top_FlagGame_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file top_FlagGame_power_routed.rpt -pb top_FlagGame_power_summary_routed.pb -rpx top_FlagGame_power_routed.rpx
+Command: report_power -file top_FlagGame_power_routed.rpt -pb top_FlagGame_power_summary_routed.pb -rpx top_FlagGame_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+104 Infos, 42 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file top_FlagGame_route_status.rpt -pb top_FlagGame_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file top_FlagGame_timing_summary_routed.rpt -pb top_FlagGame_timing_summary_routed.pb -rpx top_FlagGame_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file top_FlagGame_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file top_FlagGame_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file top_FlagGame_bus_skew_routed.rpt -pb top_FlagGame_bus_skew_routed.pb -rpx top_FlagGame_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Command: write_bitstream -force top_FlagGame.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
