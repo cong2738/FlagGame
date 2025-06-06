@@ -15,6 +15,8 @@ module color_find (
     reg [31:0] target0_D_count;
     reg [31:0] target1_U_count;
     reg [31:0] target1_D_count;
+    reg        blue_flag = (R < 5) && (G < 5) && (B > 10);
+    reg        red_flag = (R > 10) && (G < 5) && (B < 5);
     always_ff @(posedge clk, posedge reset) begin : COLOR_FIND
         if (reset) begin
             target0_U_count <= 0;
@@ -31,11 +33,11 @@ module color_find (
                 target1_U_count <= 0;
                 target1_D_count <= 0;
             end else begin  //오른손
-                if ((R < 5) && (G < 5) && (B > 10)) begin  //파랑
+                if (blue_flag) begin  //파랑
                     if (y_pixel < 120)  //반절 위면
                         target0_U_count <= target0_U_count + 1;
                     else target0_D_count <= target0_D_count + 1;
-                end else if (R > 10 && G < 5 && B < 5) begin  //빨강
+                end else if (red_flag) begin  //빨강
                     if (y_pixel < 120)  //반절 위면
                         target1_U_count <= target1_U_count + 1;
                     else target1_D_count <= target1_D_count + 1;
