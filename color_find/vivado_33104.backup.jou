@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Jun  5 14:34:43 2025
+# Process ID: 33104
+# Current directory: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11276 C:\harman\_HARMAN Team Project\HarmanSA_June_TeamPJ\color_find\color_find.xpr
+# Log file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/vivado.log
+# Journal file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.xpr}
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
