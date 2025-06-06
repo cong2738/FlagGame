@@ -70,7 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param synth.incrementalSynthesisCache {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/.Xil/Vivado-35284-korchamHoyoun24/incrSyn}
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -89,6 +91,7 @@ set_property ip_output_repo {c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_mem {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/font_complete.mem}}
 read_verilog -library xil_defaultlib -sv {
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/FlagGame.sv}
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Flag_cmd.sv}
@@ -97,6 +100,7 @@ read_verilog -library xil_defaultlib -sv {
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/QVGA_MemController.sv}
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/SCCB/SCCV.sv}
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/VGA_Controller.sv}
+  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/charactor_display.sv}
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/color_find.sv}
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/frame_buffer.sv}
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/xorshift128.sv}
@@ -111,6 +115,9 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc}}
+set_property used_in_implementation false [get_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc}}]
+
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
