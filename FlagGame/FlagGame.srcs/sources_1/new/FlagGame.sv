@@ -73,9 +73,9 @@ module FlagGame (
         end
     end
 
-    logic user_blue_up = USER & 2'b01;
-    logic user_white_up = USER & 2'b01;
-    logic user_both_up = user_blue_up & user_white_up;
+    logic user_blue_up = USER[0] == 1;
+    logic user_white_up = USER[1] == 1;
+    logic user_both_up = user_blue_up && user_white_up;
     always_comb begin : GAME_NEXT_LOGIC
         game_next     = game_state;
         temp_CMD_next = temp_CMD;
