@@ -11,3 +11,9 @@
 #-----------------------------------------------------------
 start_gui
 open_project {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.xpr}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/font_complete.mem}}
+add_files -norecurse -scan_for_includes {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/CMD_display.sv} {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/charactor_display.sv} {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/COUNT_text_display.sv}}
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
