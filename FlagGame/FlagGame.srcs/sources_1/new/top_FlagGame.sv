@@ -22,12 +22,11 @@ module top_FlagGame (
     output logic [3:0] fndCom,
     output logic [7:0] fndFont
 );
+    logic [3:0] Red, Green, Blue;
+    logic [9:0] x_pixel, y_pixel;
+    logic [3:0] ov7670_Red, ov7670_Green, ov7670_Blue;
     logic [3:0] GAME;
-    logic [3:0] Red;
-    logic [3:0] Green;
-    logic [3:0] Blue;
-    logic [9:0] x_pixel;
-    logic [9:0] y_pixel;
+    logic [31:0] game_score, game_count;
 
     SCCB_core u_OV7670_SCCB_core (
         .clk          (clk),
@@ -37,7 +36,6 @@ module top_FlagGame (
         .siod         (ov7670_sda)
     );
 
-    logic [3:0] ov7670_Red, ov7670_Green, ov7670_Blue;
     OV7670_VGA_Display u_OV7670_VGA_Display (
         .clk          (clk),
         .reset        (reset),
@@ -57,21 +55,22 @@ module top_FlagGame (
         .y_pixel      (y_pixel)
     );
 
-    abc_text_display u_abc_text_display (
-        .clk    (clk),
-        .d_en   (d_en),
-        .sw_cmd (GAME),
-        .x      (x_pixel),
-        .y      (y_pixel),
-        .i_red  (ov7670_Red),
-        .i_green(ov7670_Green),
-        .i_blue (ov7670_Blue),
-        .o_red  (Red),
-        .o_green(Green),
-        .o_blue (Blue)
+    Text_display u_Text_display (
+        .clk         (clk),
+        .reset       (reset),
+        .d_en        (d_en),
+        .game_count_i(game_count),
+        .commend     (GAME),
+        .x           (x_pixel),
+        .y           (y_pixel),
+        .i_red       (ov7670_Red),
+        .i_green     (ov7670_Green),
+        .i_blue      (ov7670_Blue),
+        .o_red       (Red),
+        .o_green     (Green),
+        .o_blue      (Blue)
     );
 
-    logic [31:0] game_score, game_count;
     game u_game (
         .clk       (clk),
         .reset     (reset),
@@ -87,12 +86,11 @@ module top_FlagGame (
     fndController u_fndController (
         .clk    (clk),
         .reset  (reset),
-        .fndData(game_count/100_000_000),
+        .fndData(game_count / 100_000_000),
         .fndDot (4'b1111),
         .fndCom (fndCom),
         .fndFont(fndFont)
     );
-
 
     assign {vgaRed, vgaGreen, vgaBlue} = {Red, Green, Blue};
 endmodule
