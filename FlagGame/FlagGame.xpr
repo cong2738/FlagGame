@@ -83,14 +83,14 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/TEXT_Display/CMD_display.sv">
-        <FileInfo>
+        <FileInfo RelPath="CMD_display.sv">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/TEXT_Display/COUNT_text_display.sv">
-        <FileInfo>
+        <FileInfo RelPath="COUNT_text_display.sv">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -132,6 +132,13 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/CAM/SCCB/SCCV.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/TEXT_Display/Text_score.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -182,6 +189,12 @@
       </File>
       <File Path="$PSRCDIR/sources_1/TEXT_Display/font_complete.mem">
         <FileInfo RelPath="font_complete.mem">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/TEXT_Display/font_score_16by16.mem">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
