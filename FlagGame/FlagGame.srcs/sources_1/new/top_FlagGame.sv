@@ -60,6 +60,7 @@ module top_FlagGame (
         .reset       (reset),
         .d_en        (d_en),
         .game_count_i(game_count),
+        .game_score(game_score),
         .commend     (GAME),
         .x           (x_pixel),
         .y           (y_pixel),

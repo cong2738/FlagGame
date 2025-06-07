@@ -39,7 +39,7 @@ module OV7670_VGA_Display (
         .rclk   (w_rclk),
         .h_sync (Hsync),
         .v_sync (Vsync),
-        .DE     (DE),
+        .DE     (vga_en),
         .x_pixel(x_pixel),
         .y_pixel(y_pixel)
     );
@@ -67,7 +67,7 @@ module OV7670_VGA_Display (
         .wAddr(wAddr),
         .wData(wData),
         .rclk (rclk),
-        .oe   (oe),
+        .oe   (ov7670_en),
         .rAddr(rAddr),
         .rData(rData)
     );
@@ -76,9 +76,9 @@ module OV7670_VGA_Display (
         .clk       (w_rclk),
         .x_pixel   (x_pixel),
         .y_pixel   (y_pixel),
-        .DE        (DE),
+        .DE        (vga_en),
         .rclk      (rclk),
-        .d_en      (oe),
+        .d_en      (ov7670_en),
         .rAddr     (rAddr),
         .rData     (rData),
         .red_port  (ov7670_Red),
