@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sat Jun  7 14:50:52 2025
+| Date         : Sat Jun  7 15:17:37 2025
 | Host         : korchamHoyoun24 running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_FlagGame_drc_opted.rpt -pb top_FlagGame_drc_opted.pb -rpx top_FlagGame_drc_opted.rpx
 | Design       : top_FlagGame
@@ -24,16 +24,16 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 46
+             Violations found: 33
 +-----------+----------+----------------------------+------------+
 | Rule      | Severity | Description                | Violations |
 +-----------+----------+----------------------------+------------+
-| CHECK-3   | Warning  | Report rule limit reached  | 2          |
+| CHECK-3   | Warning  | Report rule limit reached  | 1          |
 | DPIP-1    | Warning  | Input pipelining           | 2          |
 | DPOP-1    | Warning  | PREG Output pipelining     | 1          |
 | DPOP-2    | Warning  | MREG Output pipelining     | 1          |
 | REQP-1839 | Warning  | RAMB36 async control check | 20         |
-| REQP-1840 | Warning  | RAMB18 async control check | 20         |
+| REQP-1840 | Warning  | RAMB18 async control check | 8          |
 +-----------+----------+----------------------------+------------+
 
 2. REPORT DETAILS
@@ -41,11 +41,6 @@ Table of Contents
 CHECK-3#1 Warning
 Report rule limit reached  
 REQP-1839 rule limit reached: 20 violations have been found.
-Related violations: <none>
-
-CHECK-3#2 Warning
-Report rule limit reached  
-REQP-1840 rule limit reached: 20 violations have been found.
 Related violations: <none>
 
 DPIP-1#1 Warning
@@ -100,17 +95,17 @@ Related violations: <none>
 
 REQP-1839#7 Warning
 RAMB36 async control check  
-The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[13]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[13]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#8 Warning
 RAMB36 async control check  
-The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[13]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[13]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#9 Warning
 RAMB36 async control check  
-The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[13]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1 has an input control pin u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/ADDRARDADDR[14] (net: u_OV7670_VGA_Display/U_Frame_Buffer/wAddr[13]) which is driven by a register (u_OV7670_VGA_Display/U_OV7670_MemController/v_counter_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#10 Warning
@@ -206,66 +201,6 @@ Related violations: <none>
 REQP-1840#8 Warning
 RAMB18 async control check  
 The RAMB18E1 u_OV7670_SCCB_core/U_SCCB_Controller/U_OV7670_config_rom/dout_reg has an input control pin u_OV7670_SCCB_core/U_SCCB_Controller/U_OV7670_config_rom/dout_reg/ADDRARDADDR[9] (net: u_OV7670_SCCB_core/U_SCCB_Controller/U_OV7670_config_rom/Q[5]) which is driven by a register (u_OV7670_SCCB_core/U_SCCB_Controller/rom_addr_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#9 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#10 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#11 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#12 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#13 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#14 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#15 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#16 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#17 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_game/u_FlagGame/temp_CMD_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#18 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_game/u_FlagGame/temp_CMD_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#19 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_game/u_FlagGame/temp_CMD_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-Related violations: <none>
-
-REQP-1840#20 Warning
-RAMB18 async control check  
-The RAMB18E1 u_Text_display/U_FONT_ROM/data_cmd_reg has an input control pin u_Text_display/U_FONT_ROM/data_cmd_reg/ADDRARDADDR[13] (net: u_Text_display/U_FONT_ROM/ADDRARDADDR[9]) which is driven by a register (u_game/u_FlagGame/temp_CMD_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 
