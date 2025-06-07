@@ -44,13 +44,13 @@ module top_FlagGame (
         .ov7670_href  (ov7670_href),
         .ov7670_v_sync(ov7670_v_sync),
         .ov7670_data  (ov7670_data),
-        // .DE           (d_en),
-        .oe           (d_en),
-        .Hsync        (Hsync),
-        .Vsync        (Vsync),
         .ov7670_Red   (ov7670_Red),
         .ov7670_Green (ov7670_Green),
         .ov7670_Blue  (ov7670_Blue),
+        .ov7670_en    (d_en),
+        .vga_en       (),
+        .Hsync        (Hsync),
+        .Vsync        (Vsync),
         .x_pixel      (x_pixel),
         .y_pixel      (y_pixel)
     );
