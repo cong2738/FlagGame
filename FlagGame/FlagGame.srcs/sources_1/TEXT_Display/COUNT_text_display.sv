@@ -100,7 +100,7 @@ module COUNT_Text_display (
         if (pixel_on) begin
             o_red_cnt   = 4'hF;
             o_green_cnt = 4'h0;
-            o_blue_cnt  = 4'h0;
+            o_blue_cnt  = 4'hf;
         end else begin
             o_red_cnt   = 4'h0;
             o_green_cnt = 4'h0;
