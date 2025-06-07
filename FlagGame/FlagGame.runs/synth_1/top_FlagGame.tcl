@@ -70,9 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-30848-korchamHoyoun24/incrSyn
-set_param xicom.use_bs_reader 1
+set_param synth.incrementalSynthesisCache {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/.Xil/Vivado-8596-korchamHoyoun24/incrSyn}
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -93,6 +91,8 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_mem {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/font_complete.mem}}
 read_verilog -library xil_defaultlib -sv {
+  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/CMD_display.sv}
+  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/COUNT_text_display.sv}
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/FlagGame.sv}
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Flag_cmd.sv}
   {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_MemController.sv}
