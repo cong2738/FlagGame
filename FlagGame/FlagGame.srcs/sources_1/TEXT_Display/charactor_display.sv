@@ -50,14 +50,14 @@ module Text_display (
     logic[11:0] o_c;
     assign {o_red,o_green,o_blue} = o_c; 
     always_comb begin : col_sel
-        case ({text_on_cnt,text_on_cmd})
+        if(x < 320 && y == 120) begin // vertical_mid_guide_line
+            o_c = 12'h0f0; // green color
+        end else case ({text_on_cnt,text_on_cmd})
             TEXT_SEL: o_c = {o_red_cmd,o_green_cmd,o_blue_cmd};
             TIME_SEL: o_c = {o_red_cnt,o_green_cnt,o_blue_cnt};
             SCORE_SEL: o_c = {o_red_score,o_green_score,o_blue_score};
             default: o_c = {i_red,i_green,i_blue};
         endcase
     end
-
-
 endmodule
 
