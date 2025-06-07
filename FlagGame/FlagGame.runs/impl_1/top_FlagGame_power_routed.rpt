@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Thu Jun  5 16:31:16 2025
+| Date             : Fri Jun  6 21:44:07 2025
 | Host             : korchamHoyoun24 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_FlagGame_power_routed.rpt -pb top_FlagGame_power_summary_routed.pb -rpx top_FlagGame_power_routed.rpx
 | Design           : top_FlagGame
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.093        |
+| Total On-Chip Power (W)  | 0.107        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.020        |
+| Dynamic (W)              | 0.033        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |     1314 |       --- |             --- |
-|   LUT as Logic |     0.001 |      547 |     20800 |            2.63 |
-|   CARRY4       |    <0.001 |       61 |      8150 |            0.75 |
-|   Register     |    <0.001 |      502 |     41600 |            1.21 |
+| Slice Logic    |     0.004 |     1469 |       --- |             --- |
+|   LUT as Logic |     0.004 |      642 |     20800 |            3.09 |
+|   CARRY4       |    <0.001 |       80 |      8150 |            0.98 |
+|   Register     |    <0.001 |      457 |     41600 |            1.10 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
-|   F7/F8 Muxes  |    <0.001 |        4 |     32600 |            0.01 |
-|   Others       |     0.000 |       30 |       --- |             --- |
-| Signals        |     0.002 |     1035 |       --- |             --- |
-| Block RAM      |     0.005 |       37 |        50 |           74.00 |
+|   F7/F8 Muxes  |    <0.001 |        3 |     32600 |           <0.01 |
+|   Others       |     0.000 |       36 |       --- |             --- |
+| Signals        |     0.005 |     1157 |       --- |             --- |
+| Block RAM      |     0.003 |       37 |        50 |           74.00 |
 | DSPs           |    <0.001 |        1 |        90 |            1.11 |
-| I/O            |     0.007 |       32 |       106 |           30.19 |
+| I/O            |     0.018 |       44 |       106 |           41.51 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.093 |          |           |                 |
+| Total          |     0.107 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.022 |       0.012 |      0.010 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.026 |       0.015 |      0.010 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -144,13 +144,13 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| top_FlagGame           |     0.020 |
+| top_FlagGame           |     0.033 |
 |   u_OV7670_SCCB_core   |     0.001 |
-|   u_OV7670_VGA_Display |     0.007 |
-|     U_Frame_Buffer     |     0.005 |
-|   u_game               |     0.003 |
-|     u_color_find       |     0.001 |
-|     u_xorshift128      |     0.001 |
+|   u_OV7670_VGA_Display |     0.005 |
+|     U_Frame_Buffer     |     0.003 |
+|   u_game               |     0.007 |
+|     u_FlagGame         |     0.005 |
+|     u_xorshift128      |     0.002 |
 +------------------------+-----------+
 
 

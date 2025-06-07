@@ -18,7 +18,9 @@ module top_FlagGame (
     output logic       Vsync,
     output logic [3:0] vgaRed,
     output logic [3:0] vgaGreen,
-    output logic [3:0] vgaBlue
+    output logic [3:0] vgaBlue,
+    output logic [3:0] fndCom,
+    output logic [7:0] fndFont
 );
     logic [3:0] GAME;
     logic [3:0] Red;
@@ -44,7 +46,8 @@ module top_FlagGame (
         .ov7670_href  (ov7670_href),
         .ov7670_v_sync(ov7670_v_sync),
         .ov7670_data  (ov7670_data),
-        .DE           (d_en),
+        // .DE           (d_en),
+        .oe           (d_en),
         .Hsync        (Hsync),
         .Vsync        (Vsync),
         .ov7670_Red   (ov7670_Red),
@@ -68,6 +71,7 @@ module top_FlagGame (
         .o_blue (Blue)
     );
 
+    logic [31:0] game_score, game_count;
     game u_game (
         .clk       (clk),
         .reset     (reset),
@@ -76,8 +80,19 @@ module top_FlagGame (
         .y_pixel   (y_pixel),
         .color     ({ov7670_Red, ov7670_Green, ov7670_Blue}),
         .GAME      (GAME),
-        .game_count(game_count)
+        .game_count(game_count),
+        .game_score(game_score)
     );
+
+    fndController u_fndController (
+        .clk    (clk),
+        .reset  (reset),
+        .fndData(game_count/100_000_000),
+        .fndDot (4'b1111),
+        .fndCom (fndCom),
+        .fndFont(fndFont)
+    );
+
 
     assign {vgaRed, vgaGreen, vgaBlue} = {Red, Green, Blue};
 endmodule
@@ -122,8 +137,8 @@ module game (
         .R         (color[3:0]),
         .G         (color[7:4]),
         .B         (color[11:8]),
-        .user_hand0(USER[0]),
-        .user_hand1(USER[1])
+        .user_hand0(blue),
+        .user_hand1(red)
     );
 
     FlagGame u_FlagGame (
@@ -131,7 +146,7 @@ module game (
         .reset     (reset),
         .start     (start),
         .RANDCMD   (flag_cmd),
-        .USER      (USER),
+        .USER      ({red, blue}),
         .GAME      (GAME),
         .get       (get),
         .game_count(game_count),

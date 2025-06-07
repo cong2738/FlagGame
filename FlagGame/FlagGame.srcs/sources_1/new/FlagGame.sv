@@ -52,11 +52,10 @@ module FlagGame (
     end
 
     always_ff @(posedge clk, posedge reset) begin : GAME_COUNTER
-        if (reset) begin
+        if (reset || game_state == GAME_START || game_state == GAME_OVER) begin
             game_count <= 0;
         end else begin
-            if (game_state == GAME_START) game_count <= 0;
-            else if (game_count == 500_000_000) begin
+            if (game_count == 500_000_000) begin
                 game_count <= 0;
                 timeover   <= 1;
             end else begin
@@ -66,14 +65,17 @@ module FlagGame (
         end
     end
 
-    always_ff @(posedge pass, posedge reset) begin : SCORE_COUNTER
-        if (reset) begin
+    always_ff @(posedge clk, posedge reset) begin : SCORE_COUNTER
+        if (reset || game_state == GAME_START || game_state == GAME_OVER) begin
             game_score <= 0;
-        end else begin
+        end else if (pass) begin
             game_score <= game_score + 1;
         end
     end
 
+    logic user_blue_up = USER & 2'b01;
+    logic user_white_up = USER & 2'b01;
+    logic user_both_up = user_blue_up & user_white_up;
     always_comb begin : GAME_NEXT_LOGIC
         game_next     = game_state;
         temp_CMD_next = temp_CMD;
@@ -98,41 +100,31 @@ module FlagGame (
                 end
             end
             GAME_JUDGE: begin
+                game_next = GAME_OVER;
                 case (temp_CMD)
                     BLUE_UP, BLUE_NODOWN: begin
-                        if (USER != 2'b10) begin
-                            game_next = GAME_OVER;
-                        end else begin
-                            pass = 1;
-                            game_next = CMD_SAVE;
-                        end
-                    end
-                    BOTH_UP, BOTH_NODOWN: begin
-                        if (USER != 2'b11) begin
-                            game_next = GAME_OVER;
-                        end else begin
-                            pass = 1;
-                            game_next = CMD_SAVE;
-                        end
+                        pass = user_blue_up;
+                        game_next = user_blue_up ? CMD_SAVE : GAME_OVER;
                     end
                     WHITE_UP, WHITE_NODOWN: begin
-                        if (USER != 2'b01) begin
-                            game_next = GAME_OVER;
-                        end else begin
-                            pass = 1;
-                            game_next = CMD_SAVE;
-                        end
+                        pass = user_white_up;
+                        game_next = user_white_up ? CMD_SAVE : GAME_OVER;
                     end
-                    BLUE_DOWN, BLUE_NOUP, BOTH_DOWN, BOTH_NOUP, WHITE_DOWN, WHITE_NOUP: begin
-                        if (USER != 2'b00) begin
-                            game_next = GAME_OVER;
-                        end else begin
-                            pass = 1;
-                            game_next = CMD_SAVE;
-                        end
+                    BOTH_UP, BOTH_NODOWN: begin
+                        pass = user_both_up;
+                        game_next = user_both_up ? CMD_SAVE : GAME_OVER;
                     end
-                    default: begin
-                        game_next = GAME_OVER;
+                    BLUE_DOWN, BLUE_NOUP: begin
+                        pass = !user_blue_up;
+                        game_next = !user_blue_up ? CMD_SAVE : GAME_OVER;
+                    end
+                    WHITE_DOWN, WHITE_NOUP: begin
+                        pass = !user_white_up;
+                        game_next = !user_white_up ? CMD_SAVE : GAME_OVER;
+                    end
+                    BOTH_DOWN, BOTH_NOUP: begin
+                        pass = !user_both_up;
+                        game_next = !user_both_up ? CMD_SAVE : GAME_OVER;
                     end
                 endcase
             end
