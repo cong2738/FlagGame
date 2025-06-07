@@ -2,24 +2,12 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Jun  6 21:52:01 2025
-# Process ID: 24360
+# Start of session at: Sat Jun  7 14:40:54 2025
+# Process ID: 8596
 # Current directory: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2096 C:\harman\_HARMAN Team Project\HarmanSA_June_TeamPJ\FlagGame\FlagGame.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3492 C:\harman\_HARMAN Team Project\HarmanSA_June_TeamPJ\FlagGame\FlagGame.xpr
 # Log file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/vivado.log
 # Journal file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.xpr}
-update_compile_order -fileset sources_1
-open_hw_manager
-connect_hw_server -allow_non_jtag
-open_hw_target
-set_property PROGRAM.FILE {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/impl_1/top_FlagGame.bit} [get_hw_devices xc7a35t_0]
-current_hw_device [get_hw_devices xc7a35t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/impl_1/top_FlagGame.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
