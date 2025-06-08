@@ -1,0 +1,26 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../FlagGame.srcs/sources_1/segCTRL/fndController.v" \
+
+sv xil_defaultlib  \
+"../../../../FlagGame.srcs/sources_1/TEXT_Display/CMD_display.sv" \
+"../../../../FlagGame.srcs/sources_1/TEXT_Display/COUNT_text_display.sv" \
+"../../../../FlagGame.srcs/sources_1/game/FlagGame.sv" \
+"../../../../FlagGame.srcs/sources_1/game/Flag_cmd.sv" \
+"../../../../FlagGame.srcs/sources_1/CAM/OV7670_MemController.sv" \
+"../../../../FlagGame.srcs/sources_1/CAM/OV7670_VGA_Display.sv" \
+"../../../../FlagGame.srcs/sources_1/CAM/QVGA_MemController.sv" \
+"../../../../FlagGame.srcs/sources_1/CAM/SCCB/SCCV.sv" \
+"../../../../FlagGame.srcs/sources_1/TEXT_Display/Text_score.sv" \
+"../../../../FlagGame.srcs/sources_1/CAM/VGA_Controller.sv" \
+"../../../../FlagGame.srcs/sources_1/TEXT_Display/charactor_display.sv" \
+"../../../../FlagGame.srcs/sources_1/game/color_find.sv" \
+"../../../../FlagGame.srcs/sources_1/CAM/frame_buffer.sv" \
+"../../../../FlagGame.srcs/sources_1/game/xorshift128.sv" \
+"../../../../FlagGame.srcs/sources_1/game/top_FlagGame.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
