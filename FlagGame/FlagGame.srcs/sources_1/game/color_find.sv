@@ -15,7 +15,7 @@ module color_find (
     reg [31:0] red_flag_U_count;
     reg [31:0] red_flag_D_count;
     reg        red_flag = (R > 10) && (G < 5) && (B < 5);
-    reg        blue_flag = (R < 5) && (G < 5) && (B > 10);
+    reg        blue_flag = (R < 5) && (G < 5) && (B > 5);
     always_ff @(posedge clk, posedge reset) begin : COLOR_FIND
         if (reset) begin
             blue_flag_U_count <= 0;
