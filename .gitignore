@@ -61,6 +61,10 @@
 !*.elf
 !*.bmm
 !*.xmp
+
+#bitstream
+!*.bit
+
 #systemVerilog
 !*.sv
 #except ip folders
