@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1749373452">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1749381923">
   <File Type="PA-TCL" Name="top_FlagGame.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_FlagGame_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_FlagGame_reports.tcl"/>
@@ -32,14 +32,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/FlagGame.sv">
+    <File Path="$PSRCDIR/sources_1/game/FlagGame.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/Flag_cmd.sv">
+    <File Path="$PSRCDIR/sources_1/game/Flag_cmd.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -95,7 +95,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/color_find.sv">
+    <File Path="$PSRCDIR/sources_1/game/color_find.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -109,14 +109,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/xorshift128.sv">
+    <File Path="$PSRCDIR/sources_1/game/xorshift128.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/top_FlagGame.sv">
+    <File Path="$PSRCDIR/sources_1/game/top_FlagGame.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

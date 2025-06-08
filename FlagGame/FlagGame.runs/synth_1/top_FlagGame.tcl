@@ -95,8 +95,8 @@ read_mem {
 read_verilog -library xil_defaultlib -sv {
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/CMD_display.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/COUNT_text_display.sv
-  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/FlagGame.sv
-  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Flag_cmd.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/FlagGame.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/Flag_cmd.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_MemController.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_VGA_Display.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/QVGA_MemController.sv
@@ -104,10 +104,10 @@ read_verilog -library xil_defaultlib -sv {
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/Text_score.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/VGA_Controller.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/charactor_display.sv
-  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/color_find.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/color_find.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/frame_buffer.sv
-  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/xorshift128.sv
-  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/top_FlagGame.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/xorshift128.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/top_FlagGame.sv
 }
 read_verilog -library xil_defaultlib C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/segCTRL/fndController.v
 OPTRACE "Adding files" END { }
