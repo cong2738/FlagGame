@@ -16,7 +16,7 @@ module COUNT_Text_display (
 
     // rom interface
     output logic [10:0] rom_addr_cnt,
-    input  logic [7:0]  font_line_cnt
+    input  logic [ 7:0] font_line_cnt
 );
 
     typedef enum bit [2:0] {
@@ -27,51 +27,32 @@ module COUNT_Text_display (
         FIVE  = 3'd4
     } sec_e;
 
-    sec_e state, state_next;
-
-    localparam int CAM_WIDTH     = 320;
-    localparam int CAM_HEIGHT    = 240;
-    localparam int CHAR_WIDTH    = 8;
-    localparam int CHAR_HEIGHT   = 8;
-    localparam int TEXT_X_START  = 3;
+    localparam int CAM_WIDTH = 320;
+    localparam int CAM_HEIGHT = 240;
+    localparam int CHAR_WIDTH = 8;
+    localparam int CHAR_HEIGHT = 8;
+    localparam int TEXT_X_START = 3;
     localparam int TEXT_Y_START = 220;
 
     logic [2:0] row_addr, bit_idx;
-    logic [7:0] char_rom_idx;
+    logic [31:0] char_rom_idx;
     logic       pixel_on;
 
     assign text_on_cnt = pixel_on && d_en;
 
-    // 상태 전이
-    always_ff @(posedge clk or posedge reset) begin
-        if (reset) begin
-            state <= ONE;
-        end else begin
-            state <= state_next;
-        end
-    end
-
     // 상태 계산 및 문자 선택
     always_comb begin
-        state_next = state;
-        if (game_count_i < 100_000_000)
-            state_next = ONE;
-        else if (game_count_i < 200_000_000)
-            state_next = TWO;
-        else if (game_count_i < 300_000_000)
-            state_next = THREE;
-        else if (game_count_i < 400_000_000)
-            state_next = FOUR;
-        else 
-            state_next = FIVE;
-
-        case (state)
-            ONE:   char_rom_idx = 8'd27;  // '1'
-            TWO:   char_rom_idx = 8'd28;  // '2'
-            THREE: char_rom_idx = 8'd29;  // '3'
-            FOUR:  char_rom_idx = 8'd30;  // '4'
-            FIVE:  char_rom_idx = 8'd31;  // '5'
-            default: char_rom_idx = 8'd100;  // 공백
+        char_rom_idx = 8'd100;  // 공백
+        case (game_count_i / 100_000_000)
+            0: char_rom_idx = 31'd27;  // '1'
+            1: char_rom_idx = 31'd28;  // '2'
+            2: char_rom_idx = 31'd29;  // '3'
+            3: char_rom_idx = 31'd30;  // '4'
+            4: char_rom_idx = 31'd31;  // '5'
+            6: char_rom_idx = 31'h108;  // '6'
+            7: char_rom_idx = 31'h110;  // '7'
+            8: char_rom_idx = 31'h118;  // '8'
+            9: char_rom_idx = 31'h120;  // '9'
         endcase
     end
 
@@ -81,10 +62,7 @@ module COUNT_Text_display (
         row_addr = 3'd0;
         bit_idx  = 3'd0;
 
-        if (d_en && 
-            x >= TEXT_X_START && x < (TEXT_X_START + CHAR_WIDTH) &&
-            y >= TEXT_Y_START && y < (TEXT_Y_START + CHAR_HEIGHT)) begin
-
+        if (d_en && x >= TEXT_X_START && x < (TEXT_X_START + CHAR_WIDTH) && y >= TEXT_Y_START && y < (TEXT_Y_START + CHAR_HEIGHT)) begin
             row_addr = y - TEXT_Y_START;
             bit_idx  = x - TEXT_X_START;
             // pixel_on = font_line_cnt[CHAR_WIDTH - 1 - bit_idx];
