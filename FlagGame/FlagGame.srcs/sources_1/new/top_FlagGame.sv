@@ -60,7 +60,7 @@ module top_FlagGame (
         .reset       (reset),
         .d_en        (d_en),
         .game_count_i(game_count),
-        .game_score(game_score),
+        .game_score  (game_score),
         .commend     (GAME),
         .x           (x_pixel),
         .y           (y_pixel),
@@ -72,6 +72,7 @@ module top_FlagGame (
         .o_blue      (Blue)
     );
 
+    logic [1:0] USER;
     game u_game (
         .clk       (clk),
         .reset     (reset),
@@ -80,14 +81,16 @@ module top_FlagGame (
         .y_pixel   (y_pixel),
         .color     ({ov7670_Red, ov7670_Green, ov7670_Blue}),
         .GAME      (GAME),
+        .USER      (USER),
         .game_count(game_count),
         .game_score(game_score)
     );
 
+    logic [31:0] fndData = (USER[1] ? 10 : 0) + USER[0];
     fndController u_fndController (
         .clk    (clk),
         .reset  (reset),
-        .fndData(game_count / 100_000_000),
+        .fndData(fndData),
         .fndDot (4'b1111),
         .fndCom (fndCom),
         .fndFont(fndFont)
@@ -104,14 +107,15 @@ module game (
     input logic [9:0] y_pixel,
     input logic [11:0] color,
     output logic [3:0] GAME,
+    output logic [1:0] USER,
     output logic [31:0] game_count,
     output logic [31:0] game_score
 );
     logic         seed_en;
     logic [127:0] seed;
     logic [ 31:0] rnd;
-    logic [  1:0] USER;
     logic [  3:0] flag_cmd;
+
     xorshift128 u_xorshift128 (
         .clk    (clk),
         .rst    (reset),
@@ -133,11 +137,10 @@ module game (
         .reset     (reset),
         .x_pixel   (x_pixel),
         .y_pixel   (y_pixel),
-        .R         (color[3:0]),
+        .R         (color[11:8]),
         .G         (color[7:4]),
-        .B         (color[11:8]),
-        .user_hand0(blue),
-        .user_hand1(red)
+        .B         (color[3:0]),
+        .USER(USER)
     );
 
     FlagGame u_FlagGame (
@@ -145,7 +148,7 @@ module game (
         .reset     (reset),
         .start     (start),
         .RANDCMD   (flag_cmd),
-        .USER      ({red, blue}),
+        .USER      (USER),
         .GAME      (GAME),
         .get       (get),
         .game_count(game_count),
