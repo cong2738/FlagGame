@@ -96,15 +96,15 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/FlagGame.sv">
-        <FileInfo>
+      <File Path="$PSRCDIR/sources_1/game/FlagGame.sv">
+        <FileInfo RelPath="FlagGame.sv">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/Flag_cmd.sv">
-        <FileInfo>
+      <File Path="$PSRCDIR/sources_1/game/Flag_cmd.sv">
+        <FileInfo RelPath="Flag_cmd.sv">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -159,8 +159,8 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/color_find.sv">
-        <FileInfo>
+      <File Path="$PSRCDIR/sources_1/game/color_find.sv">
+        <FileInfo RelPath="color_find.sv">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -173,15 +173,15 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/xorshift128.sv">
-        <FileInfo>
+      <File Path="$PSRCDIR/sources_1/game/xorshift128.sv">
+        <FileInfo RelPath="xorshift128.sv">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/top_FlagGame.sv">
-        <FileInfo>
+      <File Path="$PSRCDIR/sources_1/game/top_FlagGame.sv">
+        <FileInfo RelPath="top_FlagGame.sv">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
