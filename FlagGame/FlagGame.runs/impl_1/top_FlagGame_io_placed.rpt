@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date                      : Sat Jun  7 17:52:45 2025
-| Host                      : korchamHoyoun24 running 64-bit major release  (build 9200)
+| Date                      : Sun Jun  8 18:05:44 2025
+| Host                      : HYPC running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_FlagGame_io_placed.rpt
 | Design                    : top_FlagGame
 | Device                    : xc7a35t

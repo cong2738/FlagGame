@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc} rfile:../../../FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc rfile:../../../FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports clk]
 set_property src_info {type:XDC file:1 line:50 export:INPUT save:INPUT read:READ} [current_design]

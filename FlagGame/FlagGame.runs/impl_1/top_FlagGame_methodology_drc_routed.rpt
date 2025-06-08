@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sat Jun  7 17:53:05 2025
-| Host         : korchamHoyoun24 running 64-bit major release  (build 9200)
+| Date         : Sun Jun  8 18:06:04 2025
+| Host         : HYPC running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_FlagGame_methodology_drc_routed.rpt -pb top_FlagGame_methodology_drc_routed.pb -rpx top_FlagGame_methodology_drc_routed.rpx
 | Design       : top_FlagGame
 | Device       : xc7a35tcpg236-1
@@ -23,15 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 237
+             Violations found: 229
 +-----------+------------------+--------------------------------------------+------------+
 | Rule      | Severity         | Description                                | Violations |
 +-----------+------------------+--------------------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                | 162        |
 | DPIR-1    | Warning          | Asynchronous driver check                  | 20         |
 | LUTAR-1   | Warning          | LUT drives async reset alert               | 1          |
-| SYNTH-6   | Warning          | Timing of a RAM block might be sub-optimal | 23         |
-| TIMING-16 | Warning          | Large setup violation                      | 3          |
+| SYNTH-6   | Warning          | Timing of a RAM block might be sub-optimal | 16         |
+| TIMING-16 | Warning          | Large setup violation                      | 2          |
 | TIMING-18 | Warning          | Missing input or output delay              | 28         |
 +-----------+------------------+--------------------------------------------+------------+
 
@@ -961,8 +961,8 @@ u_game/u_FlagGame/game_score_reg[4]/CLR,
 u_game/u_FlagGame/game_score_reg[5]/CLR,
 u_game/u_FlagGame/game_score_reg[6]/CLR,
 u_game/u_FlagGame/game_score_reg[7]/CLR,
-u_game/u_FlagGame/game_score_reg[8]/CLR
-u_game/u_FlagGame/game_score_reg[9]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+u_game/u_FlagGame/game_score_reg[7]_replica/CLR
+u_game/u_FlagGame/game_score_reg[8]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 SYNTH-6#1 Warning
@@ -977,122 +977,82 @@ Related violations: <none>
 
 SYNTH-6#3 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_10__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#4 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_13, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#5 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_13__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#6 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_13, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_14, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#7 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_13__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_15, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#8 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_14, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_3, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#9 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_14__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_3__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#10 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_15, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_4, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#11 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_15__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_7, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#12 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_1__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_7__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#13 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_2, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_8, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#14 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_2__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_9, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-6#15 Warning
 Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_3, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#16 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_3__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#17 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_4, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#18 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_7, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#19 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_8, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#20 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_8__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#21 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_9, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#22 Warning
-Timing of a RAM block might be sub-optimal  
 The timing for the instance u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_9__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
-SYNTH-6#23 Warning
+SYNTH-6#16 Warning
 Timing of a RAM block might be sub-optimal  
 The timing for the instance u_Text_display/u_Text_score/u_font/data_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.140 ns between u_game/u_FlagGame/game_score_reg[1]/C (clocked by sys_clk_pin) and u_Text_display/u_Text_score/u_font/data_reg/ADDRARDADDR[9] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.011 ns between u_game/u_FlagGame/game_score_reg[5]/C (clocked by sys_clk_pin) and u_Text_display/u_Text_score/u_font/data_reg/ADDRARDADDR[10] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.146 ns between u_game/u_FlagGame/game_score_reg[1]/C (clocked by sys_clk_pin) and u_Text_display/u_Text_score/u_font/data_reg/ADDRARDADDR[10] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -1.165 ns between u_game/u_FlagGame/game_score_reg[1]/C (clocked by sys_clk_pin) and u_Text_display/u_Text_score/u_font/data_reg/ADDRARDADDR[11] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.103 ns between u_game/u_FlagGame/game_score_reg[5]/C (clocked by sys_clk_pin) and u_Text_display/u_Text_score/u_font/data_reg/ADDRARDADDR[11] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

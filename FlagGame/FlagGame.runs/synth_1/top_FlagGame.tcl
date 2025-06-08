@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1/top_FlagGame.tcl"
+  variable script "C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1/top_FlagGame.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
+set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
@@ -78,38 +78,38 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.cache/wt} [current_project]
-set_property parent.project_path {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.xpr} [current_project]
+set_property webtalk.parent_dir C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.cache/wt [current_project]
+set_property parent.project_path C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part_repo_paths {C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
+set_property board_part_repo_paths {C:/Users/cong/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-set_property ip_output_repo {c:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.cache/ip} [current_project]
+set_property ip_output_repo c:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_mem {
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/font_complete.mem}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/font_score_16by16.mem}
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/font_complete.mem
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/font_score_16by16.mem
 }
 read_verilog -library xil_defaultlib -sv {
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/CMD_display.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/COUNT_text_display.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/FlagGame.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Flag_cmd.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_MemController.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_VGA_Display.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/QVGA_MemController.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/SCCB/SCCV.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/Text_score.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/VGA_Controller.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/charactor_display.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/color_find.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/frame_buffer.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/xorshift128.sv}
-  {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/top_FlagGame.sv}
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/CMD_display.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/COUNT_text_display.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/FlagGame.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Flag_cmd.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_MemController.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_VGA_Display.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/QVGA_MemController.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/SCCB/SCCV.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/Text_score.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/VGA_Controller.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/TEXT_Display/charactor_display.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/color_find.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/frame_buffer.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/xorshift128.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/top_FlagGame.sv
 }
-read_verilog -library xil_defaultlib {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/segCTRL/fndController.v}}
+read_verilog -library xil_defaultlib C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/segCTRL/fndController.v
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -119,8 +119,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc}}
-set_property used_in_implementation false [get_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc}}]
+read_xdc C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc
+set_property used_in_implementation false [get_files C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/constrs_1/imports/HarmanSA_June_TeamPJ/Basys-3-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
