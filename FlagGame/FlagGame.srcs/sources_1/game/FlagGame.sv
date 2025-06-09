@@ -29,9 +29,9 @@ module FlagGame (
 
     typedef enum logic [3:0] {
         GAME_START = 4'h0,
-        CMD_SAVE,
-        GAME_ON,
-        GAME_JUDGE,
+        CMD_SAVE   = 4'h1,
+        GAME_ON    = 4'h2,
+        GAME_JUDGE = 4'h3,
         GAME_OVER  = 4'hf
     } GAME_STATE_E;
 
@@ -85,18 +85,17 @@ module FlagGame (
             GAME_START: begin
                 temp_CMD_next = GAME_START;
                 if (start) begin
-                    get = 1;
                     game_next = CMD_SAVE;
                 end
             end
             CMD_SAVE: begin
+                get           = 1;
                 temp_CMD_next = RANDCMD;  // letching CMD
                 game_next     = GAME_ON;
             end
             GAME_ON: begin
                 if (timeover) begin
                     game_next = GAME_JUDGE;
-                    get       = 1;
                 end
             end
             GAME_JUDGE: begin
@@ -131,7 +130,6 @@ module FlagGame (
             GAME_OVER: begin
                 temp_CMD_next = GAME_OVER;
                 if (start) begin
-                    get = 1;
                     game_next = GAME_START;
                 end
             end
