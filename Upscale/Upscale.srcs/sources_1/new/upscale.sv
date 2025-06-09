@@ -2,7 +2,7 @@
 
 module upscale (
     input  logic       clk,
-    input  logic       rst_n,
+    input  logic       reset,
     
     // 원본 RGB 입력 (4비트씩)
     input  logic [3:0] pixel_r_i,
@@ -22,8 +22,8 @@ module upscale (
 );
 
     // 단순히 원본을 그대로 출력 (QVGA_MemController에서 업스케일 처리)
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
+    always_ff @(posedge clk or posedge reset) begin
+        if (reset) begin
             pixel_r_o <= '0;
             pixel_g_o <= '0;
             pixel_b_o <= '0;
@@ -31,12 +31,15 @@ module upscale (
             h_sync_o <= 1'b1;
             v_sync_o <= 1'b1;
         end else begin
-            pixel_r_o <= pixel_r_i;  // 원본 그대로
-            pixel_g_o <= pixel_g_i;
-            pixel_b_o <= pixel_b_i;
+            // 모든 신호를 그대로 통과
             de_o <= de_i;
             h_sync_o <= h_sync_i;
             v_sync_o <= v_sync_i;
+            
+            // 원본 RGB 그대로 (계단식 픽셀)
+            pixel_r_o <= pixel_r_i;
+            pixel_g_o <= pixel_g_i;
+            pixel_b_o <= pixel_b_i;
         end
     end
 
