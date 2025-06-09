@@ -18,11 +18,23 @@ module QVGA_MemController (
 );
 
     logic display_en;
+    logic [8:0] qvga_x; // max 319
+    logic [7:0] qvga_y; // max 239
 
     assign rclk = clk;
-    assign display_en = (x_pixel < 320) && (y_pixel < 240);
+
+    // Downscale VGA pixel to QVGA pixel
+    assign qvga_x = x_pixel[9:1]; // equivalent to x_pixel >> 1
+    assign qvga_y = y_pixel[9:1]; // equivalent to y_pixel >> 1
+
+    // Only enable if within 640x480
+    assign display_en = (x_pixel < 640) && (y_pixel < 480);
     assign d_en = display_en;
 
-    assign rAddr = display_en ? (y_pixel * 320 + x_pixel) : 0;
+    // QVGA framebuffer address
+    assign rAddr = display_en ? (qvga_y * 320 + qvga_x) : 17'd0;
+
+    // Color extraction from 16-bit packed RGB: R[15:12], G[10:7], B[4:1]
     assign {red_port, green_port, blue_port} = display_en ? {rData[15:12], rData[10:7], rData[4:1]} : 12'b0;
+
 endmodule
