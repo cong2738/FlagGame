@@ -20,8 +20,8 @@ module Text_score #(
     localparam int TEXT_WIDTH = CHAR_WIDTH * MAX_DIGITS;  // 16 * 10 = 160
     localparam int TEXT_HEIGHT = CHAR_HEIGHT;  // 16
 
-    localparam int CAM_WIDTH = 320;
-    localparam int CAM_HEIGHT = 240;
+    localparam int CAM_WIDTH = 640;
+    localparam int CAM_HEIGHT = 480;
 
     localparam int TEXT_X_START = CAM_WIDTH - TEXT_WIDTH;  // 320 - 160 = 160
     localparam int TEXT_Y_START = CAM_HEIGHT - TEXT_HEIGHT;  // 240 -  16 = 224

@@ -47,8 +47,8 @@ module CMD_text_display (
 
 
     // 카메라 영상 크기 (320×240) 내부 좌표 기준
-    localparam int CAM_WIDTH = 320;
-    localparam int CAM_HEIGHT = 240;
+    localparam int CAM_WIDTH = 640;
+    localparam int CAM_HEIGHT = 480;
 
     localparam int MAX_CHARS = 13;
     localparam int CHAR_WIDTH = 8;

@@ -62,7 +62,7 @@ module Text_display (
     assign {o_red, o_green, o_blue} = o_c;
     logic [2:0] sel = {score_on, text_on_cnt, text_on_cmd};
     always_comb begin : col_sel
-        if (x < 320 && y == 120) begin  // vertical_mid_guide_line
+        if (x < 640 && y == 240) begin  // vertical_mid_guide_line
             o_c = 12'h0f0;  // green color
         end else
             case (sel)
