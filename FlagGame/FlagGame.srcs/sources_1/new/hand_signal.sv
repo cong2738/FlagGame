@@ -52,13 +52,9 @@ module top_hand_signal (
     );
 
     logic [3:0] blue_flag, red_flag;
-    hand_signal #(
-        .IMG_WIDTH (320),
-        .IMG_HEIGHT(240)
-    ) u_hand_signal (
+    hand_signal u_hand_signal (
         .clk        (clk),
         .rst        (reset),
-        .pixel_valid(ov7670_en),
         .x_pixel    (x_pixel),
         .y_pixel    (y_pixel),
         .pixel_COLOR({ov7670_Red, ov7670_Green, ov7670_Blue}),
@@ -89,8 +85,8 @@ module top_hand_signal (
 endmodule
 
 module print_grid #(
-    X_SIZE = 320,
-    Y_SIZE = 240
+    X_SIZE = 640,
+    Y_SIZE = 480
 ) (
     input [3:0] R,
     input [3:0] G,
@@ -118,13 +114,11 @@ module print_grid #(
 endmodule
 
 module hand_signal #(
-    parameter IMG_WIDTH  = 320,
-    parameter IMG_HEIGHT = 240
+    parameter IMG_WIDTH  = 640,
+    parameter IMG_HEIGHT = 480
 ) (
-    input clk,
-    input rst,
-
-    input                               pixel_valid,
+    input                               clk,
+    input                               rst,
     input      [ $clog2(IMG_WIDTH)-1:0] x_pixel,
     input      [$clog2(IMG_HEIGHT)-1:0] y_pixel,
     input      [                  11:0] pixel_COLOR,
@@ -135,43 +129,46 @@ module hand_signal #(
 
     integer i;
 
-    // RGB 추출
+    // RGB 분리
     wire [3:0] R = pixel_COLOR[11:8];
     wire [3:0] G = pixel_COLOR[7:4];
     wire [3:0] B = pixel_COLOR[3:0];
 
     // 색 조건
-    wire is_color1 = (B > R) && (B > G);  //blue 계열
-    wire is_color2 = (R > G) && (R > B);  //red 계열
+    wire is_color1 = (R < 10) && (G < 10) && (10 < B);  //blue 계열
+    wire is_color2 = (G < 10) && (B < 10) && (10 < R);  //red 계열
 
     // 영역 경계 계산
-    localparam W1 = IMG_WIDTH / 3;
-    localparam W2 = (IMG_WIDTH * 2) / 3;
-    localparam W3 = IMG_WIDTH;
-    localparam H1 = IMG_HEIGHT / 3;
-    localparam H2 = (IMG_HEIGHT * 2) / 3;
-    localparam H3 = IMG_HEIGHT;
+    localparam X_UNIT = IMG_WIDTH / 3;
+    localparam Y_UNIT = IMG_HEIGHT / 3;
+
+    wire    X_AREA0 = x_pixel < (X_UNIT * 1),
+            X_AREA1 = x_pixel < (X_UNIT * 2),
+            X_AREA2 = x_pixel < (X_UNIT * 3),
+            Y_AREA0 = y_pixel < (Y_UNIT * 1),
+            Y_AREA1 = y_pixel < (Y_UNIT * 2),
+            Y_AREA2 = y_pixel < (Y_UNIT * 3);
 
     // 영역 판별 (3x3 기준)
     reg [3:0] zone_id;
     always @(*) begin
-        if (x_pixel < W1) begin
-            if (y_pixel < H1) zone_id = 4'd0;
-            else if (y_pixel < H2) zone_id = 4'd3;
-            else if (y_pixel < H3) zone_id = 4'd6;
-        end else if (x_pixel < W2) begin
-            if (y_pixel < H1) zone_id = 4'd1;
-            else if (y_pixel < H2) zone_id = 4'd4;
-            else if (y_pixel < H3) zone_id = 4'd7;
-        end else if (x_pixel < W3) begin
-            if (y_pixel < H1) zone_id = 4'd2;
-            else if (y_pixel < H2) zone_id = 4'd5;
-            else if (y_pixel < H3) zone_id = 4'd8;
+        if (X_AREA0) begin
+            if (Y_AREA0) zone_id = 4'd0;
+            else if (Y_AREA1) zone_id = 4'd3;
+            else if (Y_AREA2) zone_id = 4'd6;
+        end else if (X_AREA1) begin
+            if (Y_AREA0) zone_id = 4'd1;
+            else if (Y_AREA1) zone_id = 4'd4;
+            else if (Y_AREA2) zone_id = 4'd7;
+        end else if (X_AREA2) begin
+            if (Y_AREA0) zone_id = 4'd2;
+            else if (Y_AREA1) zone_id = 4'd5;
+            else if (Y_AREA2) zone_id = 4'd8;
         end
     end
     // 색별 영역 카운트 배열
-    reg [15:0] zone_count_color1[0:8];
-    reg [15:0] zone_count_color2[0:8];
+    reg [31:0] zone_count_color1[0:8];
+    reg [31:0] zone_count_color2[0:8];
 
     // 최대 카운트 영역 추적
     always @(posedge clk or posedge rst) begin
@@ -184,22 +181,22 @@ module hand_signal #(
             max_zone_color2 <= 0;
             blue_flag <= 0;
             red_flag <= 0;
-        end else if (pixel_valid) begin
-            if (x_pixel == 320 && y_pixel == 240) begin
+        end else begin
+            if (x_pixel == 0 && y_pixel == 0) begin
                 for (i = 0; i < 9; i = i + 1) begin
                     zone_count_color1[i] <= 0;
                     zone_count_color2[i] <= 0;
                 end
                 max_zone_color1 <= 0;
                 max_zone_color2 <= 0;
-            end else if (x_pixel == 320 && y_pixel == 240) begin
+            end else if (x_pixel == IMG_WIDTH && y_pixel == IMG_HEIGHT) begin
                 blue_flag <= max_zone_color1;
                 red_flag  <= max_zone_color2;
             end else begin
                 // color1인 영역 카운트
                 if (is_color1) begin
                     zone_count_color1[zone_id] <= zone_count_color1[zone_id] + 1;
-                    if (zone_count_color1[zone_id] + 1 > zone_count_color1[max_zone_color1]) begin
+                    if (zone_count_color1[zone_id] + 1 >= zone_count_color1[max_zone_color1]) begin
                         max_zone_color1 <= zone_id;
                     end
                 end
@@ -207,7 +204,7 @@ module hand_signal #(
                 // color2인 영역 카운트
                 if (is_color2) begin
                     zone_count_color2[zone_id] <= zone_count_color2[zone_id] + 1;
-                    if (zone_count_color2[zone_id] + 1 > zone_count_color2[max_zone_color2]) begin
+                    if (zone_count_color2[zone_id] + 1 >= zone_count_color2[max_zone_color2]) begin
                         max_zone_color2 <= zone_id;
                     end
                 end
