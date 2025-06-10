@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue Jun 10 18:53:25 2025
+| Date         : Tue Jun 10 20:03:40 2025
 | Host         : PKLT running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_FlagGame_utilization_synth.rpt -pb top_FlagGame_utilization_synth.pb
 | Design       : top_FlagGame
@@ -151,14 +151,14 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT2     |  488 |                 LUT |
+| LUT2     |  486 |                 LUT |
 | FDCE     |  448 |        Flop & Latch |
-| LUT4     |  284 |                 LUT |
-| LUT6     |  277 |                 LUT |
+| LUT4     |  285 |                 LUT |
+| LUT6     |  275 |                 LUT |
 | FDRE     |  194 |        Flop & Latch |
 | LUT3     |  173 |                 LUT |
 | CARRY4   |  157 |          CarryLogic |
-| LUT5     |  126 |                 LUT |
+| LUT5     |  129 |                 LUT |
 | FDPE     |   70 |        Flop & Latch |
 | LDCE     |   64 |        Flop & Latch |
 | LUT1     |   37 |                 LUT |
