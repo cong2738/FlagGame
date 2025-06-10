@@ -70,7 +70,7 @@
 #except ip folders
 !**/ip_repo/**
 #except synopsys Simulation folder
-!SPI_I2C_UVM/**
+!**UVM/**
 
 #drawio
 !*.drawio
