@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Jun 10 20:02:53 2025
-# Process ID: 31052
+# Start of session at: Wed Jun 11 03:11:54 2025
+# Process ID: 28468
 # Current directory: C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1
-# Command line: vivado.exe -log top_FlagGame.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_FlagGame.tcl
-# Log file: C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1/top_FlagGame.vds
+# Command line: vivado.exe -log top_hand_signal.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_hand_signal.tcl
+# Log file: C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1/top_hand_signal.vds
 # Journal file: C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source top_FlagGame.tcl -notrace
+source top_hand_signal.tcl -notrace
