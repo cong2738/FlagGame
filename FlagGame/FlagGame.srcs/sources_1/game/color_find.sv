@@ -17,8 +17,8 @@ module color_find #(
     reg [31:0] blue_flag_D_count;
     reg [31:0] red_flag_U_count;
     reg [31:0] red_flag_D_count;
-    reg        blue_flag = (R < 10) && (G < 10) && (R < B) && (G < B);
-    reg        red_flag = (G < 10) && (B < 10) && (G < R) && (B < R);
+    reg        blue_flag = (R < 15) && (G < 15) && (R < B) && (G < B);
+    reg        red_flag = (G < 15) && (B < 15) && (G < R) && (B < R);
     always_ff @(posedge clk, posedge reset) begin : COLOR_FIND
         if (reset) begin
             blue_flag_U_count <= 0;
@@ -36,11 +36,11 @@ module color_find #(
                 red_flag_D_count  <= 0;
             end else begin
                 if (blue_flag) begin  //파랑
-                    if (y_pixel < DISPLAY_H/2)  //반절 위면
+                    if (y_pixel < DISPLAY_H>>1)  //반절 위면
                         blue_flag_U_count <= blue_flag_U_count + 1;
                     else blue_flag_D_count <= blue_flag_D_count + 1;
                 end else if (red_flag) begin  //빨강
-                    if (y_pixel < DISPLAY_H/2)  //반절 위면
+                    if (y_pixel < DISPLAY_H>>1)  //반절 위면
                         red_flag_U_count <= red_flag_U_count + 1;
                     else red_flag_D_count <= red_flag_D_count + 1;
                 end

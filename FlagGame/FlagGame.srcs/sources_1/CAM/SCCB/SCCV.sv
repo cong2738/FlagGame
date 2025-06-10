@@ -298,7 +298,7 @@ module OV7670_config_rom (
             23: dout <= 16'h03_00;  // 00 //VREF       vsync edge offset
             24: dout <= 16'h0F_41;  //COM6       reset timings
             25:
-            dout <= 16'h1E_00; //MVFP       disable mirror / flip //might have magic value of 03
+            dout <= 16'h1E_20; //MVFP       Mirrormode
             26: dout <= 16'h33_0B;  //CHLF       //magic value from the internet
             27: dout <= 16'h3C_78;  //COM12      no HREF when VSYNC low
             28: dout <= 16'h69_00;  //GFIX       fix gain control

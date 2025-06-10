@@ -45,17 +45,17 @@ module music_controller (
     input wire reset,
     input wire game_over,
     input wire game_on,
+    input wire beep_on,
     output reg [5:0] note,
     output reg [31:0] duration,
     output reg play,
     input wire tone_done
 );
-    localparam GAMEOVER = 0, PASS = 1;
+    localparam GAMEOVER = 0, PASS = 1, BEEP = 2;
     reg [3:0] state = 0;
     reg music_sel = 0;
     reg active = 0;
 
-    localparam PASS_LENGTH = 6;
     reg [5:0] PASS_MUSIC[0:5] = '{12, 15, 19, 31, 31, 31};
     reg [31:0] PASS_MUSIC_DUR[0:5] = '{
         10_000_000,
@@ -66,7 +66,16 @@ module music_controller (
         0
     };
 
-    localparam GAMEOVER_LENGTH = 6;
+    reg [5:0] BEEP_SOUND[0:5] = '{19, 31, 31, 31, 31, 31};
+    reg [31:0] BEEP_DUR[0:5] = '{
+        10_000_000,
+        0,
+        0,
+        0,
+        0,
+        0
+    };
+
     reg [5:0] GAMEOVER_MUSIC[0:5] = '{16, 14, 12, 11, 9, 7};
     reg [31:0] GAMEOVER_MUSIC_DUR[0:5] = '{
         20_000_000,
@@ -83,8 +92,14 @@ module music_controller (
             music_sel <= 0;
             active    <= 0;
             play      <= 0;
-        end else if (game_on || game_over && !active) begin
+        end else if (beep_on || game_on || game_over && !active) begin
             active    <= 1;
+            case ({beep_on,game_on,game_over})
+                001: music_sel = GAMEOVER;
+                010: music_sel = PASS;
+                100: music_sel = BEEP;
+                default: music_sel = 0; 
+            endcase
             music_sel <= game_over ? GAMEOVER : PASS;
             state     <= 0;
         end else if (active) begin
@@ -98,6 +113,10 @@ module music_controller (
                     PASS: begin
                         note     <= PASS_MUSIC[state];
                         duration <= PASS_MUSIC_DUR[state];
+                    end
+                    BEEP: begin
+                        note     <= BEEP_SOUND[state];
+                        duration <= BEEP_DUR[state];
                     end
                 endcase
             end else if (tone_done) begin

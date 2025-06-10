@@ -23,8 +23,8 @@ module FlagGame (
         WHITE_NOUP = 4'b1000,  // 백기 올리지마 (올림의 반대=내림)
         BOTH_UP = 4'b1001,  // 청기, 백기 둘 다 올려
         BOTH_DOWN = 4'b1010,  // 청기, 백기 둘 다 내려
-        BOTH_NODOWN      = 4'b1011, // 청기, 백기 둘 다 내리지마 (내림의 반대=둘 다 올림)
-        BOTH_NOUP      = 4'b1100 // 청기, 백기 둘 다 올리지마 (올림의 반대=둘 다 내림)
+        BOTH_NODOWN = 4'b1011, // 청기, 백기 둘 다 내리지마 (내림의 반대=둘 다 올림)
+        BOTH_NOUP = 4'b1100 // 청기, 백기 둘 다 올리지마 (올림의 반대=둘 다 내림)
     } CMD_E;
 
     typedef enum logic [3:0] {
@@ -73,8 +73,8 @@ module FlagGame (
         end
     end
 
-    logic user_blue_up = USER[0] == 1;
-    logic user_white_up = USER[1] == 1;
+    logic user_blue_up = USER[0];
+    logic user_white_up = USER[1];
     logic user_both_up = user_blue_up && user_white_up;
     always_comb begin : GAME_NEXT_LOGIC
         game_next     = game_state;

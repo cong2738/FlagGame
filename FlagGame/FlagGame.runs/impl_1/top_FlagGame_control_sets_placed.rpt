@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Mon Jun  9 19:47:33 2025
-| Host         : korchamHoyoun24 running 64-bit major release  (build 9200)
+| Date         : Tue Jun 10 20:04:32 2025
+| Host         : PKLT running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_FlagGame_control_sets_placed.rpt
 | Design       : top_FlagGame
 | Device       : xc7a35t
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              76 |           29 |
-| No           | No                    | Yes                    |             135 |           46 |
-| No           | Yes                   | No                     |              32 |            9 |
-| Yes          | No                    | No                     |              87 |           24 |
-| Yes          | No                    | Yes                    |             383 |          103 |
+| No           | No                    | No                     |              76 |           33 |
+| No           | No                    | Yes                    |             135 |           50 |
+| No           | Yes                   | No                     |              32 |            8 |
+| Yes          | No                    | No                     |              87 |           27 |
+| Yes          | No                    | Yes                    |             383 |          104 |
 | Yes          | Yes                   | No                     |              64 |           16 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,44 +73,44 @@ Table of Contents
 +---------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
 |                       Clock Signal                      |                             Enable Signal                            |             Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
 +---------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
-|  tick                                                   |                                                                      |                                          |                1 |              1 |         1.00 |
 |  tick                                                   | u_OV7670_SCCB_core/U_SCCB/scl_reg_i_1_n_0                            | reset_IBUF                               |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG                                          | u_OV7670_SCCB_core/U_btn_detector/tick_reg_n_0                       | reset_IBUF                               |                1 |              1 |         1.00 |
+|  tick                                                   |                                                                      |                                          |                1 |              1 |         1.00 |
+|  tick                                                   | u_OV7670_SCCB_core/U_SCCB_Controller/FSM_onehot_state[3]_i_1_n_0     | reset_IBUF                               |                2 |              4 |         2.00 |
 |  tick                                                   | u_OV7670_SCCB_core/U_SCCB/state[3]_i_1_n_0                           | reset_IBUF                               |                2 |              4 |         2.00 |
-|  tick                                                   | u_OV7670_SCCB_core/U_SCCB_Controller/FSM_onehot_state[3]_i_1_n_0     | reset_IBUF                               |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG                                          | u_game/u_FlagGame/temp_CMD_next                                      | reset_IBUF                               |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG                                          | u_game/u_sound_card/music/state[3]_i_1__0_n_0                        | reset_IBUF                               |                1 |              4 |         4.00 |
-|  ov7670_pclk_IBUF_BUFG                                  | u_OV7670_VGA_Display/U_OV7670_MemController/pix_data[4]              | reset_IBUF                               |                4 |              5 |         1.25 |
+|  clk_IBUF_BUFG                                          | u_game/u_FlagGame/temp_CMD_next                                      | reset_IBUF                               |                1 |              4 |         4.00 |
+|  ov7670_pclk_IBUF_BUFG                                  | u_OV7670_VGA_Display/U_OV7670_MemController/pix_data[4]              | reset_IBUF                               |                2 |              5 |         2.50 |
 |  clk_IBUF_BUFG                                          | u_game/u_FlagGame/FSM_onehot_game_state[4]_i_1_n_0                   | reset_IBUF                               |                2 |              5 |         2.50 |
-|  ov7670_pclk_IBUF_BUFG                                  | u_OV7670_VGA_Display/U_OV7670_MemController/pix_data[15]             | reset_IBUF                               |                4 |              7 |         1.75 |
 |  tick                                                   | u_OV7670_SCCB_core/U_SCCB_Controller/wait_count_0                    | reset_IBUF                               |                2 |              7 |         3.50 |
-|  u_game/u_PRNG/u_ButtonPushTimeCounter/r_1khz           |                                                                      | reset_IBUF                               |                3 |              8 |         2.67 |
-|  ov7670_pclk_IBUF_BUFG                                  | u_OV7670_VGA_Display/U_OV7670_MemController/v_counter0               | reset_IBUF                               |                3 |              8 |         2.67 |
+|  ov7670_pclk_IBUF_BUFG                                  | u_OV7670_VGA_Display/U_OV7670_MemController/pix_data[15]             | reset_IBUF                               |                4 |              7 |         1.75 |
+|  u_game/u_PRNG/u_ButtonPushTimeCounter/r_1khz           |                                                                      | reset_IBUF                               |                1 |              8 |         8.00 |
 |  tick                                                   | u_OV7670_SCCB_core/U_SCCB_Controller/rom_addr_1                      | reset_IBUF                               |                3 |              8 |         2.67 |
+|  ov7670_pclk_IBUF_BUFG                                  | u_OV7670_VGA_Display/U_OV7670_MemController/v_counter0               | reset_IBUF                               |                3 |              8 |         2.67 |
 |  tick                                                   |                                                                      | reset_IBUF                               |                4 |              9 |         2.25 |
-|  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/CLK |                                                                      | reset_IBUF                               |                5 |             10 |         2.00 |
 |  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/CLK | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter         | reset_IBUF                               |                4 |             10 |         2.50 |
+|  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/CLK |                                                                      | reset_IBUF                               |                5 |             10 |         2.00 |
 |  clk_IBUF_BUFG                                          |                                                                      |                                          |                9 |             11 |         1.22 |
 |  clk_IBUF_BUFG                                          | u_game/u_sound_card/music/duration[24]_i_1_n_0                       |                                          |                2 |             11 |         5.50 |
 |  clk_IBUF_BUFG                                          | u_game/u_FlagGame/FSM_onehot_game_state_reg[3]_1[0]                  |                                          |                5 |             12 |         2.40 |
 |  clk_IBUF_BUFG                                          | u_OV7670_SCCB_core/U_btn_detector/start_reg_i_1_n_0                  | reset_IBUF                               |                3 |             12 |         4.00 |
-|  clk_IBUF_BUFG                                          | u_game/u_FlagGame/pass                                               | u_game/u_FlagGame/game_count[31]_i_1_n_0 |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG                                          | u_game/u_FlagGame/pass                                               | u_game/u_FlagGame/game_count[31]_i_1_n_0 |               10 |             14 |         1.40 |
 |  tick                                                   | u_OV7670_SCCB_core/U_SCCB_Controller/FSM_onehot_state_reg_n_0_[1]    | reset_IBUF                               |                4 |             16 |         4.00 |
-|  tick                                                   | u_OV7670_SCCB_core/U_SCCB/shifter[17]_i_1_n_0                        | reset_IBUF                               |                3 |             17 |         5.67 |
-|  ov7670_pclk_IBUF_BUFG                                  |                                                                      | reset_IBUF                               |                6 |             18 |         3.00 |
-|  u_PRNG/seed_en                                         |                                                                      |                                          |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG                                          |                                                                      | u_game/u_FlagGame/game_count[31]_i_1_n_0 |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/blue_flag_D_count | reset_IBUF                               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/blue_flag_U_count | reset_IBUF                               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/red_flag_D_count  | reset_IBUF                               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/red_flag_U_count  | reset_IBUF                               |                8 |             32 |         4.00 |
-|  u_PRNG/u_ButtonPushTimeCounter/temp_count__0           |                                                                      |                                          |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG                                          | u_game/u_PRNG/u_ButtonPushTimeCounter/sel                            |                                          |                8 |             32 |         4.00 |
+|  tick                                                   | u_OV7670_SCCB_core/U_SCCB/shifter[17]_i_1_n_0                        | reset_IBUF                               |                4 |             17 |         4.25 |
+|  ov7670_pclk_IBUF_BUFG                                  |                                                                      | reset_IBUF                               |                7 |             18 |         2.57 |
 |  clk_IBUF_BUFG                                          | u_game/u_sound_card/tone/dcnt[0]_i_2_n_0                             | u_game/u_sound_card/tone/clear           |                8 |             32 |         4.00 |
 |  clk_IBUF_BUFG                                          | u_game/u_sound_card/tone/dcnt[0]_i_2_n_0                             | u_game/u_sound_card/tone/tcnt[0]_i_1_n_0 |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG                                          | u_PRNG/seed_en                                                       |                                          |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG                                          |                                                                      | reset_IBUF                               |               28 |             90 |         3.21 |
-|  clk_IBUF_BUFG                                          | u_game/u_FlagGame/E[0]                                               | reset_IBUF                               |               25 |            128 |         5.12 |
+|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/red_flag_D_count  | reset_IBUF                               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/red_flag_U_count  | reset_IBUF                               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/blue_flag_D_count | reset_IBUF                               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                                          | u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/blue_flag_U_count | reset_IBUF                               |                8 |             32 |         4.00 |
+|  u_PRNG/u_ButtonPushTimeCounter/temp_count__0           |                                                                      |                                          |                9 |             32 |         3.56 |
+|  u_PRNG/seed_en                                         |                                                                      |                                          |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                                          | u_PRNG/seed_en                                                       |                                          |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                                          |                                                                      | u_game/u_FlagGame/game_count[31]_i_1_n_0 |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                                          | u_game/u_PRNG/u_ButtonPushTimeCounter/sel                            |                                          |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                                          |                                                                      | reset_IBUF                               |               33 |             90 |         2.73 |
+|  clk_IBUF_BUFG                                          | u_game/u_FlagGame/E[0]                                               | reset_IBUF                               |               23 |            128 |         5.57 |
 +---------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
 
 
