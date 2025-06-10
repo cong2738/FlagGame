@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue Jun 10 09:33:22 2025
+| Date         : Tue Jun 10 10:46:30 2025
 | Host         : korchamHoyoun24 running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file top_FlagGame_clock_utilization_routed.rpt
 | Design       : top_FlagGame
@@ -52,8 +52,8 @@ Table of Contents
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-------------+-------------------------------+----------------------------------------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site           | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock       | Driver Pin                    | Net                                          |
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-------------+-------------------------------+----------------------------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 4 |         624 |               0 |       10.000 | sys_clk_pin | clk_IBUF_BUFG_inst/O          | clk_IBUF_BUFG                                |
-| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 3 |          74 |               0 |              |             | ov7670_pclk_IBUF_BUFG_inst/O  | ov7670_pclk_IBUF_BUFG                        |
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 4 |         619 |               0 |       10.000 | sys_clk_pin | clk_IBUF_BUFG_inst/O          | clk_IBUF_BUFG                                |
+| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 3 |          75 |               0 |              |             | ov7670_pclk_IBUF_BUFG_inst/O  | ov7670_pclk_IBUF_BUFG                        |
 | g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 1 |          68 |               0 |              |             | FSM_onehot_state_reg[3]_i_3/O | tick                                         |
 | g3        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 1 |          32 |              32 |              |             | bptCount_reg[31]_i_1/O        | u_PRNG/seed_en                               |
 | g4        | src4      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 1 |          32 |               0 |              |             | temp_count_reg[31]_i_2/O      | u_PRNG/u_ButtonPushTimeCounter/temp_count__0 |
@@ -70,9 +70,9 @@ Table of Contents
 +-----------+-----------+-----------------+------------+--------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------------------------------------------+------------------------------------------------------+
 | src0      | g0        | IBUF/O          | IOB_X1Y26  | IOB_X1Y26    | X1Y0         |           1 |               0 |              10.000 | sys_clk_pin  | clk_IBUF_inst/O                                                | clk_IBUF                                             |
 | src1      | g1        | IBUF/O          | IOB_X0Y126 | IOB_X0Y126   | X0Y2         |           1 |               0 |                     |              | ov7670_pclk_IBUF_inst/O                                        | ov7670_pclk_IBUF                                     |
-| src2      | g2        | FDCE/Q          | None       | SLICE_X42Y49 | X1Y0         |           1 |               0 |                     |              | u_OV7670_SCCB_core/U_tick_gen_/tick_reg/Q                      | u_OV7670_SCCB_core/U_tick_gen_/tick_reg_0            |
-| src3      | g3        | LUT2/O          | None       | SLICE_X41Y43 | X1Y0         |           1 |             131 |                     |              | u_game/u_PRNG/u_ButtonPushTimeCounter/bptCount_reg[31]_i_2/O   | u_game/u_PRNG/u_ButtonPushTimeCounter/d1_reg_0       |
-| src4      | g4        | LUT6/O          | None       | SLICE_X36Y45 | X1Y0         |           1 |               0 |                     |              | u_game/u_PRNG/u_ButtonPushTimeCounter/temp_count_reg[31]_i_3/O | u_game/u_PRNG/u_ButtonPushTimeCounter/q_reg_reg[0]_0 |
+| src2      | g2        | FDCE/Q          | None       | SLICE_X37Y39 | X1Y0         |           1 |               0 |                     |              | u_OV7670_SCCB_core/U_tick_gen_/tick_reg/Q                      | u_OV7670_SCCB_core/U_tick_gen_/tick_reg_0            |
+| src3      | g3        | LUT2/O          | None       | SLICE_X36Y45 | X1Y0         |           1 |             131 |                     |              | u_game/u_PRNG/u_ButtonPushTimeCounter/bptCount_reg[31]_i_2/O   | u_game/u_PRNG/u_ButtonPushTimeCounter/d1_reg_0       |
+| src4      | g4        | LUT6/O          | None       | SLICE_X36Y45 | X1Y0         |           1 |               0 |                     |              | u_game/u_PRNG/u_ButtonPushTimeCounter/temp_count_reg[31]_i_3/O | u_game/u_PRNG/u_ButtonPushTimeCounter/q_reg_reg[1]_0 |
 +-----------+-----------+-----------------+------------+--------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------------------------------------------+------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -84,8 +84,8 @@ Table of Contents
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+---------------------------------------------------------------+--------------------------------------------------------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL          | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                                                    | Net                                                    |
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+---------------------------------------------------------------+--------------------------------------------------------||
-| 0        | FDCE/Q          | None       | SLICE_X49Y31/B5FF | X1Y0         |          20 |               0 |              |       | u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/pclk_reg/Q | u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/CLK - Static -
-| 1        | FDCE/Q          | None       | SLICE_X40Y44/C5FF | X1Y0         |           8 |               0 |              |       | u_game/u_PRNG/u_ButtonPushTimeCounter/r_1khz_reg/Q            | u_game/u_PRNG/u_ButtonPushTimeCounter/r_1khz           - Static -
+| 0        | FDCE/Q          | None       | SLICE_X44Y34/B5FF | X1Y0         |          20 |               0 |              |       | u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/pclk_reg/Q | u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/CLK - Static -
+| 1        | FDCE/Q          | None       | SLICE_X33Y44/AFF  | X0Y0         |           8 |               0 |              |       | u_game/u_PRNG/u_ButtonPushTimeCounter/r_1khz_reg/Q            | u_game/u_PRNG/u_ButtonPushTimeCounter/r_1khz           - Static -
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+---------------------------------------------------------------+--------------------------------------------------------||
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count)
@@ -100,10 +100,10 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1200 |    0 |   400 |    0 |    20 |    9 |    10 |    0 |    20 |
-| X1Y0              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  612 |  1500 |  205 |   450 |    1 |    40 |   18 |    20 |    0 |    20 |
-| X0Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  106 |  1200 |   30 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1500 |    0 |   450 |    0 |    40 |    9 |    20 |    0 |    20 |
+| X0Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   60 |  1200 |    9 |   400 |    0 |    20 |    8 |    10 |    0 |    20 |
+| X1Y0              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  548 |  1500 |  187 |   450 |    1 |    40 |   18 |    20 |    0 |    20 |
+| X0Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  106 |  1200 |   36 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1500 |    0 |   450 |    0 |    40 |   10 |    20 |    0 |    20 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y2              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |   950 |    0 |   300 |    0 |    10 |    0 |     5 |    0 |    20 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
@@ -129,7 +129,7 @@ All Modules
 +-----------+-----------------+-------------------+-------------+-------------+---------------+-------------+----------+----------------+----------+---------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock       | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net           |
 +-----------+-----------------+-------------------+-------------+-------------+---------------+-------------+----------+----------------+----------+---------------+
-| g0        | BUFG/O          | n/a               | sys_clk_pin |      10.000 | {0.000 5.000} |         623 |        0 |              0 |        0 | clk_IBUF_BUFG |
+| g0        | BUFG/O          | n/a               | sys_clk_pin |      10.000 | {0.000 5.000} |         618 |        0 |              0 |        0 | clk_IBUF_BUFG |
 +-----------+-----------------+-------------------+-------------+-------------+---------------+-------------+----------+----------------+----------+---------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -141,8 +141,8 @@ All Modules
 |    | X0  | X1   | HORIZONTAL PROG DELAY |
 +----+-----+------+-----------------------+
 | Y2 |   0 |    0 |                     0 |
-| Y1 |  39 |    9 |                     0 |
-| Y0 |   9 |  566 |                     0 |
+| Y1 |  39 |   10 |                     0 |
+| Y0 |  58 |  511 |                     0 |
 +----+-----+------+-----------------------+
 
 
@@ -152,7 +152,7 @@ All Modules
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                   |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------+
-| g1        | BUFG/O          | n/a               |       |             |               |          74 |        0 |              0 |        0 | ov7670_pclk_IBUF_BUFG |
+| g1        | BUFG/O          | n/a               |       |             |               |          75 |        0 |              0 |        0 | ov7670_pclk_IBUF_BUFG |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -160,13 +160,13 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+----+-----+-----------------------+
-|    | X0 | X1  | HORIZONTAL PROG DELAY |
-+----+----+-----+-----------------------+
-| Y2 |  0 |   0 |                     0 |
-| Y1 |  0 |   9 |                     0 |
-| Y0 |  9 |  56 |                     0 |
-+----+----+-----+-----------------------+
++----+-----+-----+-----------------------+
+|    | X0  | X1  | HORIZONTAL PROG DELAY |
++----+-----+-----+-----------------------+
+| Y2 |   0 |   0 |                     0 |
+| Y1 |   0 |  10 |                     0 |
+| Y0 |  10 |  55 |                     0 |
++----+-----+-----+-----------------------+
 
 
 9. Device Cell Placement Summary for Global Clock g2
@@ -244,8 +244,8 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-----------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                   |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-----------------------+
-| g0        | n/a   | BUFG/O          | None       |           9 |               0 |  0 |      0 |    9 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG         |
-| g1        | n/a   | BUFG/O          | None       |           9 |               0 |  0 |      0 |    9 |   0 |  0 |    0 |   0 |       0 | ov7670_pclk_IBUF_BUFG |
+| g0        | n/a   | BUFG/O          | None       |          58 |               0 | 50 |      0 |    8 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG         |
+| g1        | n/a   | BUFG/O          | None       |          10 |               0 |  2 |      0 |    8 |   0 |  0 |    0 |   0 |       0 | ov7670_pclk_IBUF_BUFG |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-----------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -258,8 +258,8 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+----------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                          |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+----------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         566 |               0 | 546 |      0 |   19 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG                                |
-| g1        | n/a   | BUFG/O          | None       |          56 |               0 |  38 |      0 |   18 |   0 |  0 |    0 |   0 |       0 | ov7670_pclk_IBUF_BUFG                        |
+| g0        | n/a   | BUFG/O          | None       |         511 |               0 | 491 |      0 |   19 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG                                |
+| g1        | n/a   | BUFG/O          | None       |          55 |               0 |  37 |      0 |   18 |   0 |  0 |    0 |   0 |       0 | ov7670_pclk_IBUF_BUFG                        |
 | g3        | n/a   | BUFG/O          | None       |          32 |              32 |  32 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_PRNG/seed_en                               |
 | g4        | n/a   | BUFG/O          | None       |          32 |               0 |   0 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | u_PRNG/u_ButtonPushTimeCounter/temp_count__0 |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+----------------------------------------------+
@@ -288,8 +288,8 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-----------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                   |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-----------------------+
-| g0        | n/a   | BUFG/O          | None       |           9 |               0 |  0 |      0 |    9 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG         |
-| g1        | n/a   | BUFG/O          | None       |           9 |               0 |  0 |      0 |    9 |   0 |  0 |    0 |   0 |       0 | ov7670_pclk_IBUF_BUFG |
+| g0        | n/a   | BUFG/O          | None       |          10 |               0 |  0 |      0 |   10 |   0 |  0 |    0 |   0 |       0 | clk_IBUF_BUFG         |
+| g1        | n/a   | BUFG/O          | None       |          10 |               0 |  0 |      0 |   10 |   0 |  0 |    0 |   0 |       0 | ov7670_pclk_IBUF_BUFG |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-----------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)

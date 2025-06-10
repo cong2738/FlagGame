@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Tue Jun 10 09:33:22 2025
+| Date             : Tue Jun 10 10:46:30 2025
 | Host             : korchamHoyoun24 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_FlagGame_power_routed.rpt -pb top_FlagGame_power_summary_routed.pb -rpx top_FlagGame_power_routed.rpx
 | Design           : top_FlagGame
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.113        |
+| Total On-Chip Power (W)  | 0.112        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.039        |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.004 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |     2404 |       --- |             --- |
-|   LUT as Logic |     0.005 |     1011 |     20800 |            4.86 |
+| Slice Logic    |     0.005 |     2362 |       --- |             --- |
+|   LUT as Logic |     0.005 |      997 |     20800 |            4.79 |
 |   CARRY4       |    <0.001 |      157 |      8150 |            1.93 |
-|   Register     |    <0.001 |      782 |     41600 |            1.88 |
+|   Register     |    <0.001 |      778 |     41600 |            1.87 |
 |   BUFG         |    <0.001 |        4 |        32 |           12.50 |
 |   F7/F8 Muxes  |    <0.001 |        3 |     32600 |           <0.01 |
 |   Others       |     0.000 |       53 |       --- |             --- |
-| Signals        |     0.006 |     1821 |       --- |             --- |
+| Signals        |     0.005 |     1782 |       --- |             --- |
 | Block RAM      |     0.014 |     37.5 |        50 |           75.00 |
 | I/O            |     0.010 |       45 |       106 |           42.45 |
 | Static Power   |     0.074 |          |           |                 |
-| Total          |     0.113 |          |           |                 |
+| Total          |     0.112 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.039 |       0.029 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.039 |       0.028 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,7 +148,6 @@ Table of Contents
 |   u_OV7670_VGA_Display |     0.014 |
 |     U_Frame_Buffer     |     0.012 |
 |     U_VGAController    |     0.001 |
-|       U_Pix_counter    |     0.001 |
 |   u_Text_display       |     0.004 |
 |     U_FONT_ROM         |     0.002 |
 |     u_Text_score       |     0.002 |
