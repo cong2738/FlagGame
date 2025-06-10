@@ -11,3 +11,4 @@
 #-----------------------------------------------------------
 start_gui
 open_project C:/immune_working/HarmanSA_June_TeamPJ/FlagGame/FlagGame.xpr
+update_compile_order -fileset sources_1
