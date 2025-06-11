@@ -57,18 +57,16 @@ module color_find #(
     end
 endmodule
 
-module rgb_to_color_detect (
-    input  [2:0] R,
-    G,
-    B,  // 입력: 3비트 RGB
+module rgb4_to_color_detect (
+    input  [3:0] R, G, B,          // 입력: 4비트 RGB (0~15)
     output       is_red,
     output       is_blue
 );
 
-    // 확장 RGB (0~255)
-    wire [7:0] R8 = (R * 255) / 7;
-    wire [7:0] G8 = (G * 255) / 7;
-    wire [7:0] B8 = (B * 255) / 7;
+    // RGB 확장 (0~255 범위로 확장)
+    wire [7:0] R8 = (R * 255) / 15;
+    wire [7:0] G8 = (G * 255) / 15;
+    wire [7:0] B8 = (B * 255) / 15;
 
     // 최대, 최소, 델타
     wire [7:0] Cmax = (R8 > G8) ? ((R8 > B8) ? R8 : B8) : ((G8 > B8) ? G8 : B8);
