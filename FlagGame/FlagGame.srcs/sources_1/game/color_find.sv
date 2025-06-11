@@ -17,8 +17,16 @@ module color_find #(
     reg [31:0] blue_flag_D_count;
     reg [31:0] red_flag_U_count;
     reg [31:0] red_flag_D_count;
-    reg        blue_flag = (R < 15) && (G < 15) && (10 < B);
-    reg        red_flag = (G < 15) && (B < 15) && (10 < R);
+    reg blue_flag, red_flag;
+
+    rgb_to_color_detect u_rgb_to_color_detect (
+        .R      (R),
+        .G      (G),
+        .B      (B),
+        .is_red (red_flag),
+        .is_blue(blue_flag)
+    );
+
     always_ff @(posedge clk, posedge reset) begin : COLOR_FIND
         if (reset) begin
             blue_flag_U_count <= 0;
@@ -47,4 +55,50 @@ module color_find #(
             end
         end
     end
+endmodule
+
+module rgb_to_color_detect (
+    input  [2:0] R,
+    G,
+    B,  // 입력: 3비트 RGB
+    output       is_red,
+    output       is_blue
+);
+
+    // 확장 RGB (0~255)
+    wire [7:0] R8 = (R * 255) / 7;
+    wire [7:0] G8 = (G * 255) / 7;
+    wire [7:0] B8 = (B * 255) / 7;
+
+    // 최대, 최소, 델타
+    wire [7:0] Cmax = (R8 > G8) ? ((R8 > B8) ? R8 : B8) : ((G8 > B8) ? G8 : B8);
+    wire [7:0] Cmin = (R8 < G8) ? ((R8 < B8) ? R8 : B8) : ((G8 < B8) ? G8 : B8);
+    wire [7:0] delta = Cmax - Cmin;
+
+    // V, S 계산
+    wire [7:0] V = Cmax;
+    wire [15:0] S = (Cmax == 0) ? 0 : (delta * 255) / Cmax;
+
+    // H 계산
+    reg [15:0] H_raw;
+    always @(*) begin
+        if (delta == 0) begin
+            H_raw = 0;
+        end else if (Cmax == R8) begin
+            H_raw = (60 * (G8 - B8)) / delta;
+            if (H_raw < 0) H_raw = H_raw + 360;
+        end else if (Cmax == G8) begin
+            H_raw = (60 * (B8 - R8)) / delta + 120;
+        end else begin
+            H_raw = (60 * (R8 - G8)) / delta + 240;
+        end
+    end
+
+    // H 정규화 (0~360)
+    wire [8:0] H = H_raw % 360;
+
+    // 빨강/파랑 색상 판별
+    assign is_red  = (S > 50 && V > 50) && (H <= 15 || H >= 345);
+    assign is_blue = (S > 50 && V > 50) && (H >= 210 && H <= 270);
+
 endmodule
