@@ -2,13 +2,14 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Jun 10 09:40:17 2025
-# Process ID: 11796
+# Start of session at: Wed Jun 11 09:11:38 2025
+# Process ID: 16500
 # Current directory: C:/immune_working/HarmanSA_June_TeamPJ/FlagGame
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17748 C:\immune_working\HarmanSA_June_TeamPJ\FlagGame\FlagGame.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14516 C:\immune_working\HarmanSA_June_TeamPJ\FlagGame\FlagGame.xpr
 # Log file: C:/immune_working/HarmanSA_June_TeamPJ/FlagGame/vivado.log
 # Journal file: C:/immune_working/HarmanSA_June_TeamPJ/FlagGame\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/immune_working/HarmanSA_June_TeamPJ/FlagGame/FlagGame.xpr
 update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
