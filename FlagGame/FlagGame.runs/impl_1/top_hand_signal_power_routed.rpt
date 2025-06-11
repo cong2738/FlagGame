@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Wed Jun 11 03:49:08 2025
-| Host             : HYPC running 64-bit major release  (build 9200)
+| Date             : Wed Jun 11 09:30:57 2025
+| Host             : PKLT running 64-bit major release  (build 9200)
 | Command          : report_power -file top_hand_signal_power_routed.rpt -pb top_hand_signal_power_summary_routed.pb -rpx top_hand_signal_power_routed.rpx
 | Design           : top_hand_signal
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.103        |
+| Total On-Chip Power (W)  | 0.108        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.030        |
+| Dynamic (W)              | 0.034        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     1904 |       --- |             --- |
-|   LUT as Logic |     0.002 |      812 |     20800 |            3.90 |
+| Clocks         |     0.004 |        3 |       --- |             --- |
+| Slice Logic    |     0.002 |     1898 |       --- |             --- |
+|   LUT as Logic |     0.002 |      814 |     20800 |            3.91 |
 |   CARRY4       |    <0.001 |       58 |      8150 |            0.71 |
-|   Register     |    <0.001 |      793 |     41600 |            1.91 |
+|   Register     |    <0.001 |      794 |     41600 |            1.91 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       30 |       --- |             --- |
+|   Others       |     0.000 |       29 |       --- |             --- |
 |   F7/F8 Muxes  |     0.000 |        3 |     32600 |           <0.01 |
-| Signals        |     0.006 |     1755 |       --- |             --- |
-| Block RAM      |     0.011 |     33.5 |        50 |           67.00 |
-| I/O            |     0.008 |       43 |       106 |           40.57 |
+| Signals        |     0.005 |     1750 |       --- |             --- |
+| Block RAM      |     0.012 |     36.5 |        50 |           73.00 |
+| I/O            |     0.011 |       43 |       106 |           40.57 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.103 |          |           |                 |
+| Total          |     0.108 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.032 |       0.021 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.033 |       0.022 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -143,11 +143,10 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| top_hand_signal        |     0.030 |
+| top_hand_signal        |     0.034 |
 |   u_OV7670_VGA_Display |     0.014 |
-|     U_Frame_Buffer     |     0.011 |
+|     U_Frame_Buffer     |     0.012 |
 |     U_VGAController    |     0.001 |
-|       U_Pix_counter    |     0.001 |
 |   u_SCCB_core          |     0.001 |
 |   u_hand_signal        |     0.007 |
 +------------------------+-----------+
