@@ -58,7 +58,9 @@ module color_find #(
 endmodule
 
 module rgb4_to_color_detect (
-    input  [3:0] R, G, B,          // 입력: 4비트 RGB (0~15)
+    input  [3:0] R,
+    input  [3:0] G,
+    input  [3:0] B,
     output       is_red,
     output       is_blue
 );
