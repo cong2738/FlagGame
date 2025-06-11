@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1/top_hand_signal.tcl"
+  variable script "C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.runs/synth_1/top_FlagGame.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
+set_param synth.incrementalSynthesisCache C:/harman/HarmanSA_June_TeamPJ/FlagGame/.Xil/Vivado-13700-PKLT/incrSyn
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -90,15 +92,29 @@ OPTRACE "Adding files" START { }
 read_mem {
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Graphic/font_score_16by16.mem
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Graphic/font_complete.mem
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Graphic/font_counter_new.mem
 }
 read_verilog -library xil_defaultlib -sv {
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/PRNG/ButtonPushTimeCounter.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Graphic/CMD_display.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Graphic/COUNT_text_display.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/FlagGame.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/Flag_cmd.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Graphic/Gameover_effect.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_MemController.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/OV7670_VGA_Display.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/PRNG/PRNG.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/QVGA_MemController.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/SCCB/SCCV.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Graphic/Text_score.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/VGA_Controller.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/Graphic/charactor_display.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/color_find.sv
   C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/CAM/frame_buffer.sv
-  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/new/hand_signal.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/sound_card.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/PRNG/sys_counter.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/PRNG/xorshift.sv
+  C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/game/top_FlagGame.sv
 }
 read_verilog -library xil_defaultlib C:/harman/HarmanSA_June_TeamPJ/FlagGame/FlagGame.srcs/sources_1/segCTRL/fndController.v
 OPTRACE "Adding files" END { }
@@ -117,7 +133,7 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top top_hand_signal -part xc7a35tcpg236-1
+synth_design -top top_FlagGame -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -127,10 +143,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef top_hand_signal.dcp
+write_checkpoint -force -noxdef top_FlagGame.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file top_hand_signal_utilization_synth.rpt -pb top_hand_signal_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file top_FlagGame_utilization_synth.rpt -pb top_FlagGame_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
