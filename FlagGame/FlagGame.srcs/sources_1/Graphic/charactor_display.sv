@@ -33,13 +33,13 @@ module Text_display (
     logic [7:0] font_line_cnt;
 
     CMD_text_display U_CMD_text_display (.*);
-    COUNT_Text_display U_CNT_DISPLAY (.*);
+    COUNT_Text_display U_CNT_DISPLAY (.*, .x(x), .y(y));
     font_rom U_FONT_ROM (
         .clk(clk),
         .addr_cmd(rom_addr_cmd),
-        .addr_cnt(rom_addr_cnt),
-        .data_cmd(font_line_cmd),
-        .data_cnt(font_line_cnt)
+        // .addr_cnt(rom_addr_cnt),
+        .data_cmd(font_line_cmd)
+        // .data_cnt(font_line_cnt)
     );
 
     logic [3:0] o_red_score;
