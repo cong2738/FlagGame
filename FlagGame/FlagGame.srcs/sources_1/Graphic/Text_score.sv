@@ -19,12 +19,14 @@ module Text_score #(
     localparam int MAX_DIGITS = 4;
     localparam int TEXT_WIDTH = CHAR_WIDTH * MAX_DIGITS;  // 16 * 10 = 160
     localparam int TEXT_HEIGHT = CHAR_HEIGHT;  // 16
+    localparam int EDGE_BLACK = 5;
+    localparam int BLANK = 2;
 
     localparam int CAM_WIDTH = 640;
     localparam int CAM_HEIGHT = 480;
 
-    localparam int TEXT_X_START = CAM_WIDTH - TEXT_WIDTH;  // 320 - 160 = 160
-    localparam int TEXT_Y_START = CAM_HEIGHT - TEXT_HEIGHT;  // 240 -  16 = 224
+    localparam int TEXT_X_START = CAM_WIDTH - TEXT_WIDTH - EDGE_BLACK - BLANK;  // 640 - 64 -5 -2 = ~~
+    localparam int TEXT_Y_START = CAM_HEIGHT - TEXT_HEIGHT - EDGE_BLACK - BLANK;  // 480 - 16 - 5 -2 == ~~
     localparam int TEXT_X_END = TEXT_X_START + TEXT_WIDTH;  // 160 + 160 = 320
     localparam int TEXT_Y_END = TEXT_Y_START + TEXT_HEIGHT;  // 224 +  16 = 240
 
@@ -102,7 +104,7 @@ module Text_score #(
         if (score_on) begin
             text_red   = 4'hf;  // 1111
             text_green = 4'hf;  // 1111
-            text_blue  = 4'h0;  // 0000
+            text_blue  = 4'hf;  // 0000
         end else begin
             text_red = 4'h0;
             text_green = 4'h0;

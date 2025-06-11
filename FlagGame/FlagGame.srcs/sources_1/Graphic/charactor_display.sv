@@ -33,13 +33,13 @@ module Text_display (
     logic [7:0] font_line_cnt;
 
     CMD_text_display U_CMD_text_display (.*);
-    COUNT_Text_display U_CNT_DISPLAY (.*, .x(x), .y(y));
+    COUNT_Text_display U_CNT_DISPLAY (.*);
     font_rom U_FONT_ROM (
         .clk(clk),
         .addr_cmd(rom_addr_cmd),
-        // .addr_cnt(rom_addr_cnt),
-        .data_cmd(font_line_cmd)
-        // .data_cnt(font_line_cnt)
+        .addr_cnt(rom_addr_cnt),
+        .data_cmd(font_line_cmd),
+        .data_cnt(font_line_cnt)
     );
 
     logic [3:0] o_red_score;
@@ -61,10 +61,20 @@ module Text_display (
     logic [11:0] o_c;
     assign {o_red, o_green, o_blue} = o_c;
     logic [2:0] sel = {score_on, text_on_cnt, text_on_cmd};
+
     always_comb begin : col_sel
-        if (x < 640 && y == 240) begin  // vertical_mid_guide_line
+        if (x > 5 && x < 635 && y == 240) begin  // vertical_mid_guide_line
             o_c = 12'h0f0;  // green color
-        end else
+        end else 
+        if (x < 640 && y < 5) begin
+            o_c = 12'h000;
+        end else if (x < 5 && y < 480) begin
+            o_c = 12'h000;
+        end else if (x > 635 && y < 480) begin
+            o_c = 12'h000;
+        end else if (x < 640 && y > 475) begin
+            o_c = 12'h000;
+        end else 
             case (sel)
                 TEXT_SEL:  o_c = {o_red_cmd, o_green_cmd, o_blue_cmd};
                 TIME_SEL:  o_c = {o_red_cnt, o_green_cnt, o_blue_cnt};
@@ -73,4 +83,3 @@ module Text_display (
             endcase
     end
 endmodule
-
