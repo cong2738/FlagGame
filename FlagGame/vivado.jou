@@ -13,3 +13,4 @@ start_gui
 open_project C:/immune_working/HarmanSA_June_TeamPJ/FlagGame/FlagGame.xpr
 update_compile_order -fileset sources_1
 synth_design -rtl -rtl_skip_mlo -name rtl_1
+refresh_design
