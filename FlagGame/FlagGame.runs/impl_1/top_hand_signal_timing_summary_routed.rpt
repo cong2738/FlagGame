@@ -1,0 +1,1430 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Wed Jun 11 11:31:11 2025
+| Host         : PKLT running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file top_hand_signal_timing_summary_routed.rpt -pb top_hand_signal_timing_summary_routed.pb -rpx top_hand_signal_timing_summary_routed.rpx -warn_on_violation
+| Design       : top_hand_signal
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (218)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (1008)
+5. checking no_input_delay (12)
+6. checking no_output_delay (28)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (218)
+--------------------------
+ There are 74 register/latch pins with no clock driven by root clock pin: ov7670_pclk (HIGH)
+
+ There are 20 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/pclk_reg/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[0]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[1]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[2]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[3]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[4]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[5]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[6]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[7]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[8]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/h_counter_reg[9]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[5]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[6]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[7]/Q (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/v_counter_reg[8]/Q (HIGH)
+
+ There are 68 register/latch pins with no clock driven by root clock pin: u_SCCB_core/U_tick_gen_/tick_reg/Q (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (1008)
+---------------------------------------------------
+ There are 1008 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (12)
+-------------------------------
+ There are 12 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (28)
+--------------------------------
+ There are 28 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      1.083        0.000                      0                 1253        0.196        0.000                      0                 1253        4.500        0.000                       0                   702  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock        Waveform(ns)       Period(ns)      Frequency(MHz)
+-----        ------------       ----------      --------------
+sys_clk_pin  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin         1.083        0.000                      0                 1253        0.196        0.000                      0                 1253        4.500        0.000                       0                   702  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.083ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.196ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.083ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[0][11]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.521ns  (logic 3.669ns (43.058%)  route 4.852ns (56.942%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.155ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.786ns = ( 14.786 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.188ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.457    12.484    u_AreaSel/zone_count_color2_reg[8][31]
+    SLICE_X31Y43         LUT6 (Prop_lut6_I1_O)        0.124    12.608 r  u_AreaSel/zone_count_color2[0][31]_i_1/O
+                         net (fo=32, routed)          1.043    13.651    u_hand_signal/zone_count_color2_reg[0][31]_0[0]
+    SLICE_X41Y39         FDCE                                         r  u_hand_signal/zone_count_color2_reg[0][11]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.445    14.786    u_hand_signal/CLK
+    SLICE_X41Y39         FDCE                                         r  u_hand_signal/zone_count_color2_reg[0][11]/C
+                         clock pessimism              0.188    14.974    
+                         clock uncertainty           -0.035    14.939    
+    SLICE_X41Y39         FDCE (Setup_fdce_C_CE)      -0.205    14.734    u_hand_signal/zone_count_color2_reg[0][11]
+  -------------------------------------------------------------------
+                         required time                         14.734    
+                         arrival time                         -13.651    
+  -------------------------------------------------------------------
+                         slack                                  1.083    
+
+Slack (MET) :             1.083ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[0][13]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.521ns  (logic 3.669ns (43.058%)  route 4.852ns (56.942%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.155ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.786ns = ( 14.786 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.188ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.457    12.484    u_AreaSel/zone_count_color2_reg[8][31]
+    SLICE_X31Y43         LUT6 (Prop_lut6_I1_O)        0.124    12.608 r  u_AreaSel/zone_count_color2[0][31]_i_1/O
+                         net (fo=32, routed)          1.043    13.651    u_hand_signal/zone_count_color2_reg[0][31]_0[0]
+    SLICE_X41Y39         FDCE                                         r  u_hand_signal/zone_count_color2_reg[0][13]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.445    14.786    u_hand_signal/CLK
+    SLICE_X41Y39         FDCE                                         r  u_hand_signal/zone_count_color2_reg[0][13]/C
+                         clock pessimism              0.188    14.974    
+                         clock uncertainty           -0.035    14.939    
+    SLICE_X41Y39         FDCE (Setup_fdce_C_CE)      -0.205    14.734    u_hand_signal/zone_count_color2_reg[0][13]
+  -------------------------------------------------------------------
+                         required time                         14.734    
+                         arrival time                         -13.651    
+  -------------------------------------------------------------------
+                         slack                                  1.083    
+
+Slack (MET) :             1.083ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[0][14]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.521ns  (logic 3.669ns (43.058%)  route 4.852ns (56.942%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.155ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.786ns = ( 14.786 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.188ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.457    12.484    u_AreaSel/zone_count_color2_reg[8][31]
+    SLICE_X31Y43         LUT6 (Prop_lut6_I1_O)        0.124    12.608 r  u_AreaSel/zone_count_color2[0][31]_i_1/O
+                         net (fo=32, routed)          1.043    13.651    u_hand_signal/zone_count_color2_reg[0][31]_0[0]
+    SLICE_X41Y39         FDCE                                         r  u_hand_signal/zone_count_color2_reg[0][14]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.445    14.786    u_hand_signal/CLK
+    SLICE_X41Y39         FDCE                                         r  u_hand_signal/zone_count_color2_reg[0][14]/C
+                         clock pessimism              0.188    14.974    
+                         clock uncertainty           -0.035    14.939    
+    SLICE_X41Y39         FDCE (Setup_fdce_C_CE)      -0.205    14.734    u_hand_signal/zone_count_color2_reg[0][14]
+  -------------------------------------------------------------------
+                         required time                         14.734    
+                         arrival time                         -13.651    
+  -------------------------------------------------------------------
+                         slack                                  1.083    
+
+Slack (MET) :             1.118ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[1][0]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.553ns  (logic 3.669ns (42.899%)  route 4.884ns (57.101%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.088ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.781ns = ( 14.781 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.647    12.674    u_AreaSel/zone_count_color2_reg[8][31]
+    SLICE_X35Y42         LUT6 (Prop_lut6_I1_O)        0.124    12.798 r  u_AreaSel/zone_count_color2[1][31]_i_1/O
+                         net (fo=32, routed)          0.884    13.682    u_hand_signal/zone_count_color2_reg[1][31]_0[0]
+    SLICE_X33Y35         FDCE                                         r  u_hand_signal/zone_count_color2_reg[1][0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.440    14.781    u_hand_signal/CLK
+    SLICE_X33Y35         FDCE                                         r  u_hand_signal/zone_count_color2_reg[1][0]/C
+                         clock pessimism              0.260    15.041    
+                         clock uncertainty           -0.035    15.006    
+    SLICE_X33Y35         FDCE (Setup_fdce_C_CE)      -0.205    14.801    u_hand_signal/zone_count_color2_reg[1][0]
+  -------------------------------------------------------------------
+                         required time                         14.801    
+                         arrival time                         -13.682    
+  -------------------------------------------------------------------
+                         slack                                  1.118    
+
+Slack (MET) :             1.118ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[1][1]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.553ns  (logic 3.669ns (42.899%)  route 4.884ns (57.101%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.088ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.781ns = ( 14.781 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.647    12.674    u_AreaSel/zone_count_color2_reg[8][31]
+    SLICE_X35Y42         LUT6 (Prop_lut6_I1_O)        0.124    12.798 r  u_AreaSel/zone_count_color2[1][31]_i_1/O
+                         net (fo=32, routed)          0.884    13.682    u_hand_signal/zone_count_color2_reg[1][31]_0[0]
+    SLICE_X33Y35         FDCE                                         r  u_hand_signal/zone_count_color2_reg[1][1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.440    14.781    u_hand_signal/CLK
+    SLICE_X33Y35         FDCE                                         r  u_hand_signal/zone_count_color2_reg[1][1]/C
+                         clock pessimism              0.260    15.041    
+                         clock uncertainty           -0.035    15.006    
+    SLICE_X33Y35         FDCE (Setup_fdce_C_CE)      -0.205    14.801    u_hand_signal/zone_count_color2_reg[1][1]
+  -------------------------------------------------------------------
+                         required time                         14.801    
+                         arrival time                         -13.682    
+  -------------------------------------------------------------------
+                         slack                                  1.118    
+
+Slack (MET) :             1.139ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[5][0]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.533ns  (logic 3.669ns (42.999%)  route 4.864ns (57.001%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.087ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.782ns = ( 14.782 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.618    12.646    u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/max_zone_color2_reg[3]
+    SLICE_X39Y43         LUT6 (Prop_lut6_I1_O)        0.124    12.770 r  u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/zone_count_color2[5][31]_i_1/O
+                         net (fo=32, routed)          0.893    13.663    u_hand_signal/zone_count_color2_reg[5][31]_0[0]
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.441    14.782    u_hand_signal/CLK
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][0]/C
+                         clock pessimism              0.260    15.042    
+                         clock uncertainty           -0.035    15.007    
+    SLICE_X32Y37         FDCE (Setup_fdce_C_CE)      -0.205    14.802    u_hand_signal/zone_count_color2_reg[5][0]
+  -------------------------------------------------------------------
+                         required time                         14.802    
+                         arrival time                         -13.663    
+  -------------------------------------------------------------------
+                         slack                                  1.139    
+
+Slack (MET) :             1.139ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[5][12]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.533ns  (logic 3.669ns (42.999%)  route 4.864ns (57.001%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.087ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.782ns = ( 14.782 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.618    12.646    u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/max_zone_color2_reg[3]
+    SLICE_X39Y43         LUT6 (Prop_lut6_I1_O)        0.124    12.770 r  u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/zone_count_color2[5][31]_i_1/O
+                         net (fo=32, routed)          0.893    13.663    u_hand_signal/zone_count_color2_reg[5][31]_0[0]
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][12]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.441    14.782    u_hand_signal/CLK
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][12]/C
+                         clock pessimism              0.260    15.042    
+                         clock uncertainty           -0.035    15.007    
+    SLICE_X32Y37         FDCE (Setup_fdce_C_CE)      -0.205    14.802    u_hand_signal/zone_count_color2_reg[5][12]
+  -------------------------------------------------------------------
+                         required time                         14.802    
+                         arrival time                         -13.663    
+  -------------------------------------------------------------------
+                         slack                                  1.139    
+
+Slack (MET) :             1.139ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[5][19]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.533ns  (logic 3.669ns (42.999%)  route 4.864ns (57.001%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.087ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.782ns = ( 14.782 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.618    12.646    u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/max_zone_color2_reg[3]
+    SLICE_X39Y43         LUT6 (Prop_lut6_I1_O)        0.124    12.770 r  u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/zone_count_color2[5][31]_i_1/O
+                         net (fo=32, routed)          0.893    13.663    u_hand_signal/zone_count_color2_reg[5][31]_0[0]
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][19]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.441    14.782    u_hand_signal/CLK
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][19]/C
+                         clock pessimism              0.260    15.042    
+                         clock uncertainty           -0.035    15.007    
+    SLICE_X32Y37         FDCE (Setup_fdce_C_CE)      -0.205    14.802    u_hand_signal/zone_count_color2_reg[5][19]
+  -------------------------------------------------------------------
+                         required time                         14.802    
+                         arrival time                         -13.663    
+  -------------------------------------------------------------------
+                         slack                                  1.139    
+
+Slack (MET) :             1.139ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[5][1]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.533ns  (logic 3.669ns (42.999%)  route 4.864ns (57.001%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.087ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.782ns = ( 14.782 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.618    12.646    u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/max_zone_color2_reg[3]
+    SLICE_X39Y43         LUT6 (Prop_lut6_I1_O)        0.124    12.770 r  u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/zone_count_color2[5][31]_i_1/O
+                         net (fo=32, routed)          0.893    13.663    u_hand_signal/zone_count_color2_reg[5][31]_0[0]
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.441    14.782    u_hand_signal/CLK
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][1]/C
+                         clock pessimism              0.260    15.042    
+                         clock uncertainty           -0.035    15.007    
+    SLICE_X32Y37         FDCE (Setup_fdce_C_CE)      -0.205    14.802    u_hand_signal/zone_count_color2_reg[5][1]
+  -------------------------------------------------------------------
+                         required time                         14.802    
+                         arrival time                         -13.663    
+  -------------------------------------------------------------------
+                         slack                                  1.139    
+
+Slack (MET) :             1.139ns  (required time - arrival time)
+  Source:                 u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/zone_count_color2_reg[5][3]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.533ns  (logic 3.669ns (42.999%)  route 4.864ns (57.001%))
+  Logic Levels:           4  (LUT4=1 LUT6=2 RAMB36E1=1)
+  Clock Path Skew:        -0.087ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.782ns = ( 14.782 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.130ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.609     5.130    u_OV7670_VGA_Display/U_Frame_Buffer/clk_IBUF_BUFG
+    RAMB36_X0Y2          RAMB36E1                                     r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_CASCADEOUTB)
+                                                      2.872     8.002 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12/CASCADEOUTB
+                         net (fo=1, routed)           0.065     8.067    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_12_n_1
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CASCADEINB_DOBDO[0])
+                                                      0.425     8.492 r  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/DOBDO[0]
+                         net (fo=2, routed)           1.854    10.346    u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12_n_67
+    SLICE_X8Y42          LUT4 (Prop_lut4_I3_O)        0.124    10.470 r  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_6/O
+                         net (fo=1, routed)           1.434    11.904    u_OV7670_VGA_Display/U_Frame_Buffer/rData[12]
+    SLICE_X31Y44         LUT6 (Prop_lut6_I3_O)        0.124    12.028 f  u_OV7670_VGA_Display/U_Frame_Buffer/zone_count_color2[0][31]_i_3/O
+                         net (fo=10, routed)          0.618    12.646    u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/max_zone_color2_reg[3]
+    SLICE_X39Y43         LUT6 (Prop_lut6_I1_O)        0.124    12.770 r  u_OV7670_VGA_Display/U_VGAController/U_Pix_counter/zone_count_color2[5][31]_i_1/O
+                         net (fo=32, routed)          0.893    13.663    u_hand_signal/zone_count_color2_reg[5][31]_0[0]
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][3]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         1.441    14.782    u_hand_signal/CLK
+    SLICE_X32Y37         FDCE                                         r  u_hand_signal/zone_count_color2_reg[5][3]/C
+                         clock pessimism              0.260    15.042    
+                         clock uncertainty           -0.035    15.007    
+    SLICE_X32Y37         FDCE (Setup_fdce_C_CE)      -0.205    14.802    u_hand_signal/zone_count_color2_reg[5][3]
+  -------------------------------------------------------------------
+                         required time                         14.802    
+                         arrival time                         -13.663    
+  -------------------------------------------------------------------
+                         slack                                  1.139    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.196ns  (arrival time - required time)
+  Source:                 u_hand_signal/max_zone_color1_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/blue_flag_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.523ns  (logic 0.141ns (26.951%)  route 0.382ns (73.049%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.255ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.950ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.563     1.446    u_hand_signal/CLK
+    SLICE_X39Y43         FDCE                                         r  u_hand_signal/max_zone_color1_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y43         FDCE (Prop_fdce_C_Q)         0.141     1.587 r  u_hand_signal/max_zone_color1_reg[3]/Q
+                         net (fo=33, routed)          0.382     1.969    u_hand_signal/max_zone_color1_reg_n_0_[3]
+    SLICE_X33Y31         FDCE                                         r  u_hand_signal/blue_flag_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.823     1.950    u_hand_signal/CLK
+    SLICE_X33Y31         FDCE                                         r  u_hand_signal/blue_flag_reg[3]/C
+                         clock pessimism             -0.249     1.701    
+    SLICE_X33Y31         FDCE (Hold_fdce_C_D)         0.072     1.773    u_hand_signal/blue_flag_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.773    
+                         arrival time                           1.969    
+  -------------------------------------------------------------------
+                         slack                                  0.196    
+
+Slack (MET) :             0.198ns  (arrival time - required time)
+  Source:                 u_hand_signal/max_zone_color1_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/blue_flag_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.519ns  (logic 0.141ns (27.145%)  route 0.378ns (72.855%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.255ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.950ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.563     1.446    u_hand_signal/CLK
+    SLICE_X39Y43         FDCE                                         r  u_hand_signal/max_zone_color1_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y43         FDCE (Prop_fdce_C_Q)         0.141     1.587 r  u_hand_signal/max_zone_color1_reg[1]/Q
+                         net (fo=65, routed)          0.378     1.966    u_hand_signal/max_zone_color1_reg_n_0_[1]
+    SLICE_X33Y31         FDCE                                         r  u_hand_signal/blue_flag_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.823     1.950    u_hand_signal/CLK
+    SLICE_X33Y31         FDCE                                         r  u_hand_signal/blue_flag_reg[1]/C
+                         clock pessimism             -0.249     1.701    
+    SLICE_X33Y31         FDCE (Hold_fdce_C_D)         0.066     1.767    u_hand_signal/blue_flag_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -1.767    
+                         arrival time                           1.966    
+  -------------------------------------------------------------------
+                         slack                                  0.198    
+
+Slack (MET) :             0.227ns  (arrival time - required time)
+  Source:                 u_hand_signal/max_zone_color1_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/blue_flag_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.552ns  (logic 0.141ns (25.540%)  route 0.411ns (74.460%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.255ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.950ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.563     1.446    u_hand_signal/CLK
+    SLICE_X39Y43         FDCE                                         r  u_hand_signal/max_zone_color1_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y43         FDCE (Prop_fdce_C_Q)         0.141     1.587 r  u_hand_signal/max_zone_color1_reg[0]/Q
+                         net (fo=65, routed)          0.411     1.998    u_hand_signal/max_zone_color1_reg_n_0_[0]
+    SLICE_X33Y31         FDCE                                         r  u_hand_signal/blue_flag_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.823     1.950    u_hand_signal/CLK
+    SLICE_X33Y31         FDCE                                         r  u_hand_signal/blue_flag_reg[0]/C
+                         clock pessimism             -0.249     1.701    
+    SLICE_X33Y31         FDCE (Hold_fdce_C_D)         0.070     1.771    u_hand_signal/blue_flag_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.771    
+                         arrival time                           1.998    
+  -------------------------------------------------------------------
+                         slack                                  0.227    
+
+Slack (MET) :             0.237ns  (arrival time - required time)
+  Source:                 u_SCCB_core/U_tick_gen_/count_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_SCCB_core/U_tick_gen_/count_reg[7]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.386ns  (logic 0.212ns (54.902%)  route 0.174ns (45.098%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.497ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.563     1.446    u_SCCB_core/U_tick_gen_/CLK
+    SLICE_X34Y47         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y47         FDCE (Prop_fdce_C_Q)         0.164     1.610 r  u_SCCB_core/U_tick_gen_/count_reg[2]/Q
+                         net (fo=7, routed)           0.174     1.784    u_SCCB_core/U_tick_gen_/count[2]
+    SLICE_X34Y48         LUT4 (Prop_lut4_I1_O)        0.048     1.832 r  u_SCCB_core/U_tick_gen_/count[7]_i_1/O
+                         net (fo=1, routed)           0.000     1.832    u_SCCB_core/U_tick_gen_/count_0[7]
+    SLICE_X34Y48         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.832     1.959    u_SCCB_core/U_tick_gen_/CLK
+    SLICE_X34Y48         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[7]/C
+                         clock pessimism             -0.497     1.462    
+    SLICE_X34Y48         FDCE (Hold_fdce_C_D)         0.133     1.595    u_SCCB_core/U_tick_gen_/count_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -1.595    
+                         arrival time                           1.832    
+  -------------------------------------------------------------------
+                         slack                                  0.237    
+
+Slack (MET) :             0.237ns  (arrival time - required time)
+  Source:                 u_SCCB_core/U_tick_gen_/count_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_SCCB_core/U_tick_gen_/count_reg[4]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.358ns  (logic 0.209ns (58.341%)  route 0.149ns (41.659%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.563     1.446    u_SCCB_core/U_tick_gen_/CLK
+    SLICE_X34Y47         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y47         FDCE (Prop_fdce_C_Q)         0.164     1.610 r  u_SCCB_core/U_tick_gen_/count_reg[4]/Q
+                         net (fo=4, routed)           0.149     1.759    u_SCCB_core/U_tick_gen_/count[4]
+    SLICE_X34Y47         LUT6 (Prop_lut6_I1_O)        0.045     1.804 r  u_SCCB_core/U_tick_gen_/count[4]_i_1/O
+                         net (fo=1, routed)           0.000     1.804    u_SCCB_core/U_tick_gen_/count_0[4]
+    SLICE_X34Y47         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.832     1.959    u_SCCB_core/U_tick_gen_/CLK
+    SLICE_X34Y47         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[4]/C
+                         clock pessimism             -0.513     1.446    
+    SLICE_X34Y47         FDCE (Hold_fdce_C_D)         0.121     1.567    u_SCCB_core/U_tick_gen_/count_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.567    
+                         arrival time                           1.804    
+  -------------------------------------------------------------------
+                         slack                                  0.237    
+
+Slack (MET) :             0.241ns  (arrival time - required time)
+  Source:                 u_SCCB_core/U_btn_detector/shift_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_SCCB_core/U_btn_detector/pulse_counter_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.359ns  (logic 0.249ns (69.306%)  route 0.110ns (30.694%))
+  Logic Levels:           2  (CARRY4=1 LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.988ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.502ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.590     1.473    u_SCCB_core/U_btn_detector/CLK
+    SLICE_X4Y59          FDCE                                         r  u_SCCB_core/U_btn_detector/shift_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y59          FDCE (Prop_fdce_C_Q)         0.141     1.614 r  u_SCCB_core/U_btn_detector/shift_reg_reg[0]/Q
+                         net (fo=15, routed)          0.110     1.725    u_SCCB_core/U_btn_detector/shift_reg[0]
+    SLICE_X5Y59          LUT6 (Prop_lut6_I3_O)        0.045     1.770 r  u_SCCB_core/U_btn_detector/pulse_counter[0]_i_3/O
+                         net (fo=1, routed)           0.000     1.770    u_SCCB_core/U_btn_detector/pulse_counter[0]_i_3_n_0
+    SLICE_X5Y59          CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.063     1.833 r  u_SCCB_core/U_btn_detector/pulse_counter_reg[0]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.833    u_SCCB_core/U_btn_detector/pulse_counter_reg[0]_i_1_n_4
+    SLICE_X5Y59          FDCE                                         r  u_SCCB_core/U_btn_detector/pulse_counter_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.860     1.988    u_SCCB_core/U_btn_detector/CLK
+    SLICE_X5Y59          FDCE                                         r  u_SCCB_core/U_btn_detector/pulse_counter_reg[3]/C
+                         clock pessimism             -0.502     1.486    
+    SLICE_X5Y59          FDCE (Hold_fdce_C_D)         0.105     1.591    u_SCCB_core/U_btn_detector/pulse_counter_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.591    
+                         arrival time                           1.833    
+  -------------------------------------------------------------------
+                         slack                                  0.241    
+
+Slack (MET) :             0.258ns  (arrival time - required time)
+  Source:                 u_hand_signal/max_zone_color1_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_hand_signal/blue_flag_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.530ns  (logic 0.148ns (27.938%)  route 0.382ns (72.062%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.255ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.950ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.563     1.446    u_hand_signal/CLK
+    SLICE_X38Y43         FDCE                                         r  u_hand_signal/max_zone_color1_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y43         FDCE (Prop_fdce_C_Q)         0.148     1.594 r  u_hand_signal/max_zone_color1_reg[2]/Q
+                         net (fo=33, routed)          0.382     1.976    u_hand_signal/max_zone_color1_reg_n_0_[2]
+    SLICE_X33Y31         FDCE                                         r  u_hand_signal/blue_flag_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.823     1.950    u_hand_signal/CLK
+    SLICE_X33Y31         FDCE                                         r  u_hand_signal/blue_flag_reg[2]/C
+                         clock pessimism             -0.249     1.701    
+    SLICE_X33Y31         FDCE (Hold_fdce_C_D)         0.017     1.718    u_hand_signal/blue_flag_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.718    
+                         arrival time                           1.976    
+  -------------------------------------------------------------------
+                         slack                                  0.258    
+
+Slack (MET) :             0.260ns  (arrival time - required time)
+  Source:                 u_SCCB_core/U_tick_gen_/count_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_SCCB_core/U_tick_gen_/count_reg[5]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.396ns  (logic 0.209ns (52.837%)  route 0.187ns (47.162%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.497ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.563     1.446    u_SCCB_core/U_tick_gen_/CLK
+    SLICE_X34Y47         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y47         FDCE (Prop_fdce_C_Q)         0.164     1.610 r  u_SCCB_core/U_tick_gen_/count_reg[0]/Q
+                         net (fo=8, routed)           0.187     1.797    u_SCCB_core/U_tick_gen_/count[0]
+    SLICE_X34Y48         LUT6 (Prop_lut6_I4_O)        0.045     1.842 r  u_SCCB_core/U_tick_gen_/count[5]_i_1/O
+                         net (fo=1, routed)           0.000     1.842    u_SCCB_core/U_tick_gen_/count_0[5]
+    SLICE_X34Y48         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.832     1.959    u_SCCB_core/U_tick_gen_/CLK
+    SLICE_X34Y48         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[5]/C
+                         clock pessimism             -0.497     1.462    
+    SLICE_X34Y48         FDCE (Hold_fdce_C_D)         0.120     1.582    u_SCCB_core/U_tick_gen_/count_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -1.582    
+                         arrival time                           1.842    
+  -------------------------------------------------------------------
+                         slack                                  0.260    
+
+Slack (MET) :             0.274ns  (arrival time - required time)
+  Source:                 u_SCCB_core/U_tick_gen_/count_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_SCCB_core/U_tick_gen_/count_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.405ns  (logic 0.207ns (51.051%)  route 0.198ns (48.949%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.563     1.446    u_SCCB_core/U_tick_gen_/CLK
+    SLICE_X34Y47         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y47         FDCE (Prop_fdce_C_Q)         0.164     1.610 r  u_SCCB_core/U_tick_gen_/count_reg[0]/Q
+                         net (fo=8, routed)           0.198     1.809    u_SCCB_core/U_tick_gen_/count[0]
+    SLICE_X34Y47         LUT5 (Prop_lut5_I4_O)        0.043     1.852 r  u_SCCB_core/U_tick_gen_/count[3]_i_1/O
+                         net (fo=1, routed)           0.000     1.852    u_SCCB_core/U_tick_gen_/count_0[3]
+    SLICE_X34Y47         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.832     1.959    u_SCCB_core/U_tick_gen_/CLK
+    SLICE_X34Y47         FDCE                                         r  u_SCCB_core/U_tick_gen_/count_reg[3]/C
+                         clock pessimism             -0.513     1.446    
+    SLICE_X34Y47         FDCE (Hold_fdce_C_D)         0.131     1.577    u_SCCB_core/U_tick_gen_/count_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.577    
+                         arrival time                           1.852    
+  -------------------------------------------------------------------
+                         slack                                  0.274    
+
+Slack (MET) :             0.280ns  (arrival time - required time)
+  Source:                 u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.371ns  (logic 0.186ns (50.171%)  route 0.185ns (49.829%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.943ns
+    Source Clock Delay      (SCD):    1.433ns
+    Clock Pessimism Removal (CPR):    0.510ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.550     1.433    u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/clk_IBUF_BUFG
+    SLICE_X32Y25         FDCE                                         r  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y25         FDCE (Prop_fdce_C_Q)         0.141     1.574 f  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter_reg[0]/Q
+                         net (fo=3, routed)           0.185     1.759    u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter[0]
+    SLICE_X32Y25         LUT1 (Prop_lut1_I0_O)        0.045     1.804 r  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter[0]_i_1/O
+                         net (fo=1, routed)           0.000     1.804    u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter[0]_i_1_n_0
+    SLICE_X32Y25         FDCE                                         r  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=701, routed)         0.816     1.943    u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/clk_IBUF_BUFG
+    SLICE_X32Y25         FDCE                                         r  u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter_reg[0]/C
+                         clock pessimism             -0.510     1.433    
+    SLICE_X32Y25         FDCE (Hold_fdce_C_D)         0.091     1.524    u_OV7670_VGA_Display/U_VGAController/U_Pix_Clk_gen/p_counter_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.524    
+                         arrival time                           1.804    
+  -------------------------------------------------------------------
+                         slack                                  0.280    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clk }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X0Y8   u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_13/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X1Y9   u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_2/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X1Y3   u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_7/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X0Y5   u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_1/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X0Y3   u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_12/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X0Y13  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_15/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X1Y10  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_2/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X1Y4   u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_1_7/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X0Y4   u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_1/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.892         10.000      7.108      RAMB36_X0Y10  u_OV7670_VGA_Display/U_Frame_Buffer/mem_reg_0_14/CLKBWRCLK
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X39Y43  u_hand_signal/max_zone_color1_reg[0]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X39Y43  u_hand_signal/max_zone_color1_reg[1]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X38Y43  u_hand_signal/max_zone_color1_reg[2]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X39Y43  u_hand_signal/max_zone_color1_reg[3]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X37Y47  u_hand_signal/zone_count_color1_reg[0][12]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X36Y48  u_hand_signal/zone_count_color1_reg[0][14]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X36Y48  u_hand_signal/zone_count_color1_reg[0][15]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X36Y48  u_hand_signal/zone_count_color1_reg[0][16]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X37Y48  u_hand_signal/zone_count_color1_reg[0][19]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X36Y48  u_hand_signal/zone_count_color1_reg[0][1]/C
+High Pulse Width  Fast    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X35Y38  u_hand_signal/zone_count_color2_reg[8][9]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X0Y104  u_OV7670_VGA_Display/U_OV7670_Clk_Gen/p_counter_reg[0]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X0Y104  u_OV7670_VGA_Display/U_OV7670_Clk_Gen/p_counter_reg[1]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X0Y104  u_OV7670_VGA_Display/U_OV7670_Clk_Gen/pclk_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X15Y30  u_hand_signal/red_flag_reg[0]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X15Y30  u_hand_signal/red_flag_reg[1]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X15Y30  u_hand_signal/red_flag_reg[2]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X15Y30  u_hand_signal/red_flag_reg[3]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X41Y48  u_hand_signal/zone_count_color1_reg[0][10]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X43Y47  u_hand_signal/zone_count_color1_reg[0][11]/C
+
+
+

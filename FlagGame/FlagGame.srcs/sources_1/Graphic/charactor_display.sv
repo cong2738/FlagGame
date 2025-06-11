@@ -37,9 +37,7 @@ module Text_display (
     font_rom U_FONT_ROM (
         .clk(clk),
         .addr_cmd(rom_addr_cmd),
-        .addr_cnt(rom_addr_cnt),
-        .data_cmd(font_line_cmd),
-        .data_cnt(font_line_cnt)
+        .data_cmd(font_line_cmd)
     );
 
     logic [3:0] o_red_score;
