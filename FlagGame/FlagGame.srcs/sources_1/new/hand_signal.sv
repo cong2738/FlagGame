@@ -22,7 +22,7 @@ module top_hand_signal (
     output [3:0] fndCom,
     output [7:0] fndFont
 );
-    SCCB_core u_SCCB_core(
+    SCCB_core u_SCCB_core (
         .clk(clk),
         .reset(reset),
         .initial_start(ov7670_start),
@@ -112,11 +112,7 @@ module print_grid #(
 );
     localparam X_UNIT = X_SIZE / 3, Y_UNIT = Y_SIZE / 3;
     always_comb begin : PRINT_LOGIC
-        {o_R, o_G, o_B} = {
-            zone_id != red_flag && zone_id == blue_flag ? 0 : R,
-            zone_id == red_flag || zone_id == blue_flag ? 0 : G,
-            zone_id == red_flag && zone_id != blue_flag ? 0 : B
-        };
+        {o_R, o_G, o_B} = {R, G, B};
         case (x)
             X_UNIT * 1: {o_R, o_G, o_B} = {4'hf, 4'h0, 4'h0};
             X_UNIT * 2: {o_R, o_G, o_B} = {4'hf, 4'h0, 4'h0};
