@@ -1,6 +1,14 @@
 `timescale 1ns / 1ps
 
-module CMD_text_display (
+
+module CMD_text_display #(
+    parameter int SCALE        = 2,               // 확대 배율 2배
+    parameter int CAM_WIDTH    = 640,
+    parameter int CAM_HEIGHT   = 480,
+    parameter int MAX_CHARS    = 13,
+    parameter int CHAR_WIDTH   = 8,
+    parameter int CHAR_HEIGHT  = 8
+)(
     input  logic        clk,
     input  logic        reset,
     input  logic        d_en,
@@ -10,10 +18,9 @@ module CMD_text_display (
     output logic [ 3:0] o_red_cmd,
     output logic [ 3:0] o_green_cmd,
     output logic [ 3:0] o_blue_cmd,
-    output logic text_on_cmd,
-    //rom_data ports
-    output logic [$clog2(8) + 7:0] rom_addr_cmd,
-    input  logic [7:0] font_line_cmd 
+    output logic        text_on_cmd,
+    output logic [$clog2(CHAR_HEIGHT) + 7:0] rom_addr_cmd,
+    input  logic [ 7:0] font_line_cmd
 );
 
 
@@ -46,44 +53,31 @@ module CMD_text_display (
     sec_e state, state_next;
 
 
-    // 카메라 영상 크기 (320×240) 내부 좌표 기준
-    localparam int CAM_WIDTH = 640;
-    localparam int CAM_HEIGHT = 480;
+       // 스케일 적용된 문자 블록 크기, 화면 중앙 정렬
+    localparam int BLOCK_W    = MAX_CHARS * CHAR_WIDTH * SCALE;
+    localparam int BLOCK_H    = CHAR_HEIGHT * SCALE;
+    localparam int TEXT_X0    = (CAM_WIDTH  - BLOCK_W) / 2;
+    localparam int TEXT_Y0    = 16;  // Y 위치 고정(start at 16)
+    localparam int TEXT_X1    = TEXT_X0 + BLOCK_W;
+    localparam int TEXT_Y1    = TEXT_Y0 + BLOCK_H;
 
-    localparam int MAX_CHARS = 13;
-    localparam int CHAR_WIDTH = 8;
-    localparam int CHAR_HEIGHT = 8;
+    // 문장 표시 여부와 ROM 코드 배열
+    logic show_text;
+    logic [7:0] codes [0:MAX_CHARS-1];
 
-    // 카메라 내부 좌표계(0~319)에서 가로 중앙에 텍스트 블록을 정렬
-    localparam int TEXT_X_START = (CAM_WIDTH - MAX_CHARS * CHAR_WIDTH) / 2;
-    localparam int TEXT_Y_START = 16;
-    localparam int TEXT_X_END = TEXT_X_START + MAX_CHARS * CHAR_WIDTH;
-    localparam int TEXT_Y_END = TEXT_Y_START + CHAR_HEIGHT;
+    // scaled 상대 좌표, 원본 ROM 좌표
+    logic [9:0] dx, dy;
+    logic [3:0] char_slot;
+    logic [2:0] row_addr, col_addr;
+    logic pixel_on;
+    logic [7:0] char_rom_idx;
+                // 슬롯 내부 상대 좌표
+    logic [9:0] sx = dx % (CHAR_WIDTH * SCALE);
+    logic [9:0] sy = dy;
 
-    localparam int ROW_addr_CMD_BITS = $clog2(CHAR_HEIGHT);
-    localparam int SLOT_NUM_BITS = $clog2(MAX_CHARS);
-
-    logic [  ROW_addr_CMD_BITS-1:0] row_addr_cmd;
-    logic [  ROW_addr_CMD_BITS-1:0] bit_idx;
-    logic                       pixel_on;
-
-    logic [                7:0] char_rom_idx;
-    // logic [ROW_addr_CMD_BITS + 7:0] rom_addr_cmd;
-    logic [                7:0] codes        [0:MAX_CHARS-1]; // ROM 인덱스 배열 (13글자)
-    int                         str_len; // 실제 그려야 할 슬롯 개수 (항상 13으로 고정)
-    logic                       show_text;   // 문자열 활성화 여부
-
-    // logic [2:0] count_five_sec, count_five_sec_next;
-
-    assign text_on_cmd  = pixel_on && d_en;
-    assign rom_addr_cmd = (char_rom_idx << ROW_addr_CMD_BITS) | row_addr_cmd;
-
-    // font_rom u_font (
-    //     .clk (clk),
-    //     .addr_cmd(rom_addr_cmd),
-    //     .data_cmd(font_line_cmd)
-    // );
-
+    // text_on 및 ROM 주소
+    assign text_on_cmd = pixel_on && d_en;
+    assign rom_addr_cmd = (char_rom_idx << $clog2(CHAR_HEIGHT)) | row_addr;
 
 
     always_comb begin : commend_text
@@ -91,11 +85,11 @@ module CMD_text_display (
         for (int i = 0; i < MAX_CHARS; i++) begin
             codes[i] = 8'd100;  // backtick(`) 폰트 인덱스 = 63
         end
-        str_len   = 0;
+ 
         show_text = 1'b0;
 
-        // 2) commend_e에 따라 str_len과 codes[] 배열에 ROM 인덱스 할당
-        //    모든 경우 str_len을 13으로 고정하여 앞뒤 공백까지 전부 그리도록 함
+        // 2) commend_e에 따라  과 codes[] 배열에 ROM 인덱스 할당
+        //    모든 경우  을 13으로 고정하여 앞뒤 공백까지 전부 그리도록 함
         case (commend)
             GAME_START: begin
                 show_text = 1'b1;
@@ -114,7 +108,6 @@ module CMD_text_display (
                 codes[10] = 8'd19;  // 'T'
                 codes[11] = 8'd57;  // ?
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
             end
 
             BLUE_UP: begin
@@ -134,7 +127,6 @@ module CMD_text_display (
                 codes[10] = 8'd100;  // 공백
                 codes[11] = 8'd100;  // 공백
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
             end
 
             BLUE_DOWN: begin
@@ -154,7 +146,7 @@ module CMD_text_display (
                 codes[10] = 8'd13;  // 'N'
                 codes[11] = 8'd100;  // 공백
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
+
             end
 
             BLUE_NO_DOWN: begin
@@ -174,7 +166,7 @@ module CMD_text_display (
                 codes[10] = 8'd22;  // 'W'
                 codes[11] = 8'd13;  // 'N'
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
+
             end
 
             BLUE_NO_UP: begin
@@ -194,7 +186,7 @@ module CMD_text_display (
                 codes[10] = 8'd15;  // 'P'
                 codes[11] = 8'd100;  // 공백
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
+
             end
 
             RED_UP: begin
@@ -214,7 +206,7 @@ module CMD_text_display (
                 codes[10] = 8'd100;
                 codes[11] = 8'd100;
                 codes[12] = 8'd100;
-                str_len   = 13;
+          
             end
 
             RED_DOWN: begin
@@ -234,7 +226,7 @@ module CMD_text_display (
                 codes[10] = 8'd100;
                 codes[11] = 8'd100;
                 codes[12] = 8'd100;
-                str_len   = 13;
+          
             end
 
             RED_NO_DOWN: begin
@@ -254,7 +246,6 @@ module CMD_text_display (
                 codes[10] = 8'd22;  // 'W'
                 codes[11] = 8'd13;  // 'N'
                 codes[12] = 8'd100;
-                str_len   = 13;
             end
 
             RED_NO_UP: begin
@@ -274,7 +265,6 @@ module CMD_text_display (
                 codes[10] = 8'd15;  // 'P'
                 codes[11] = 8'd100;
                 codes[12] = 8'd100;
-                str_len   = 13;
             end
 
 
@@ -295,7 +285,6 @@ module CMD_text_display (
                 codes[10] = 8'd100;  // 공백
                 codes[11] = 8'd100;  // 공백
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
             end
 
             BOTH_DOWN: begin
@@ -315,7 +304,6 @@ module CMD_text_display (
                 codes[10] = 8'd13;  // 'N'
                 codes[11] = 8'd100;  // 공백
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
             end
 
             BOTH_NO_DOWN: begin
@@ -335,7 +323,6 @@ module CMD_text_display (
                 codes[10] = 8'd22;  // 'W'
                 codes[11] = 8'd13;  // 'N'
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
             end
 
             BOTH_NO_UP: begin
@@ -355,7 +342,6 @@ module CMD_text_display (
                 codes[10] = 8'd15;  // 'P'
                 codes[11] = 8'd100;  // 공백
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
             end
 
             GAME_OVER: begin
@@ -375,45 +361,46 @@ module CMD_text_display (
                 codes[10] = 8'd17;  // 'R'
                 codes[11] = 8'd100;  // 공백
                 codes[12] = 8'd100;  // 공백
-                str_len   = 13;
             end
 
             default: begin
                 // default일 때 show_text=0 → 공백 상태
                 show_text = 1'b0;
-                str_len   = 0;
             end
         endcase
 
-        // 3) 픽셀 계산: show_text=0이면 전부 Off,
-        //    char_slot < str_len 인 경우에만 문자 그리기
         pixel_on     = 1'b0;
-        char_rom_idx = 8'h00;
-        row_addr_cmd     = '0;
-        bit_idx      = '0;
+        char_rom_idx = 8'd0;
+        row_addr     = '0;
+        col_addr     = '0;
+        dx           = '0;
+        dy           = '0;
 
-        if (d_en && show_text) begin
-            if ( x >= TEXT_X_START && x <  TEXT_X_END &&
-                 y >= TEXT_Y_START && y <  TEXT_Y_END ) begin
+        if (d_en && show_text &&
+            x >= TEXT_X0 && x < TEXT_X1 &&
+            y >= TEXT_Y0 && y < TEXT_Y1) begin
 
-                logic [SLOT_NUM_BITS-1:0] char_slot;
-                char_slot = (x - TEXT_X_START) / CHAR_WIDTH;
+            // 확대된 블록 내 상대 좌표
+            dx = x - TEXT_X0;
+            dy = y - TEXT_Y0;
 
-                if (char_slot < str_len) begin
-                    char_rom_idx = codes[char_slot];
-                    row_addr_cmd = (y - TEXT_Y_START) & ((1 << ROW_addr_CMD_BITS) - 1);
-                    bit_idx = (x - TEXT_X_START) % CHAR_WIDTH;
-                    pixel_on = font_line_cmd[bit_idx];
-                end else begin
-                    // str_len 초과 슬롯: 공백 (pixel_on 그대로 0)
-                end
-            end
+            // 어느 문자 슬롯인지
+            char_slot = dx / (CHAR_WIDTH * SCALE);
+            char_rom_idx = codes[char_slot];
+
+            // 원본 ROM 좌표 복원
+            col_addr = sx / SCALE;     // 0..7
+            row_addr = sy / SCALE;     // 0..7
+
+            // 비트 선택 (MSB=좌측)
+            pixel_on = font_line_cmd[col_addr];
         end
     end
 
+    // 3) 색상 출력
     always_comb begin
-        if (pixel_on && d_en) begin
-            o_red_cmd   = 4'hf;
+        if (pixel_on) begin
+            o_red_cmd   = 4'hF;
             o_green_cmd = 4'h0;
             o_blue_cmd  = 4'h0;
         end else begin
@@ -426,24 +413,28 @@ module CMD_text_display (
 endmodule
 
 
+
 module font_rom (
     input  logic        clk,
     input  logic [10:0] addr_cmd,
-    input  logic [10:0] addr_cnt,
-    output logic [ 7:0] data_cmd,
-    output logic [ 7:0] data_cnt
+    // input  logic [10:0] addr_cnt,
+    output logic [ 7:0] data_cmd
+    // output logic [ 7:0] data_cnt
 );
 
     (* rom_style = "block" *)
-    logic [7:0] rom[0:1023];
+    logic [7:0] rom1[0:1023];
+    // logic [7:0] rom2[0:1023];
+
 
     initial begin
-        $readmemh("font_complete.mem", rom);
+        $readmemh("font_complete.mem", rom1);
+        // $readmemh("font_counter_new.mem", rom2);
     end
 
     always_ff @(posedge clk) begin
-        data_cmd <= rom[addr_cmd];
-        data_cnt <= rom[addr_cnt];
+        data_cmd <= rom1[addr_cmd];
+        // data_cnt <= rom2[addr_cnt];
 
     end
 
