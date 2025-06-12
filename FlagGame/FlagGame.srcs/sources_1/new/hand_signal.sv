@@ -139,10 +139,20 @@ module AreaSel #(
     localparam Y_UNIT = IMG_HEIGHT / 3;
 
     wire    X_AREA0 = x_pixel < (X_UNIT * 1),
+
+
             X_AREA1 = x_pixel < (X_UNIT * 2),
+
+
             X_AREA2 = x_pixel < (X_UNIT * 3),
+
+
             Y_AREA0 = y_pixel < (Y_UNIT * 1),
+
+
             Y_AREA1 = y_pixel < (Y_UNIT * 2),
+
+
             Y_AREA2 = y_pixel < (Y_UNIT * 3);
 
     // 영역 판별 (3x3 기준)
@@ -188,8 +198,15 @@ module hand_signal #(
     wire [3:0] B = pixel_COLOR[3:0];
 
     // 색 조건
-    wire is_color1 = (R < 10) && (G < 10) && (10 < B);  //blue 계열
-    wire is_color2 = (G < 10) && (B < 10) && (10 < R);  //red 계열
+    // wire is_color1 = (R < 10) && (G < 10) && (10 < B);  //blue 계열
+    // wire is_color2 = (G < 10) && (B < 10) && (10 < R);  //red 계열
+    rgb4_to_color_detect u_rgb4_to_color_detect (
+        .R      (R),
+        .G      (G),
+        .B      (B),
+        .is_red (is_color2),
+        .is_blue(is_color1)
+    );
 
 
     // 색별 영역 카운트 배열

@@ -55,7 +55,7 @@ module FlagGame (
         if (reset || game_state == GAME_START || game_state == GAME_OVER) begin
             game_count <= 0;
         end else begin
-            if (game_count == 500_000_000) begin
+            if (game_count == 300_000_000) begin
                 game_count <= 0;
                 timeover   <= 1;
             end else begin

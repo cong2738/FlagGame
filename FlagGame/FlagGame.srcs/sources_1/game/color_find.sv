@@ -19,7 +19,7 @@ module color_find #(
     reg [31:0] red_flag_D_count;
     reg blue_flag, red_flag;
 
-    rgb_to_color_detect u_rgb_to_color_detect (
+    rgb4_to_color_detect u_rgb_to_color_detect (
         .R      (R),
         .G      (G),
         .B      (B),
