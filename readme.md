@@ -43,7 +43,9 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ## Cam_Circuit
 
 ## video  
-[![Video Label](http://img.youtube.com/vi/tyY2kQC33uQ/0.jpg)](https://youtu.be/tyY2kQC33uQ)
+[![Video Label](http://img.youtube.com/vi/tyY2kQC33uQ/0.jpg)](https://youtu.be/tyY2kQC33uQ)<br/>
+click!
+
 ## 디렉토리 구조
 
 ```bash
