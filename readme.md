@@ -43,28 +43,21 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ## Cam_Circuit
 
 ## video  
-<table>
-　　<tr>
-　　　　<td>GAME</td>
-　　</tr>
-　　<tr>
-　　　　<td><img alt = "I2C" src="./발표자료/I2C.gif" width="100%" height="auto"/></td>
-　　</tr>
-</table>
+[![Video Label](http://img.youtube.com/vi/tyY2kQC33uQ/0.jpg)](https://youtu.be/tyY2kQC33uQ)<br/>
+click!
 
 ## 디렉토리 구조
 
 ```bash
 project
-├── C : program demo
-├── project_i2C_microblaze : I2C device block
-├── project_I2C_SIMULATION : I2C Simulation(vivado SV SIM)
-├── project_I2C : I2C modules
-├── SPI
-│   ├── 20250522_SPI_master_Slave_moudle : SPI module
-│   └── 20250523_SPI_AXI_Master_MICROBLAZE : SPI device block
-├── SPI_I2C_UVM : SPI Simulation(synopsys VCS SIM, verdi)
-└── 발표자료
+├── FlagGame : ProjectMain
+├── random_simulation_visualization : PRNG_Simulation
+├── image : test_img
+├── image_code : test_img_code
+├── py : python_file
+├── SCCB : SCCB_module_demo
+├── Text_display : Text_display_module_demo
+└── Flag_cmd : cmd_gen_demo
 ```
 
 
