@@ -103,7 +103,7 @@ project
 ├── random_simulation_visualization : PRNG_Simulation
 ├── image : test_img
 ├── image_code : test_img_code
-├── py : python_file
+├── py : python_files
 |   └── pyojun.py : PRNG 시뮬레이션 시각화 프로그램
 ├── SCCB : SCCB_module_demo
 ├── Text_display : Text_display_module_demo
