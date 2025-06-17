@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Jun 17 09:25:25 2025
+# Process ID: 10512
+# Current directory: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22736 C:\harman\_HARMAN Team Project\HarmanSA_June_TeamPJ\FlagGame\FlagGame.xpr
+# Log file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/vivado.log
+# Journal file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.xpr}
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/FlagGame.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+ERROR: [Project 1-510] Parsing generated run data failed
+exit
+ERROR: [Vivado 12-106] *** Exception: java.lang.NullPointerException (See C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/FlagGame/vivado_pid10512.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 17 09:25:44 2025...

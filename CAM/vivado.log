@@ -1,0 +1,619 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Jun  4 13:48:39 2025
+# Process ID: 39140
+# Current directory: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent40196 C:\harman\_HARMAN Team Project\HarmanSA_June_TeamPJ\CAM\CAM.xpr
+# Log file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/vivado.log
+# Journal file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.xpr}
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: OV7670_VGA_Display
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1435.570 ; gain = 233.906
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'OV7670_VGA_Display' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_VGA_Display.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_clk_gen' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_clk_gen' (1#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'VGA_Controller' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_counter' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:50]
+	Parameter H_MAX bound to: 800 - type: integer 
+	Parameter V_MAX bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (2#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:50]
+INFO: [Synth 8-6157] synthesizing module 'VGA_decoder' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:85]
+	Parameter H_Visible_area bound to: 640 - type: integer 
+	Parameter H_Front_porch bound to: 16 - type: integer 
+	Parameter H_Sync_pulse bound to: 96 - type: integer 
+	Parameter H_Back_porch bound to: 48 - type: integer 
+	Parameter H_Whole_line bound to: 800 - type: integer 
+	Parameter V_Visible_area bound to: 480 - type: integer 
+	Parameter V_Front_porch bound to: 10 - type: integer 
+	Parameter V_Sync_pulse bound to: 2 - type: integer 
+	Parameter V_Back_porch bound to: 33 - type: integer 
+	Parameter V_Whole_frame bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'VGA_decoder' (3#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:85]
+INFO: [Synth 8-6155] done synthesizing module 'VGA_Controller' (4#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'OV7670_MemController' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_MemController' (5#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_MemController.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'frame_buffer' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/frame_buffer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'frame_buffer' (6#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/frame_buffer.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'QVGA_MemController' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/QVGA_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'QVGA_MemController' (7#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/QVGA_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_VGA_Display' (8#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_VGA_Display.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1553.266 ; gain = 351.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1553.266 ; gain = 351.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1553.266 ; gain = 351.602
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1553.266 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1594.504 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 1740.613 ; gain = 538.949
+19 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 1740.613 ; gain = 633.805
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1795.574 ; gain = 35.977
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'OV7670_VGA_Display' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_VGA_Display.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'VGA_Controller' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_clk_gen' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_clk_gen' (1#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'pixel_counter' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:50]
+	Parameter H_MAX bound to: 800 - type: integer 
+	Parameter V_MAX bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (2#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:50]
+INFO: [Synth 8-6157] synthesizing module 'VGA_decoder' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:85]
+	Parameter H_Visible_area bound to: 640 - type: integer 
+	Parameter H_Front_porch bound to: 16 - type: integer 
+	Parameter H_Sync_pulse bound to: 96 - type: integer 
+	Parameter H_Back_porch bound to: 48 - type: integer 
+	Parameter H_Whole_line bound to: 800 - type: integer 
+	Parameter V_Visible_area bound to: 480 - type: integer 
+	Parameter V_Front_porch bound to: 10 - type: integer 
+	Parameter V_Sync_pulse bound to: 2 - type: integer 
+	Parameter V_Back_porch bound to: 33 - type: integer 
+	Parameter V_Whole_frame bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'VGA_decoder' (3#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:85]
+INFO: [Synth 8-6155] done synthesizing module 'VGA_Controller' (4#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'OV7670_MemController' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_MemController' (5#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_MemController.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'frame_buffer' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/frame_buffer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'frame_buffer' (6#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/frame_buffer.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'QVGA_MemController' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/QVGA_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'QVGA_MemController' (7#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/QVGA_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_VGA_Display' (8#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_VGA_Display.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1853.910 ; gain = 94.312
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1853.910 ; gain = 94.312
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1853.910 ; gain = 94.312
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1853.910 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1853.910 ; gain = 94.312
+close_project
+create_project color_find {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find} -part xc7a35tcpg236-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+import_files -norecurse {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_VGA_Display.sv} {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_MemController.sv} {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/frame_buffer.sv} {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/QVGA_MemController.sv}}
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: OV7670_VGA_Display
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1896.215 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'OV7670_VGA_Display' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/CAM/OV7670_VGA_Display.sv:3]
+ERROR: [Synth 8-439] module 'VGA_Controller' not found [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/CAM/OV7670_VGA_Display.sv:36]
+ERROR: [Synth 8-6156] failed synthesizing module 'OV7670_VGA_Display' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/imports/CAM/OV7670_VGA_Display.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1896.215 ; gain = 0.000
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+1 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+update_compile_order -fileset sources_1
+import_files -norecurse {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/VGA_Controller.sv}}
+update_compile_order -fileset sources_1
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new
+file mkdir C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new
+file mkdir {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new}
+close [ open {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/top_color_find.v} w ]
+add_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/top_color_find.v}}
+update_compile_order -fileset sources_1
+close [ open {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/color_find.sv} w ]
+add_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/color_find.sv}}
+close [ open {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/top_color_find.sv} w ]
+add_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/top_color_find.sv}}
+export_ip_user_files -of_objects  [get_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/top_color_find.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/top_color_find.v}}
+file delete -force {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/top_color_find.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+import_files -norecurse C:/harman/FPGA_Harman-1/rand21354125/rand21354125.srcs/sources_1/imports/CMD_Watch/fnd_controller.v
+update_compile_order -fileset sources_1
+close [ open {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/middle_frame_color.sv} w ]
+add_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/sources_1/new/middle_frame_color.sv}}
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse C:/harman/FPGA_Harman-1/Basys-3-Master.xdc
+import_files -fileset constrs_1 C:/harman/FPGA_Harman-1/Basys-3-Master.xdc
+export_ip_user_files -of_objects  [get_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/constrs_1/imports/FPGA_Harman-1/Basys-3-Master.xdc}}] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/constrs_1/imports/FPGA_Harman-1/Basys-3-Master.xdc}}
+file delete -force {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/constrs_1/imports/FPGA_Harman-1/Basys-3-Master.xdc}
+add_files -fileset constrs_1 -norecurse C:/harman/fpga-VGA/VGA_CAM/VGA_CAM.srcs/constrs_1/imports/harman/Basys-3-Master.xdc
+import_files -fileset constrs_1 C:/harman/fpga-VGA/VGA_CAM/VGA_CAM.srcs/constrs_1/imports/harman/Basys-3-Master.xdc
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Wed Jun  4 14:33:16 2025] Launched synth_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/synth_1/runme.log
+[Wed Jun  4 14:33:16 2025] Launched impl_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Wed Jun  4 14:34:50 2025] Launched synth_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/synth_1/runme.log
+[Wed Jun  4 14:34:50 2025] Launched impl_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Wed Jun  4 14:36:56 2025] Launched synth_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/synth_1/runme.log
+[Wed Jun  4 14:36:56 2025] Launched impl_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Wed Jun  4 14:38:33 2025] Launched synth_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/synth_1/runme.log
+[Wed Jun  4 14:38:33 2025] Launched impl_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.2
+  **** Build date : Nov 18 2020 at 10:01:48
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 04 2020-06:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1896.215 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B9AA55A
+set_property PROGRAM.FILE {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/impl_1/top_color_find.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/impl_1/top_color_find.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+export_ip_user_files -of_objects  [get_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/constrs_1/imports/harman/Basys-3-Master.xdc}}] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/constrs_1/imports/harman/Basys-3-Master.xdc}}
+file delete -force {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.srcs/constrs_1/imports/harman/Basys-3-Master.xdc}
+add_files -fileset constrs_1 -norecurse C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/constrs_1/imports/VGA_Harman/Basys-3-Master.xdc
+import_files -fileset constrs_1 C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/constrs_1/imports/VGA_Harman/Basys-3-Master.xdc
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Wed Jun  4 14:43:21 2025] Launched synth_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/synth_1/runme.log
+[Wed Jun  4 14:43:22 2025] Launched impl_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/impl_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Wed Jun  4 14:43:40 2025] Launched synth_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/synth_1/runme.log
+[Wed Jun  4 14:43:40 2025] Launched impl_1...
+Run output will be captured here: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/color_find/color_find.runs/impl_1/top_color_find.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B9AA55A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B9AA55A
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B9AA55A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B9AA55A
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B9AA55A
+open_project C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Labtools 27-2058] connect_hw_server command cancelled.
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 3323.863 ; gain = 0.000
+INFO: [Common 17-344] 'connect_hw_server' was cancelled
+update_compile_order -fileset sources_1
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Labtools 27-3461] Cannot support an older version of hw_server.
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 3323.863 ; gain = 0.000
+ERROR: [Common 17-39] 'connect_hw_server' failed due to earlier errors.
+current_project color_find
+close_hw_manager
+current_project CAM_TEST0
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.2
+  **** Build date : Nov 18 2020 at 10:01:48
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 04 2020-06:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost.
+ Targets(s) ", jsn-Basys3-210183B9AA55A" may be locked by another hw_server.
+current_project color_find
+close_project
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost.
+ Targets(s) ", jsn-Basys3-210183B9AA55A" may be locked by another hw_server.
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B9AA55A
+set_property PROGRAM.FILE {C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.runs/impl_1/OV7670_VGA_Display.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.runs/impl_1/OV7670_VGA_Display.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B9AA55A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B9AA55A
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+close [ open C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv w ]
+add_files C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: OV7670_VGA_Display
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3398.887 ; gain = 65.086
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'OV7670_VGA_Display' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_clk_gen' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_clk_gen' (1#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'SCCB_core' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'tick_gen' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:511]
+INFO: [Synth 8-6155] done synthesizing module 'tick_gen' (2#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:511]
+INFO: [Synth 8-6157] synthesizing module 'btn_detector' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:539]
+INFO: [Synth 8-6155] done synthesizing module 'btn_detector' (3#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:539]
+INFO: [Synth 8-6157] synthesizing module 'SCCB_Controller' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:52]
+INFO: [Synth 8-6157] synthesizing module 'OV7670_config_rom' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:369]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_config_rom' (4#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:369]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB_Controller' (5#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:52]
+INFO: [Synth 8-6157] synthesizing module 'SCCB' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:131]
+	Parameter OV7670_ADDR_WRITE bound to: 8'b01000010 
+	Parameter OV7670_ADDR_READ bound to: 8'b01000011 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:218]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:266]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:297]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:216]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:204]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB' (6#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:131]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB_core' (7#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:3]
+WARNING: [Synth 8-689] width (8) of port connection 'sioc' does not match port width (1) of module 'SCCB_core' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:48]
+WARNING: [Synth 8-6104] Input port 'ov7670_SCL' has an internal driver [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:48]
+WARNING: [Synth 8-689] width (8) of port connection 'siod' does not match port width (1) of module 'SCCB_core' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:49]
+WARNING: [Synth 8-6104] Input port 'ov7670_SDA' has an internal driver [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:49]
+INFO: [Synth 8-6157] synthesizing module 'VGA_Controller' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_counter' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:50]
+	Parameter H_MAX bound to: 800 - type: integer 
+	Parameter V_MAX bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (8#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:50]
+INFO: [Synth 8-6157] synthesizing module 'VGA_decoder' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:85]
+	Parameter H_Visible_area bound to: 640 - type: integer 
+	Parameter H_Front_porch bound to: 16 - type: integer 
+	Parameter H_Sync_pulse bound to: 96 - type: integer 
+	Parameter H_Back_porch bound to: 48 - type: integer 
+	Parameter H_Whole_line bound to: 800 - type: integer 
+	Parameter V_Visible_area bound to: 480 - type: integer 
+	Parameter V_Front_porch bound to: 10 - type: integer 
+	Parameter V_Sync_pulse bound to: 2 - type: integer 
+	Parameter V_Back_porch bound to: 33 - type: integer 
+	Parameter V_Whole_frame bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'VGA_decoder' (9#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:85]
+INFO: [Synth 8-6155] done synthesizing module 'VGA_Controller' (10#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'OV7670_MemController' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_MemController' (11#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_MemController.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'frame_buffer' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/frame_buffer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'frame_buffer' (12#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/frame_buffer.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'QVGA_MemController' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/QVGA_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'QVGA_MemController' (13#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/QVGA_MemController.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'glayScale_filter' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/glayScale_filter.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'glayScale_filter' (14#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/glayScale_filter.sv:3]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:116]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_VGA_Display' (15#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3465.945 ; gain = 132.145
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[7] with 1st driver pin 'ov7670_SCL[7]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[7] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[6] with 1st driver pin 'ov7670_SCL[6]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[6] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[5] with 1st driver pin 'ov7670_SCL[5]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[5] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[4] with 1st driver pin 'ov7670_SCL[4]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[4] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[3] with 1st driver pin 'ov7670_SCL[3]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[3] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[2] with 1st driver pin 'ov7670_SCL[2]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[2] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[1] with 1st driver pin 'ov7670_SCL[1]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SCL[1] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[7] with 1st driver pin 'ov7670_SDA[7]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[7] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[6] with 1st driver pin 'ov7670_SDA[6]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[6] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[5] with 1st driver pin 'ov7670_SDA[5]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[5] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[4] with 1st driver pin 'ov7670_SDA[4]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[4] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[3] with 1st driver pin 'ov7670_SDA[3]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[3] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[2] with 1st driver pin 'ov7670_SDA[2]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[2] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[1] with 1st driver pin 'ov7670_SDA[1]' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ov7670_SDA[1] with 2nd driver pin 'GND' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       14|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3465.945 ; gain = 132.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3465.945 ; gain = 132.145
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 3465.945 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/constrs_1/imports/VGA_Harman/Basys-3-Master.xdc]
+Finished Parsing XDC File [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/constrs_1/imports/VGA_Harman/Basys-3-Master.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3578.910 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 3593.934 ; gain = 260.133
+38 Infos, 4 Warnings, 28 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 3593.934 ; gain = 260.133
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3660.266 ; gain = 66.332
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'OV7670_VGA_Display' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_clk_gen' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_clk_gen' (1#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'SCCB_core' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'tick_gen' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:511]
+INFO: [Synth 8-6155] done synthesizing module 'tick_gen' (2#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:511]
+INFO: [Synth 8-6157] synthesizing module 'btn_detector' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:539]
+INFO: [Synth 8-6155] done synthesizing module 'btn_detector' (3#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:539]
+INFO: [Synth 8-6157] synthesizing module 'SCCB_Controller' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:52]
+INFO: [Synth 8-6157] synthesizing module 'OV7670_config_rom' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:369]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_config_rom' (4#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:369]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB_Controller' (5#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:52]
+INFO: [Synth 8-6157] synthesizing module 'SCCB' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:131]
+	Parameter OV7670_ADDR_WRITE bound to: 8'b01000010 
+	Parameter OV7670_ADDR_READ bound to: 8'b01000011 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:218]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:266]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:297]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:216]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:204]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB' (6#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:131]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB_core' (7#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/SCCB.sv:3]
+WARNING: [Synth 8-6104] Input port 'ov7670_SCL' has an internal driver [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:48]
+WARNING: [Synth 8-6104] Input port 'ov7670_SDA' has an internal driver [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:49]
+INFO: [Synth 8-6157] synthesizing module 'VGA_Controller' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_counter' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:50]
+	Parameter H_MAX bound to: 800 - type: integer 
+	Parameter V_MAX bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (8#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:50]
+INFO: [Synth 8-6157] synthesizing module 'VGA_decoder' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:85]
+	Parameter H_Visible_area bound to: 640 - type: integer 
+	Parameter H_Front_porch bound to: 16 - type: integer 
+	Parameter H_Sync_pulse bound to: 96 - type: integer 
+	Parameter H_Back_porch bound to: 48 - type: integer 
+	Parameter H_Whole_line bound to: 800 - type: integer 
+	Parameter V_Visible_area bound to: 480 - type: integer 
+	Parameter V_Front_porch bound to: 10 - type: integer 
+	Parameter V_Sync_pulse bound to: 2 - type: integer 
+	Parameter V_Back_porch bound to: 33 - type: integer 
+	Parameter V_Whole_frame bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'VGA_decoder' (9#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:85]
+INFO: [Synth 8-6155] done synthesizing module 'VGA_Controller' (10#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'OV7670_MemController' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_MemController' (11#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_MemController.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'frame_buffer' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/frame_buffer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'frame_buffer' (12#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/frame_buffer.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'QVGA_MemController' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/QVGA_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'QVGA_MemController' (13#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/QVGA_MemController.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'glayScale_filter' [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/glayScale_filter.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'glayScale_filter' (14#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/new/glayScale_filter.sv:3]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:116]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_VGA_Display' (15#1) [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/sources_1/imports/new/OV7670_VGA_Display.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3722.602 ; gain = 128.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3723.664 ; gain = 129.730
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3723.664 ; gain = 129.730
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 3741.066 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/constrs_1/imports/VGA_Harman/Basys-3-Master.xdc]
+Finished Parsing XDC File [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/constrs_1/imports/VGA_Harman/Basys-3-Master.xdc]
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 3741.066 ; gain = 147.133
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/constrs_1/imports/VGA_Harman/Basys-3-Master.xdc]
+Finished Parsing XDC File [C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.srcs/constrs_1/imports/VGA_Harman/Basys-3-Master.xdc]
+Completed Processing XDC Constraints
+
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Wed Jun  4 15:12:20 2025] Launched synth_1...
+Run output will be captured here: C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.runs/synth_1/runme.log
+[Wed Jun  4 15:12:20 2025] Launched impl_1...
+Run output will be captured here: C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.runs/impl_1/OV7670_VGA_Display.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Wed Jun  4 15:15:42 2025] Launched synth_1...
+Run output will be captured here: C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.runs/synth_1/runme.log
+[Wed Jun  4 15:15:42 2025] Launched impl_1...
+Run output will be captured here: C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/harman/fpga-VGA/CAM_TEST0/CAM_TEST0.runs/impl_1/OV7670_VGA_Display.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jun  4 15:20:33 2025...

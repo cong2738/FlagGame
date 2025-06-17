@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Jun  4 11:27:55 2025
+# Process ID: 41108
+# Current directory: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent41820 C:\harman\_HARMAN Team Project\HarmanSA_June_TeamPJ\CAM\CAM.xpr
+# Log file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/vivado.log
+# Journal file: C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.xpr}
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+close [ open {C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new/color_finder.sv} w ]
+add_files {{C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/new/color_finder.sv}}
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: OV7670_VGA_Display
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1459.625 ; gain = 244.301
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'OV7670_VGA_Display' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_VGA_Display.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_clk_gen' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_clk_gen' (1#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'VGA_Controller' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_counter' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:50]
+	Parameter H_MAX bound to: 800 - type: integer 
+	Parameter V_MAX bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (2#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:50]
+INFO: [Synth 8-6157] synthesizing module 'VGA_decoder' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:85]
+	Parameter H_Visible_area bound to: 640 - type: integer 
+	Parameter H_Front_porch bound to: 16 - type: integer 
+	Parameter H_Sync_pulse bound to: 96 - type: integer 
+	Parameter H_Back_porch bound to: 48 - type: integer 
+	Parameter H_Whole_line bound to: 800 - type: integer 
+	Parameter V_Visible_area bound to: 480 - type: integer 
+	Parameter V_Front_porch bound to: 10 - type: integer 
+	Parameter V_Sync_pulse bound to: 2 - type: integer 
+	Parameter V_Back_porch bound to: 33 - type: integer 
+	Parameter V_Whole_frame bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'VGA_decoder' (3#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:85]
+INFO: [Synth 8-6155] done synthesizing module 'VGA_Controller' (4#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/VGA_Controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'OV7670_MemController' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_MemController' (5#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_MemController.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'frame_buffer' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/frame_buffer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'frame_buffer' (6#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/frame_buffer.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'QVGA_MemController' [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/QVGA_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'QVGA_MemController' (7#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/QVGA_MemController.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_VGA_Display' (8#1) [C:/harman/_HARMAN Team Project/HarmanSA_June_TeamPJ/CAM/CAM.srcs/sources_1/CAM/OV7670_VGA_Display.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1550.855 ; gain = 335.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1550.855 ; gain = 335.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1550.855 ; gain = 335.531
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1550.855 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1618.613 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 1752.512 ; gain = 537.188
+19 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 1752.512 ; gain = 646.516
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jun  4 13:47:32 2025...
