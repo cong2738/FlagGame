@@ -4,6 +4,7 @@
 **/FlagGame.cache/**
 **/FlagGame.sim/**
 **/FlagGame.hw/**
+**/.xil/**
 #Exclude vivado File
 **.debug
 **.jou
