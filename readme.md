@@ -37,14 +37,14 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![Cam_design](./doc/CAM/CAM_design.png)</br>
 #### Module Overview
 ##### VGA
-   <img src="./doc/CAM/VGA_Timing_Diagram.png" width="auto" height="750"/></br>
-   <img src="./doc/CAM/VGA_Standard.png" width="auto" height="500"/></br>
-<img src="./doc/CAM/CAM_Buffer_Block_Desgin.png" width="auto" height="400"/></br>  
+   <img src="./doc/CAM/VGA_Timing_Diagram.png" width="550" height="auto"/></br>
+   <img src="./doc/CAM/VGA_Standard.png" width="550" height="auto"/></br>
+<img src="./doc/CAM/CAM_Buffer_Block_Desgin.png" width="550" height="auto"/></br>  
 
 ##### CAM
 - SCCB</br>
-   <img src="./doc/CAM/SCCB_Timing_Diagram.png" width="auto" height="300"/></br>
-   <img src="./doc/CAM/SCCB_BLock_Design.png" width="auto" height="300"/></br>
+   <img src="./doc/CAM/SCCB_Timing_Diagram.png" width="550" height="auto"/></br>
+   <img src="./doc/CAM/SCCB_BLock_Design.png" width="550" height="auto"/></br>
 
 ### GRAPIC Block
 - Block Design</br>
@@ -53,8 +53,8 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 - text_show<br/>
 <table>
    <tr>
-      <img src="./doc/GRAPHIC/TEXT_Show_ALG.png" width="600" height="auto"/>
-      <img src="./doc/GRAPHIC/TEXT_Show_romBlock.png" width="600" height="auto"/>
+      <img src="./doc/GRAPHIC/TEXT_Show_ALG.png" width="550" height="auto"/>
+      <img src="./doc/GRAPHIC/TEXT_Show_romBlock.png" width="550" height="auto"/>
    </tr>
 </table>
 
