@@ -26,9 +26,9 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![Verilog](https://img.shields.io/badge/HDL-Verilog-ff5722?style=for-the-badge)
 ![SystemVerilog](https://img.shields.io/badge/HDL-SystemVerilog-ff9800?style=for-the-badge)
 
-### SYSTEM
+### Board
 ![Basys3](https://img.shields.io/badge/Board-Basys3-2196f3?style=for-the-badge)</br>
-_ _ _ _ _ _
+
 ## SystenArchitecture
 ![SystenArchitecture](./doc/SystenArchitecture_design.png)</br>
 _ _ _ _ _ _
