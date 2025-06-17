@@ -38,8 +38,7 @@ _ _ _ _ _ _
 ##### VGA
    <img src="./doc/CAM/VGA_Timing_Diagram.png" width="550" height="auto"/></br>
    <img src="./doc/CAM/VGA_Standard.png" width="550" height="auto"/></br>
-<img src="./doc/CAM/CAM_Buffer_Block_Desgin.png" width="550" height="auto"/></br>  
-_ _ _ _ _ _
+   <img src="./doc/CAM/CAM_Buffer_Block_Desgin.png" width="550" height="auto"/></br>  
 
 ##### CAM
 - SCCB</br>
@@ -57,6 +56,7 @@ _ _ _ _ _ _
       <img src="./doc/GRAPHIC/TEXT_Show_romBlock.png" width="550" height="auto"/>
    </tr>
 </table>
+
 _ _ _ _ _ _
 
 ### GAME Block
