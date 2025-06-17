@@ -37,14 +37,14 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![Cam_design](./doc/CAM/CAM_design.png)</br>
 #### Module Overview
 ##### VGA
-   <img src="./doc/CAM/VGA_Timing_Diagram.png" height="750"/></br>
-   <img src="./doc/CAM/VGA_Standard.png" height="500"/></br>
-<img src="./doc/CAM/CAM_Buffer_Block_Desgin.png" height="400"/></br>  
+   <img src="./doc/CAM/VGA_Timing_Diagram.png" width="auto" height="750"/></br>
+   <img src="./doc/CAM/VGA_Standard.png" width="auto" height="500"/></br>
+<img src="./doc/CAM/CAM_Buffer_Block_Desgin.png" width="auto" height="400"/></br>  
 
 ##### CAM
 - SCCB</br>
-   <img src="./doc/CAM/SCCB_Timing_Diagram.png" height="300"/></br>
-   <img src="./doc/CAM/SCCB_BLock_Design.png" height="300"/></br>
+   <img src="./doc/CAM/SCCB_Timing_Diagram.png" width="auto" height="300"/></br>
+   <img src="./doc/CAM/SCCB_BLock_Design.png" width="auto" height="300"/></br>
 
 ### GRAPIC Block
 - Block Design</br>
@@ -53,8 +53,8 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 - text_show<br/>
 <table>
    <tr>
-      <img src="./doc/GRAPHIC/TEXT_Show_ALG.png" width="600"/>
-      <img src="./doc/GRAPHIC/TEXT_Show_romBlock.png" width="600"/>
+      <img src="./doc/GRAPHIC/TEXT_Show_ALG.png" width="600" height="auto"/>
+      <img src="./doc/GRAPHIC/TEXT_Show_romBlock.png" width="600" height="auto"/>
    </tr>
 </table>
 
@@ -103,6 +103,7 @@ project
 ├── image : test_img
 ├── image_code : test_img_code
 ├── py : python_file
+|   └── pyojun.py : PRNG 시뮬레이션 시각화 프로그램
 ├── SCCB : SCCB_module_demo
 ├── Text_display : Text_display_module_demo
 └── Flag_cmd : cmd_gen_demo
