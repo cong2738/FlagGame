@@ -90,7 +90,8 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![SCCB Simulation](./doc/SIM/SCCB_CM_SIM.png)</br>
 
 ## video  
-click!-->[![청기백기 동작 영상](http://img.youtube.com/vi/tyY2kQC33uQ/0.jpg)](https://youtu.be/tyY2kQC33uQ)</br>
+click!--></br>
+[![청기백기 동작 영상](http://img.youtube.com/vi/tyY2kQC33uQ/0.jpg)](https://youtu.be/tyY2kQC33uQ)</br>
 
 ![수신호 동작 영상](./doc/handSig.gif)</br>
 
