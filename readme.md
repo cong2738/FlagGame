@@ -33,7 +33,6 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![SystenArchitecture](./doc/SystenArchitecture_design.png)</br>
 
 ### Cam Block
-- Block Design</br>
 ![Cam_design](./doc/CAM/CAM_design.png)</br>
 #### Module Overview
 ##### VGA
@@ -47,7 +46,6 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
    <img src="./doc/CAM/SCCB_BLock_Design.png" width="550" height="auto"/></br>
 
 ### GRAPIC Block
-- Block Design</br>
 ![GRAPIC_design](./doc/GRAPHIC/SHOW_design.png)</br>
 #### Module Overview
 - text_show<br/>
@@ -59,7 +57,6 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 </table>
 
 ### GAME Block
-- Block Design</br>
 ![Layout](./doc/GAME/GAME_Design.png)</br>
 #### Module Overview
 - game_state</br>
