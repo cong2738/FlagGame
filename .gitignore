@@ -1,6 +1,6 @@
 ## PumpK's gitignore for SV workspace ##
 
-#Exclude vivado Folder
+#Exclude vivado Trees
 **/FlagGame.sim/**
 **/FlagGame.hw/**
 **/FlagGame.cache/**
