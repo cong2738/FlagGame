@@ -10,6 +10,9 @@
 **.jou
 **.log
 **.str
+**backup**
 
 #Exept gitignore
 !.gitignore
+#Exept vivado xpr
+!**.xpr
