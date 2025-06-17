@@ -1,3 +1,7 @@
+**.jou
+**.log
+**.debug
+
 !*/
 !.gitignore
 
