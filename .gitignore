@@ -1,14 +1,14 @@
 ## PumpK's gitignore for SV workspace ##
 
 #Exclude vivado Trees
+**/FlagGame.cache/**
 **/FlagGame.sim/**
 **/FlagGame.hw/**
-**/FlagGame.cache/**
 #Exclude vivado File
+**.debug
 **.jou
 **.log
 **.str
-**.debug
 
 #Exept gitignore
 !.gitignore
