@@ -7,7 +7,7 @@
 |박호윤                                          |박지수                                            |임윤재                                         |함영은                                      |                                                                               
 | :--------------------------------------------: | :--------------------------------------------:     | :---------------------------------------:       | :---------------------------------------: |
 |   [@cong2738](https://github.com/cong2738)     |    [@Friday930](https://github.com/Friday930)      | [@immune](https://github.com/immune1029)        | [@heyhoo46](https://github.com/heyhoo46)  |
-|GAME LOGIC Circuit DESIGN AND DEVELOP           |ISP Develop and SIM,VGA Print module develop And SIM|camera communication develop and Game font design|GAME UI design, Graphic Circuit develop, GameLogic SIM|
+|SystenArchitecture Design And GAME LOGIC Circuit Develop           |ISP Develop and SIM,VGA Print module develop And SIM|camera communication develop and Game font design|GAME UI design, Graphic Circuit develop, GameLogic SIM|
 
 ## Introduce
 
