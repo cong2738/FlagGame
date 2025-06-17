@@ -11,6 +11,7 @@
 **.log
 **.str
 **backup**
+**.bkp
 
 #Exept gitignore
 !.gitignore
