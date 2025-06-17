@@ -30,20 +30,21 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![Basys3](https://img.shields.io/badge/Board-Basys3-2196f3?style=for-the-badge)        
 
 ## Design
+![Layout](./doc/SystenArchitecture-Project%20design.drawio.png)
 
 
 ## Layout, Circuit
-
-![Layout](\)
+![Layout](./doc/SystenArchitecture-Project%20design.drawio.png)
 
 ### GANE_Circuit
+![Layout](./doc/SystenArchitecture-Project%20design.drawio.png)
 
 ### GRAPIC_Circuit
 
 ## Cam_Circuit
 
 ## video  
-[![Video Label](http://img.youtube.com/vi/tyY2kQC33uQ/0.jpg)](https://youtu.be/tyY2kQC33uQ)<br/>
+[![동작 영상](http://img.youtube.com/vi/tyY2kQC33uQ/0.jpg)](https://youtu.be/tyY2kQC33uQ)<br/>
 click!
 
 ## 디렉토리 구조
