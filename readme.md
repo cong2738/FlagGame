@@ -28,10 +28,10 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 
 ### SYSTEM
 ![Basys3](https://img.shields.io/badge/Board-Basys3-2196f3?style=for-the-badge)</br>
-
+_ _ _ _ _ _
 ## SystenArchitecture
 ![SystenArchitecture](./doc/SystenArchitecture_design.png)</br>
-
+_ _ _ _ _ _
 ### Cam Block
 ![Cam_design](./doc/CAM/CAM_design.png)</br>
 #### Module Overview
@@ -39,11 +39,13 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
    <img src="./doc/CAM/VGA_Timing_Diagram.png" width="550" height="auto"/></br>
    <img src="./doc/CAM/VGA_Standard.png" width="550" height="auto"/></br>
 <img src="./doc/CAM/CAM_Buffer_Block_Desgin.png" width="550" height="auto"/></br>  
+_ _ _ _ _ _
 
 ##### CAM
 - SCCB</br>
    <img src="./doc/CAM/SCCB_Timing_Diagram.png" width="550" height="auto"/></br>
    <img src="./doc/CAM/SCCB_BLock_Design.png" width="550" height="auto"/></br>
+_ _ _ _ _ _
 
 ### GRAPIC Block
 ![GRAPIC_design](./doc/GRAPHIC/SHOW_design.png)</br>
@@ -55,6 +57,7 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
       <img src="./doc/GRAPHIC/TEXT_Show_romBlock.png" width="550" height="auto"/>
    </tr>
 </table>
+_ _ _ _ _ _
 
 ### GAME Block
 ![Layout](./doc/GAME/GAME_Design.png)</br>
@@ -71,7 +74,7 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
    - color range</br>
    ![color_find](./doc/color_find/HSV.png)</br>
    ![color_find](./doc/color_find/HSV_trans.png)</br>
-   
+_ _ _ _ _ _   
 
 ## Circuit
 ![Layout, Circuit](./doc/Circuit.png)</br>
