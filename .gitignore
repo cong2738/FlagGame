@@ -1,11 +1,11 @@
+#Exclude otherFile
+**/FlagGame.sim/**
+**/FlagGame.hw/**
+**/FlagGame.cache/**
 **.jou
 **.log
 **.debug
+**.str
 
-!*/
+#Exept gitignore
 !.gitignore
-
-#Exclude otherFile
-*/FlagGame.sim
-*/FlagGame.hw
-*/FlagGame.cache
