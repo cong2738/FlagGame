@@ -1,11 +1,14 @@
-#Exclude otherFile
+## PumpK's gitignore for SV workspace ##
+
+#Exclude vivado Folder
 **/FlagGame.sim/**
 **/FlagGame.hw/**
 **/FlagGame.cache/**
+#Exclude vivado File
 **.jou
 **.log
-**.debug
 **.str
+**.debug
 
 #Exept gitignore
 !.gitignore
