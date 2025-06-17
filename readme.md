@@ -37,15 +37,26 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![Cam_design](./doc/CAM/CAM_design.png)</br>
 #### Module Overview
 ##### VGA
+   <img src="./doc/CAM/VGA_Timing_Diagram.png" height="750"/></br>
+   <img src="./doc/CAM/VGA_Standard.png" height="500"/></br>
+<img src="./doc/CAM/CAM_Buffer_Block_Desgin.png" height="400"/></br>  
+
 ##### CAM
 - SCCB</br>
+   <img src="./doc/CAM/SCCB_Timing_Diagram.png" height="300"/></br>
+   <img src="./doc/CAM/SCCB_BLock_Design.png" height="300"/></br>
 
 ### GRAPIC Block
 - Block Design</br>
 ![GRAPIC_design](./doc/GRAPHIC/SHOW_design.png)</br>
 #### Module Overview
 - text_show<br/>
-
+<table>
+   <tr>
+      <img src="./doc/GRAPHIC/TEXT_Show_ALG.png" width="600"/>
+      <img src="./doc/GRAPHIC/TEXT_Show_romBlock.png" width="600"/>
+   </tr>
+</table>
 
 ### GAME Block
 - Block Design</br>
@@ -53,8 +64,17 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 #### Module Overview
 - game_state</br>
 ![game_state](./doc/GAME/GAME_FSMpng.png)</br>
-- color_find</br>
+- PRNG</br>
+  - xorShift</br>
+   ![xorShift formula](./doc/PRNG/xorShift_formula.png)</br>
+  - seed set</br>
+   ![rnd seed](./doc/PRNG/PRNG_SEED_BlockDesign.png)</br>
+- user color find</br>
 ![color_find](./doc/color_find/Color_Detection_Logic.png)</br>
+   - color range</br>
+   ![color_find](./doc/color_find/HSV.png)</br>
+   ![color_find](./doc/color_find/HSV_trans.png)</br>
+   
 
 ## Circuit
 ![Layout, Circuit](./doc/Circuit.png)</br>
@@ -68,6 +88,7 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![GAME_STATE Simulation](./doc/SIM/game_state_SIM.png)</br>
 - SCCB</br>
 ![SCCB Simulation](./doc/SIM/SCCB_CM_SIM.png)</br>
+
 ## video  
 click!-->[![청기백기 동작 영상](http://img.youtube.com/vi/tyY2kQC33uQ/0.jpg)](https://youtu.be/tyY2kQC33uQ)</br>
 
