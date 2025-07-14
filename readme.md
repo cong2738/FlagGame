@@ -33,6 +33,7 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![Basys3](https://img.shields.io/badge/Board-Basys3-2196f3?style=for-the-badge)</br>
 
 ## SystenArchitecture
+<img src="./doc/SystenArchitecture_design.png" width="auto" height="auto"/></br>
 _ _ _ _ _ _
 ### Cam Block
 ![Cam_design](./doc/CAM/CAM_design.png)</br>
