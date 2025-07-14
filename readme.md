@@ -22,15 +22,18 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ![Verdi](https://img.shields.io/badge/Tool-Verdi-00c853?style=for-the-badge)
 ![VCS](https://img.shields.io/badge/Tool-VCS-00695c?style=for-the-badge)
 
-### Development
+### Development & Simulation
 ![Verilog](https://img.shields.io/badge/HDL-Verilog-ff5722?style=for-the-badge)
 ![SystemVerilog](https://img.shields.io/badge/HDL-SystemVerilog-ff9800?style=for-the-badge)
+
+### Simulation Visualizing
+![Python](https://img.shields.io/badge/Lang-Python-3776AB?style=for-the-badge)
 
 ### Board
 ![Basys3](https://img.shields.io/badge/Board-Basys3-2196f3?style=for-the-badge)</br>
 
 ## SystenArchitecture
-![SystenArchitecture](./doc/SystenArchitecture_design.png)</br>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
 _ _ _ _ _ _
 ### Cam Block
 ![Cam_design](./doc/CAM/CAM_design.png)</br>
