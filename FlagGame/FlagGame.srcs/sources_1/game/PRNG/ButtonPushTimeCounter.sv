@@ -66,28 +66,3 @@ module ButtonPushTimeCounter (
 
     assign seed_tick = f_edge;
 endmodule
-
-
-module ButtonPushTimeCounter_TestCircuit (
-    input clk,
-    input rst,
-    input btn,
-    output [7:0] fnd_font,
-    output [3:0] fnd_comm
-);
-    logic [31:0] bptCount;
-    ButtonPushTimeCounter u_ButtonPushTimeCounter (
-        .clk     (clk),
-        .reset   (rst),
-        .i_btn   (btn),
-        .bptCount(bptCount),
-        .seed_tick()
-    );
-    fnd_controller u_fnd_controller (
-        .clk     (clk),
-        .reset   (rst),
-        .bcd32   (bptCount),
-        .fnd_font(fnd_font),
-        .fnd_comm(fnd_comm)
-    );
-endmodule
