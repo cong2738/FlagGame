@@ -37,7 +37,7 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ## SystenArchitecture
 <img src="./doc/SystenArchitecture_design.png" width="auto" height="auto"/></br>
 _ _ _ _ _ _
-### Cam Block: 캠 입력 처리장치
+### Cam Block: 캠 입력 처리장치(ISP)
 ![Cam_design](./doc/CAM/CAM_design.png)</br>
 #### Module Overview
 ##### VGA
@@ -51,7 +51,7 @@ _ _ _ _ _ _
    <img src="./doc/CAM/SCCB_BLock_Design.png" width="550" height="auto"/></br>
 _ _ _ _ _ _
 
-### Graphic Block: 그래픽 처리장치(VGA를 통해 모니터에 출력)
+### Graphic Block(GPU): 게임UI 그래픽 처리장치(ISP)
 ![GRAPHIC_design](./doc/GRAPHIC/SHOW_design.png)</br>
 #### Module Overview
 - text_show<br/>
@@ -64,7 +64,7 @@ _ _ _ _ _ _
 
 _ _ _ _ _ _
 
-### Game Block: 게임 데이터 처리장치(ISP)
+### Game Block(CPU): 게임 데이터 처리장치(ISP, PRNG)
 ![Layout](./doc/GAME/GAME_Design.png)</br>
 #### Module Overview
 - game_state</br>
