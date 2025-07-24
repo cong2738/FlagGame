@@ -90,7 +90,7 @@ _ _ _ _ _ _
 ![Layout, Circuit](./doc/Circuit.png)</br>
 
 ## SIM
-- PRNG</br>
+- PRNG: 최대표준편차(약12억)과 최대평균(약21억)에 가까운 값 --> 이상적인 난수수열로 판단</br>
 ![PRNG Simulation](./doc/SIM/PRNG_SIM.png)</br>
 ![PRNG RND_Histogram](./doc/SIM/RND_Histogram.png)</br>
 ![PRNG mean,SD](./doc/SIM/PRNG_평균,표준편차.png)</br>
