@@ -14,7 +14,9 @@
 - ImageSerchingAndDetect  
 FPGA 기반으로 실시간 카메라 영상을 처리하고, 사용자의 깃발 동작을 인식해 반응하는 청기백기 게임을 구현한다. 카메라에서 입력된 원시 영상은 직접 구현한 ISP 회로를 통해 밝기 보정과 노이즈 제거 등 전처리를 거친다. 이후 ROI(Region of Interest) 영역에서 조건에 부합하는 픽셀의 개수를 카운트하여, 깃발의 색상과 위치를 판별한다.<br/>
 HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고, 각 영역에서의 개수를 비교함으로써 사용자의 동작을 인식한다. 전 과정은 순수 하드웨어(FPGA) 로직으로 구성되어, 외부 CPU 개입 없이 고속으로 처리된다. FSM 기반 제어 로직을 통해 게임 판정 및 화면 출력까지 실시간으로 수행한다.<br/>
-
+   - Cam Block     : 캠 입력 처리장치, SCCB를 통해 캠을 세팅하며 VGA사이즈로 입력받음
+   - Graphic Block : 그래픽 처리장치(GPU), 게임상태에 따라 캠 영상에 게임UI를 오버레이하는 블록
+   - Game Block    : 게임 데이터 처리장치(CPU), 의사난수발생기를 통해 발생한 난수수열을 바탕으로 청기백기 게임을 동작시킨다. 난수 시드는 사용자의 입력 타이밍, 입력길이, 센서데이터를 사용하며 캠 픽셀 RGB와 픽셀타이밍을 X,Y로 이용하여 깃발의 위치를 판별하고 게임을 진행시킨다.
 ## Stacks
 
 ### Environment
@@ -35,7 +37,7 @@ HSV 변환이나 색상 분리 없이 RGB 조건만으로 픽셀을 분류하고
 ## SystenArchitecture
 <img src="./doc/SystenArchitecture_design.png" width="auto" height="auto"/></br>
 _ _ _ _ _ _
-### Cam Block
+### Cam Block: 캠 입력 처리장치
 ![Cam_design](./doc/CAM/CAM_design.png)</br>
 #### Module Overview
 ##### VGA
@@ -49,8 +51,8 @@ _ _ _ _ _ _
    <img src="./doc/CAM/SCCB_BLock_Design.png" width="550" height="auto"/></br>
 _ _ _ _ _ _
 
-### GRAPIC Block
-![GRAPIC_design](./doc/GRAPHIC/SHOW_design.png)</br>
+### Graphic Block: 그래픽 처리장치(VGA를 통해 모니터에 출력)
+![GRAPHIC_design](./doc/GRAPHIC/SHOW_design.png)</br>
 #### Module Overview
 - text_show<br/>
 <table>
@@ -62,7 +64,7 @@ _ _ _ _ _ _
 
 _ _ _ _ _ _
 
-### GAME Block
+### Game Block: 게임 데이터 처리장치(ISP)
 ![Layout](./doc/GAME/GAME_Design.png)</br>
 #### Module Overview
 - game_state</br>
