@@ -19,8 +19,11 @@
       - Cam Block     : 캠 입력 처리장치, SCCB를 통해 캠을 세팅하며 VGA사이즈로 입력받음
       - Graphic Block : 그래픽 처리장치(GPU), 게임상태에 따라 캠 영상에 게임UI를 오버레이하는 블록
       - Game Block    : 게임 데이터 처리장치(CPU), 의사난수발생기를 통해 발생한 난수수열을 바탕으로 청기백기 게임을 동작시킨다. 난수 시드는 사용자의 입력 타이밍, 입력길이, 센서데이터를 사용하며 캠 픽셀 HSV색공간과 픽셀타이밍을 X,Y로 이용하여 ROI카운트를 통해 깃발의 위치를 판별하고 게임을 진행시킨다.
+
 ## Stacks
 
+ - 핵심기술: ISP, ROI 기반 컬러 검출(이미지 세그멘테이션), PRNG ,VGA
+ 
 ### Environment
 ![Vivado](https://img.shields.io/badge/Tool-Vivado-904cab?style=for-the-badge&logo=&logoColor=white)
 ![Verdi](https://img.shields.io/badge/Tool-Verdi-00c853?style=for-the-badge)
